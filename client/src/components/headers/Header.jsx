@@ -1,15 +1,20 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Navbar} from "react-bootstrap";
+import {Navbar} from 'react-bootstrap';
+import useScrollNavigate from '../../hooks/useScrollNavigate';
 
 const Header = () => {
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [headerHeight, setHeaderHeight] = useState(0);
     const headerRef = useRef(null);
+    const navigate = useScrollNavigate();
 
     useEffect(() => {
-        setHeaderHeight(headerRef.current ? headerRef.current.clientHeight : 0);
+        setHeaderHeight(getHeaderHeight());
     }, [headerRef])
+
+
+    const getHeaderHeight = () => headerRef.current ? headerRef.current.clientHeight : 0;
 
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
@@ -19,9 +24,8 @@ const Header = () => {
         setPrevScrollPos(currentScrollPos);
     };
 
-
     const handleResize = () =>
-        setHeaderHeight(headerRef.current ? headerRef.current.clientHeight : 0);
+        setHeaderHeight(getHeaderHeight());
 
 
     window.addEventListener('scroll', handleScroll);
