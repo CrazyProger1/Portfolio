@@ -1,6 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainPage from './components/pages/MainPage';
+
 const App = () =>
     <div>
-        Hello
+        <MainPage/>
     </div>
 
 export default App;
