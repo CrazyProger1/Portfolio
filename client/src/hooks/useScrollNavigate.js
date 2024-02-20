@@ -1,5 +1,4 @@
 const useScrollNavigate = () => {
-
     return (id) => {
         const element = document.getElementById(id);
 
