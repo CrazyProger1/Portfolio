@@ -1,10 +1,20 @@
 
 .header {
-
+    background-color: #221F1F;
+    min-height: 80px;
 }
 
+.header-brand {
+    font-family: Poppins-Regular, serif;
+    font-size: 25px;
+}
+
+.header-brand {
+    cursor: pointer;
+}
 
 .header-nav-link {
     font-family: Poppins-Regular, serif;
     font-size: 20px;
 }
+
