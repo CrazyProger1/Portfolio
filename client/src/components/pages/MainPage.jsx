@@ -1,58 +1,19 @@
 import React from 'react';
 import PageWrapper from './PageWrapper';
-import IntroSection from "../sections/IntroSection";
+import IntroSection from '../sections/IntroSection';
+import HorizontalDivider from '../dividers/HorizontalDivider';
+import AboutSection from "../sections/AboutSection";
 
 const MainPage = () =>
     <PageWrapper>
         <IntroSection/>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p id='about'>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p id='projects'>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p id='contact'>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
+        <div id='about'/>
+        <HorizontalDivider name='About'/>
+        <AboutSection/>
+        <div id='projects'/>
+        <HorizontalDivider name='Projects'/>
+        <div id='contact'/>
+        <HorizontalDivider name='Contact Me'/>
     </PageWrapper>
 
 export default MainPage;

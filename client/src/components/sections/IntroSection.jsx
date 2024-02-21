@@ -16,7 +16,7 @@ const IntroSection = () => {
 
             </Col>
             <Col className='d-flex justify-content-center'>
-                <Image src={process.env.PUBLIC_URL + '/images/me.jpg'} width='55%' style={{borderRadius: '49px'}}/>
+                <Image src={process.env.PUBLIC_URL + '/images/me.jpg'} width='58%' style={{borderRadius: '49px'}}/>
             </Col>
         </Row>
     );
