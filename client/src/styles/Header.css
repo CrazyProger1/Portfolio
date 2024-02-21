@@ -18,3 +18,16 @@
     font-size: 20px;
 }
 
+.header-nav-links-container {
+
+}
+
+.header-nav-icons-container {
+
+}
+
+@media only screen and (max-width: 992px) {
+    .header-nav-icons-container {
+        display: none;
+    }
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
-import {FaGithub, FaLinkedin, FaTelegram} from "react-icons/fa";
-import {GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from "../../config/data";
-import {HEADER_NAV_LINKS} from "../../config/constants";
+import {FaGithub, FaLinkedin, FaTelegram} from 'react-icons/fa';
+import {GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from '../../config/data';
+import {HEADER_NAV_LINKS} from '../../config/constants';
 import useScrollNavigate from '../../hooks/useScrollNavigate';
 import '../../styles/Header.css'
 
@@ -17,12 +17,11 @@ const Header = () => {
                 // bg='dark'
                 data-bs-theme='dark'
                 collapseOnSelect>
-
                 <Container>
                     <Navbar.Brand className='header-brand'>crazyproger1</Navbar.Brand>
                     <Navbar.Toggle aria-controls='header-navbar'/>
                     <Navbar.Collapse id='header-navbar'>
-                        <Nav className='mx-auto'>
+                        <Nav className='header-nav-links-container mx-auto'>
                             {HEADER_NAV_LINKS.map(({text, to}) =>
                                 <Nav.Link
                                     className='header-nav-link ms-3'
@@ -32,7 +31,7 @@ const Header = () => {
                             )}
                         </Nav>
                     </Navbar.Collapse>
-                    <Nav>
+                    <Nav className='header-nav-icons-container'>
                         <Nav.Link href={TELEGRAM_LINK} target='_blank'>
                             <FaTelegram color='white' size='32px'/>
                         </Nav.Link>
@@ -41,7 +40,7 @@ const Header = () => {
                             <FaLinkedin color='white' size='32px'/>
                         </Nav.Link>
 
-                        <Nav.Link  href={GITHUB_LINK} target='_blank'>
+                        <Nav.Link href={GITHUB_LINK} target='_blank'>
                             <FaGithub color='white' size='32px'/>
                         </Nav.Link>
                     </Nav>
