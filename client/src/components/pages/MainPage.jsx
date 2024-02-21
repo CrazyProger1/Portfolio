@@ -9,17 +9,17 @@ const MainPage = () =>
         <p>Hello</p>
         <p>Hello</p>
         <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
-        <p>Hello</p>
         <p id='about'>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p id='projects'>Hello</p>
         <p>Hello</p>
         <p>Hello</p>
         <p>Hello</p>

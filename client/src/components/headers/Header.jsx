@@ -12,9 +12,9 @@ const Header = () => {
     return (
         <div>
             <Navbar
-                className='header'
+                className='header bg-dark'
                 expand='lg'
-                // bg='dark'
+                bg='dark'
                 data-bs-theme='dark'
                 collapseOnSelect>
                 <Container>
