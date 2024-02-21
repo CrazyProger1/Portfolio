@@ -4,7 +4,7 @@ import {FaGithub, FaLinkedin, FaTelegram} from 'react-icons/fa';
 import {GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from '../../config/data';
 import {HEADER_NAV_LINKS} from '../../config/constants';
 import useScrollNavigate from '../../hooks/useScrollNavigate';
-import '../../styles/Header.css'
+import '../../styles/header.css'
 
 const Header = () => {
     const navigate = useScrollNavigate();
@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <div>
             <Navbar
-                className='header bg-dark'
+                className='header'
                 expand='lg'
                 bg='dark'
                 data-bs-theme='dark'

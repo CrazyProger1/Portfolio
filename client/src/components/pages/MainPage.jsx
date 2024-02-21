@@ -1,8 +1,10 @@
 import React from 'react';
 import PageWrapper from './PageWrapper';
+import IntroSection from "../sections/IntroSection";
 
 const MainPage = () =>
     <PageWrapper>
+        <IntroSection/>
         <p>Hello</p>
         <p>Hello</p>
         <p>Hello</p>

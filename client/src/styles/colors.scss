@@ -1,8 +1,10 @@
+$bg-color: #221F1F;
+
 $theme-colors: (
-        'dark': #221F1F,
+        'dark': $bg-color,
 );
 
-$body-bg: #221F1F;
+$body-bg: $bg-color;
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
