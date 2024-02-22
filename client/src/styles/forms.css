@@ -1,0 +1,18 @@
+
+.form-control {
+    color: white !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid gray !important;
+}
+
+
+.from-label {
+    color: white !important;
+}
+
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+}

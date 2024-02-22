@@ -1,5 +1,6 @@
 import React from 'react';
-import {Badge} from "react-bootstrap";
+import {Badge} from 'react-bootstrap';
+import {FaHashtag} from 'react-icons/fa';
 
 const SkillBadge = ({name, level, ...props}) => {
     const boxShadow = '3px 3px 3px rgba(255, 255, 255, 0.1)'; // Тень
@@ -17,7 +18,7 @@ const SkillBadge = ({name, level, ...props}) => {
             }}
             bg={level}>
             <span className='text-dark' style={{fontFamily: 'Poppins-Regular', fontSize: '17px'}}>
-                #{name}
+                <FaHashtag size='16px'/>{name}
             </span>
 
         </Badge>

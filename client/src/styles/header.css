@@ -1,8 +1,8 @@
 
-
 .header {
     /*background-color: #221F1F;*/
     min-height: 80px;
+    z-index: auto;
 }
 
 .header-brand {
@@ -23,12 +23,9 @@
 
 }
 
-.header-nav-icons-container {
-
-}
 
 @media only screen and (max-width: 992px) {
     .header-nav-icons-container {
-        display: none;
+        display: none !important;
     }
 }
