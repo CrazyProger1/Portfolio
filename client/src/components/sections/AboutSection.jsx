@@ -60,6 +60,10 @@ const AboutSection = () => {
             level: 'success'
         },
         {
+            name: 'Peewee',
+            level: 'success'
+        },
+        {
             name: 'Aiogram',
             level: 'success'
         },

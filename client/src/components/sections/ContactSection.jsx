@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactMe from '../forms/ContactMe';
-import {Button} from 'react-bootstrap';
 import styled from 'styled-components';
 
 
@@ -24,11 +23,14 @@ const ButtonSend = styled.button`
 
 
 const ContactSection = () => {
+    const handleClick = () => {
+        console.log('SENDING!')
+    }
     return (
         <div>
             <ContactMe/>
             <div className='d-flex justify-content-center my-5'>
-                <ButtonSend>Send</ButtonSend>
+                <ButtonSend onClick={handleClick}>Send</ButtonSend>
             </div>
 
         </div>
