@@ -100,6 +100,10 @@ const AboutSection = () => {
             level: 'warning',
         },
         {
+            name: 'Bootstrap',
+            level: 'success'
+        },
+        {
             name: 'PostgreSQL',
             level: 'success'
         },
@@ -110,6 +114,10 @@ const AboutSection = () => {
         {
             name: 'Mongo DB',
             level: 'warning'
+        },
+        {
+            name: 'Docker',
+            level: 'success'
         },
 
 
