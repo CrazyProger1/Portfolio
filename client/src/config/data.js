@@ -8,4 +8,4 @@ export const TELEGRAM_LINK = process.env.REACT_APP_TELEGRAM_LINK;
 export const PHONE = process.env.REACT_APP_PHONE;
 export const EMAIL = process.env.REACT_APP_EMAIL;
 
-
+export const ME_PHOTO = process.env.PUBLIC_URL + '/images/me.jpg'

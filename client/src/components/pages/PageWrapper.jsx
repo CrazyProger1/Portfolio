@@ -6,7 +6,7 @@ import Footer from '../footers/Footer';
 
 
 const PageWrapper = ({children, ...props}) =>
-    <div>
+    <React.Fragment>
         <Headroom>
             <Header/>
         </Headroom>
@@ -16,6 +16,6 @@ const PageWrapper = ({children, ...props}) =>
         </Container>
 
         <Footer/>
-    </div>
+    </React.Fragment>
 
 export default PageWrapper;
