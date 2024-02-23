@@ -6,7 +6,7 @@ import '../../styles/dividers.scss'
 const HorizontalDivider = ({section, ...props}) =>
     <Row>
         <Col md='auto'>
-            <h2 className='section-title text-light display-5'>{section}</h2>
+            <h2 className='section-title text-light display-5 user-select-none'>{section}</h2>
         </Col>
         <Col className='d-flex align-items-center'>
             <hr className='section-line'/>
