@@ -24,6 +24,7 @@ const Header = () => {
                     <Nav className='mx-auto'>
                         {HEADER_NAV_LINKS.map(({text, to}) =>
                             <Nav.Link
+                                key={to}
                                 className='header-text-link ms-3 user-select-none'
                                 onClick={() => navigate(to)}>
                                 {text}

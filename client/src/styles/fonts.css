@@ -16,4 +16,16 @@
 }
 
 
+.text-regular {
+    font-family: Poppins-Regular, serif;
+}
+
+.text-bold {
+    font-family: Poppins-Bold, serif;
+}
+
+.text-extrabold {
+    font-family: Poppins-ExtraBold, serif;
+}
+
 
