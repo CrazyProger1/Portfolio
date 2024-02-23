@@ -4,9 +4,9 @@ import HorizontalDivider from '../dividers/HorizontalDivider';
 
 const MainPage = () =>
     <PageWrapper>
-        <HorizontalDivider name='About'/>
-        <HorizontalDivider name='Projects'/>
-        <HorizontalDivider name='Contact Me'/>
+        <HorizontalDivider section='About'/>
+        <HorizontalDivider section='Projects'/>
+        <HorizontalDivider section='Contact Me'/>
     </PageWrapper>
 
 export default MainPage;
