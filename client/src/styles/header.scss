@@ -1,0 +1,26 @@
+@import 'colors';
+
+
+.header {
+  min-height: 80px;
+  z-index: auto;
+  font-family: Poppins-Regular, serif;
+}
+
+.header-brand {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.header-brand:hover {
+  text-shadow: 0 0 5px $fg-color;
+}
+
+.header-text-link {
+  font-size: 20px;
+}
+
+.header-text-link:hover {
+  text-shadow: 0 0 5px $fg-color;
+}
+

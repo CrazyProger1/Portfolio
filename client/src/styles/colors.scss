@@ -1,7 +1,9 @@
 $bg-color: #221F1F;
+$fg-color: #FFFFFF;
 
 $theme-colors: (
         'dark': $bg-color,
+        'light': $fg-color
 );
 
 $body-bg: $bg-color;

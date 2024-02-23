@@ -1,11 +1,11 @@
 import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
-import {FaGithub, FaLinkedin, FaTelegram} from 'react-icons/fa';
-import {GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from '../../config/data';
+import {MobileHide} from '../styled/MobileHide';
+import {BRAND} from '../../config/data';
 import {HEADER_NAV_LINKS} from '../../config/constants';
-import {CollapseDiv} from '../styled/CollapseDiv';
 import useScrollNavigate from '../../hooks/useScrollNavigate';
-import '../../styles/header.css'
+import SocialNetworksNav from '../navs/SocialNetworksNav';
+import '../../styles/header.scss'
 
 const Header = () => {
     const navigate = useScrollNavigate();
@@ -18,34 +18,22 @@ const Header = () => {
             data-bs-theme='dark'
             collapseOnSelect>
             <Container>
-                <Navbar.Brand className='header-brand'>crazyproger1</Navbar.Brand>
-                <Navbar.Toggle aria-controls='header-navbar'/>
-                <Navbar.Collapse id='header-navbar'>
+                <Navbar.Brand className='header-brand'>{BRAND}</Navbar.Brand>
+                <Navbar.Toggle aria-controls='header-collapse'/>
+                <Navbar.Collapse id='header-collapse'>
                     <Nav className='mx-auto'>
                         {HEADER_NAV_LINKS.map(({text, to}) =>
                             <Nav.Link
-                                className='header-nav-link ms-3'
+                                className='header-text-link ms-3'
                                 onClick={() => navigate(to)}>
                                 {text}
                             </Nav.Link>
                         )}
                     </Nav>
                 </Navbar.Collapse>
-                <CollapseDiv>
-                    <Nav>
-                        <Nav.Link href={TELEGRAM_LINK} target='_blank'>
-                            <FaTelegram color='white' size='32px'/>
-                        </Nav.Link>
-
-                        <Nav.Link href={LINKEDIN_LINK} target='_blank'>
-                            <FaLinkedin color='white' size='32px'/>
-                        </Nav.Link>
-
-                        <Nav.Link href={GITHUB_LINK} target='_blank'>
-                            <FaGithub color='white' size='32px'/>
-                        </Nav.Link>
-                    </Nav>
-                </CollapseDiv>
+                <MobileHide>
+                    <SocialNetworksNav/>
+                </MobileHide>
             </Container>
         </Navbar>
     );

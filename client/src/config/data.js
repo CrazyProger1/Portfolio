@@ -1,3 +1,11 @@
-export const GITHUB_LINK = 'https://github.com/CrazyProger1';
-export const LINKEDIN_LINK = 'https://www.linkedin.com/in/nikolay-hetman-366933221/';
-export const TELEGRAM_LINK = 'https://t.me/crazyproger1';
+export const BRAND = process.env.REACT_APP_BRAND;
+
+// Social network links
+export const GITHUB_LINK = process.env.REACT_APP_GITHUB_LINK;
+export const LINKEDIN_LINK = process.env.REACT_APP_LINKEDIN_LINK;
+export const TELEGRAM_LINK = process.env.REACT_APP_TELEGRAM_LINK;
+
+export const PHONE = process.env.REACT_APP_PHONE;
+export const EMAIL = process.env.REACT_APP_EMAIL;
+
+

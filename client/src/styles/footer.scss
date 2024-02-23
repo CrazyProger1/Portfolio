@@ -1,0 +1,14 @@
+@import 'colors';
+
+.footer {
+  min-height: 80px;
+  font-family: Poppins-Regular, serif;
+}
+
+.footer-text-link {
+  font-size: 20px;
+}
+
+.footer-text-link:hover {
+  text-shadow: 0 0 5px $fg-color;
+}

@@ -1,0 +1,12 @@
+@import 'colors';
+
+.section-title {
+  font-family: Poppins-Regular, serif;
+  font-size: 45px;
+}
+
+.section-line {
+  width: 100%;
+  color: $fg-color;
+  border: 1px solid $fg-color;
+}
