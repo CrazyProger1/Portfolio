@@ -1,6 +1,5 @@
 
 .header {
-    /*background-color: #221F1F;*/
     min-height: 80px;
     z-index: auto;
 }
@@ -17,15 +16,4 @@
 .header-nav-link {
     font-family: Poppins-Regular, serif;
     font-size: 20px;
-}
-
-.header-nav-links-container {
-
-}
-
-
-@media only screen and (max-width: 992px) {
-    .header-nav-icons-container {
-        display: none !important;
-    }
 }
