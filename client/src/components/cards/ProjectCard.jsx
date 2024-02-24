@@ -5,8 +5,11 @@ import '../../styles/cards.scss'
 import '../../styles/images.scss'
 
 const ProjectCard = ({name, version, image, ...props}) => {
+    const handleClick = () => {
+        console.log('CLICK')
+    }
     return (
-        <Card className='project-card user-select-none border-0'>
+        <Card onClick={handleClick} className='project-card user-select-none border-0 rounded-5'>
             <Card.Img
                 className='rounded-5'
                 variant='top'

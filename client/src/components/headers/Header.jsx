@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
-import {MobileHide} from '../styled/MobileHide';
+import {DesktopWrapper} from '../styled/DesktopWrapper';
 import {BRAND} from '../../config/data';
 import {HEADER_NAV_LINKS} from '../../config/constants';
 import useScrollNavigate from '../../hooks/useScrollNavigate';
@@ -32,9 +32,9 @@ const Header = () => {
                         )}
                     </Nav>
                 </Navbar.Collapse>
-                <MobileHide>
+                <DesktopWrapper>
                     <SocialNetworksNav/>
-                </MobileHide>
+                </DesktopWrapper>
             </Container>
         </Navbar>
     );

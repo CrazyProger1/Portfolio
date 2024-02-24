@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillBadge from '../badges/SkillBadge';
 
-const SkillsTable = ({skills, ...props}) =>
+const SkillTable = ({skills, ...props}) =>
     <div className='d-flex flex-wrap'>
         {skills.map(skill =>
             <div key={skill.name} className='m-1'>
@@ -10,4 +10,4 @@ const SkillsTable = ({skills, ...props}) =>
         )}
     </div>
 
-export default SkillsTable;
+export default SkillTable;

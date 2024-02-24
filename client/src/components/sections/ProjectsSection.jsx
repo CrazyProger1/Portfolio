@@ -1,8 +1,8 @@
 import React from 'react';
-import ProjectsSlider from '../sliders/ProjectsSlider';
+import ProjectSlider from '../sliders/ProjectSlider';
 import {PROJECTS} from '../../config/data';
 
-const ProjectsSection = () => <ProjectsSlider projects={PROJECTS}/>
+const ProjectsSection = () => <ProjectSlider projects={PROJECTS}/>
 
 
 export default ProjectsSection;
