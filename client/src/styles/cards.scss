@@ -2,6 +2,7 @@
 
 
 .project-card {
+
 }
 
 .project-card:hover {
@@ -9,3 +10,13 @@
   filter: drop-shadow(0 0 5px $fg-color);
 }
 
+.project-card-image {
+  height: 16rem;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 992px) {
+  .project-card-image {
+    height: auto;
+  }
+}

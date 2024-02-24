@@ -9,14 +9,14 @@ const ProjectSlider = ({projects, ...props}) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         responsive: [
             {
-                breakpoint: 982,
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
                 }
             },
         ]

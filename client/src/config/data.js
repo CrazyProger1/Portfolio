@@ -135,24 +135,28 @@ export const SKILLS = [
 
 export const PROJECTS = [
     {
-        name: 'test-project',
-        version: '0.0.1',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
-    },
-    {
-        name: 'test-project 2',
+        name: 'Simple-XSS',
         version: '0.0.2',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+        image: 'https://github.com/CrazyProger1/Simple-XSS/blob/master/resources/images/v0.3.png?raw=true',
+        variant: 'light'
     },
     {
-        name: 'test-project 3',
+        name: 'Translatable-Enums',
         version: '0.0.3',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+        image: process.env.PUBLIC_URL + '/images/project_2.png',
+        variant: 'dark'
     },
     {
-        name: 'test-project 4',
-        version: '0.0.4',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+        name: 'PC-Alarm',
+        version: '0.0.1',
+        image: process.env.PUBLIC_URL + '/images/project_3.png',
+        variant: 'light'
+    },
+    {
+        name: 'Scary-Stories',
+        version: '0.0.1',
+        image: process.env.PUBLIC_URL + '/images/project_4.png',
+        variant: 'dark'
     },
     {
         name: 'test-project 5',
