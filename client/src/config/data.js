@@ -132,3 +132,41 @@ export const SKILLS = [
         level: 'high'
     },
 ]
+
+export const PROJECTS = [
+    {
+        name: 'test-project',
+        version: '0.0.1',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 2',
+        version: '0.0.2',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 3',
+        version: '0.0.3',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 4',
+        version: '0.0.4',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 5',
+        version: '0.0.5',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 6',
+        version: '0.0.6',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    },
+    {
+        name: 'test-project 7',
+        version: '0.0.7',
+        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+    }
+]

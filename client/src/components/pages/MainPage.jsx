@@ -3,6 +3,7 @@ import PageWrapper from './PageWrapper';
 import HorizontalDivider from '../dividers/HorizontalDivider';
 import IntroSection from '../sections/IntroSection';
 import AboutSection from '../sections/AboutSection';
+import ProjectsSection from '../sections/ProjectsSection';
 
 const MainPage = () =>
     <PageWrapper>
@@ -11,10 +12,13 @@ const MainPage = () =>
 
         <div className='mt-5' id='about'/>
         <HorizontalDivider section='About'/>
+        <div className='mt-3'/>
         <AboutSection/>
 
         <div className='mt-5' id='projects'/>
         <HorizontalDivider section='Projects'/>
+        <div className='mt-3'/>
+        <ProjectsSection/>
 
         <div className='mt-5' id='contact'/>
         <HorizontalDivider section='Contact Me'/>
