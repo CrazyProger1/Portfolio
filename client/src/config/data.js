@@ -138,36 +138,36 @@ export const PROJECTS = [
         name: 'Simple-XSS',
         version: '0.0.2',
         image: 'https://github.com/CrazyProger1/Simple-XSS/blob/master/resources/images/v0.3.png?raw=true',
-        variant: 'light'
+        stars: 45
     },
     {
         name: 'Translatable-Enums',
         version: '0.0.3',
         image: process.env.PUBLIC_URL + '/images/project_2.png',
-        variant: 'dark'
+        stars: 2
     },
     {
         name: 'PC-Alarm',
         version: '0.0.1',
         image: process.env.PUBLIC_URL + '/images/project_3.png',
-        variant: 'light'
+        stars: 4
     },
     {
         name: 'Scary-Stories',
         version: '0.0.1',
         image: process.env.PUBLIC_URL + '/images/project_4.png',
-        variant: 'dark'
+        stars: 1
     },
     {
         name: 'FastPy',
         version: '0.0.0',
         image: process.env.PUBLIC_URL + '/images/project_5.png',
-        variant: 'dark'
+        stars: 11
     },
     {
         name: 'ScreenWriter',
-        version: '0.0.6',
+        version: '0.0.2',
         image: process.env.PUBLIC_URL + '/images/project_6.png',
-        variant: 'light'
+        stars: 3
     },
 ]
