@@ -5,6 +5,7 @@ import MainPage from '../components/pages/MainPage';
 import '../styles/fonts.css'
 import '../styles/colors.scss';
 import '../styles/scroll.css';
+import '../styles/forms.scss'
 
 const App = () =>
     <div>

@@ -159,18 +159,15 @@ export const PROJECTS = [
         variant: 'dark'
     },
     {
-        name: 'test-project 5',
-        version: '0.0.5',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+        name: 'FastPy',
+        version: '0.0.0',
+        image: process.env.PUBLIC_URL + '/images/project_5.png',
+        variant: 'dark'
     },
     {
-        name: 'test-project 6',
+        name: 'ScreenWriter',
         version: '0.0.6',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
+        image: process.env.PUBLIC_URL + '/images/project_6.png',
+        variant: 'light'
     },
-    {
-        name: 'test-project 7',
-        version: '0.0.7',
-        image: 'https://www.liquidplanner.com/wp-content/uploads/2019/04/HiRes-17.jpg'
-    }
 ]

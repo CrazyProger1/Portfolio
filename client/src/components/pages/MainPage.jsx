@@ -4,6 +4,7 @@ import HorizontalDivider from '../dividers/HorizontalDivider';
 import IntroSection from '../sections/IntroSection';
 import AboutSection from '../sections/AboutSection';
 import ProjectsSection from '../sections/ProjectsSection';
+import ContactMeSection from '../sections/ContactMeSection';
 
 const MainPage = () =>
     <PageWrapper>
@@ -22,6 +23,8 @@ const MainPage = () =>
 
         <div className='mt-5' id='contact'/>
         <HorizontalDivider section='Contact Me'/>
+        <div className='mt-3'/>
+        <ContactMeSection/>
     </PageWrapper>
 
 export default MainPage;
