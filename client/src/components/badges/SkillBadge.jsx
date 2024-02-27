@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../../styles/badges.scss'
+import SkillTooltip from "../tooltips/SkillTooltip";
 
 
 const skillBadgeVariants = {
-    high: '#17AA87',
-    middle: '#F1C40F',
-    low: '#FF603E',
+    advanced: '#17AA87',
+    intermediate: '#F1C40F',
+    basic: '#FF603E',
 
 }
 
@@ -31,19 +31,17 @@ const BadgeRight = styled.div`
 `
 
 
-const SkillBadge = ({skill, ...props}) => {
-    const {name, level} = skill;
-    return (
+const SkillBadge = ({skill, ...props}) =>
+    <SkillTooltip skill={skill}>
         <div className='text-regular skill-badge user-select-none d-flex flex-row'>
             <BadgeLeft className='text-bold'>
                 #
             </BadgeLeft>
-            <BadgeRight className='text-dark' variant={level}>
-                {name}
+            <BadgeRight className='text-dark' variant={skill?.level}>
+                {skill?.name}
             </BadgeRight>
         </div>
-    );
-}
+    </SkillTooltip>
 
 
 export default SkillBadge;

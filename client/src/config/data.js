@@ -13,123 +13,139 @@ export const ME_PHOTO = process.env.PUBLIC_URL + '/images/me.jpg'
 export const SKILLS = [
     {
         name: 'Python',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'C++',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'JavaScript',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'С#',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'Kotlin',
-        level: 'low'
+        level: 'basic'
+    },
+    {
+        name: 'HTML',
+        level: 'intermediate'
+    },
+    {
+        name: 'CSS',
+        level: 'intermediate'
     },
     {
         name: 'SQL',
-        level: 'high',
+        level: 'advanced',
     },
     {
         name: 'OOP',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'SOLID',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'REST',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'GIT',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Django',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'FastAPI',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Flask',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'SQLAlchemy',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Peewee',
-        level: 'high'
+        level: 'advanced'
+    },
+    {
+        name: 'Jinja 2',
+        level: 'advanced'
+    },
+    {
+        name: 'BeautifulSoup 4',
+        level: 'advanced'
     },
     {
         name: 'Aiogram',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Telebot',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'Flet',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'PyQT5',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Tkinter',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Pygame',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Pydantic',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Pytest',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'Unittests',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'React JS',
-        level: 'middle',
+        level: 'intermediate',
     },
     {
         name: 'Bootstrap',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'PostgreSQL',
-        level: 'high'
+        level: 'advanced'
     },
     {
         name: 'Redis',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'Mongo DB',
-        level: 'middle'
+        level: 'intermediate'
     },
     {
         name: 'Docker',
-        level: 'high'
+        level: 'advanced'
     },
 ]
 

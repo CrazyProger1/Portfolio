@@ -9,12 +9,12 @@ const ProjectOverviewOffcanvas = ({show, handleClose, project, ...props}) => {
     return (
         <Offcanvas className='h-auto' placement='bottom' show={show} onHide={handleClose}>
             <Offcanvas.Header closeButton closeVariant='white'>
-                <Offcanvas.Title className='text-regular text-light'>{name}</Offcanvas.Title>
+                <Offcanvas.Title className='text-regular text-light user-select-none'>{name}</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className='text-regular text-light'>
                 <div className='d-flex justify-content-center'>
                     <Col xs={12} md={6}>
-                        <Image className='rounded-5' src={image} thumbnail/>
+                        <Image className='rounded-5 user-select-none' src={image} thumbnail/>
                     </Col>
                 </div>
 
