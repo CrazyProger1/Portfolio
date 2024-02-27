@@ -37,9 +37,10 @@ const ProjectsSection = () => {
         <React.Fragment>
             <ProjectSlider
                 projects={PROJECTS}
-                onChoose={project => dispatchOffcanvas({type: 'show', project: project})}
-            />
-            <ProjectOverviewOffcanvas {...offcanvasState} handleClose={() => dispatchOffcanvas({type: 'hide'})}/>
+                onChoose={project => dispatchOffcanvas({type: 'show', project: project})}/>
+            <ProjectOverviewOffcanvas
+                {...offcanvasState}
+                handleClose={() => dispatchOffcanvas({type: 'hide'})}/>
         </React.Fragment>
     );
 }

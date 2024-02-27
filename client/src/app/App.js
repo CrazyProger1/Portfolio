@@ -6,6 +6,7 @@ import '../styles/fonts.css'
 import '../styles/colors.scss';
 import '../styles/scroll.css';
 import '../styles/forms.scss'
+import '../styles/navs.scss'
 
 const App = () =>
     <div>
