@@ -13,10 +13,10 @@ const Footer = () =>
         collapseOnSelect>
         <Container>
             <Nav className='d-flex flex-column'>
-                <Nav.Link className='footer-text-link text-regular' href={PHONE}>
+                <Nav.Link className='footer-text-link text-regular' href={'tel:' + PHONE}>
                     {PHONE}
                 </Nav.Link>
-                <Nav.Link className='footer-text-link text-regular' href={EMAIL}>
+                <Nav.Link className='footer-text-link text-regular' href={'mailto:' + EMAIL}>
                     {EMAIL}
                 </Nav.Link>
             </Nav>

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import ProjectCard from '../cards/ProjectCard';
 import '../../styles/sliders.scss'
 
-const ProjectSlider = ({projects, ...props}) => {
+const ProjectSlider = ({projects, onChoose, ...props}) => {
     const settings = {
         infinite: true,
         speed: 500,
@@ -13,12 +13,20 @@ const ProjectSlider = ({projects, ...props}) => {
         autoplaySpeed: 4000,
         responsive: [
             {
-                breakpoint: 992,
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 800,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
             },
+
         ]
     };
     return (
@@ -27,7 +35,10 @@ const ProjectSlider = ({projects, ...props}) => {
                 <div
                     className='p-3 slider-item'
                     key={project.name}>
-                    <ProjectCard {...project}/>
+                    <ProjectCard
+                        project={project}
+                        onChoose={onChoose}
+                    />
                 </div>
             )}
         </Slider>

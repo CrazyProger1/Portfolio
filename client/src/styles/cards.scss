@@ -14,3 +14,9 @@
   height: 16rem;
   object-fit: cover;
 }
+
+@media screen and (max-width: 992px) {
+  .project-card-image {
+    height: 14rem;
+  }
+}

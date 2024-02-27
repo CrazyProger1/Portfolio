@@ -31,15 +31,19 @@ const BadgeRight = styled.div`
 `
 
 
-const SkillBadge = ({name, level, ...props}) =>
-    <div className='text-regular skill-badge user-select-none d-flex flex-row'>
-        <BadgeLeft className='text-bold'>
-            #
-        </BadgeLeft>
-        <BadgeRight className='text-dark' variant={level}>
-            {name}
-        </BadgeRight>
-    </div>
+const SkillBadge = ({skill, ...props}) => {
+    const {name, level} = skill;
+    return (
+        <div className='text-regular skill-badge user-select-none d-flex flex-row'>
+            <BadgeLeft className='text-bold'>
+                #
+            </BadgeLeft>
+            <BadgeRight className='text-dark' variant={level}>
+                {name}
+            </BadgeRight>
+        </div>
+    );
+}
 
 
 export default SkillBadge;

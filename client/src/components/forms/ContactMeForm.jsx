@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Col, Form} from 'react-bootstrap';
+import {EMAIL} from '../../config/data';
 
 
 const ContactMeForm = () => {
@@ -7,7 +8,7 @@ const ContactMeForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const handleSend = () => {
-
+        window.open(`mailto:${EMAIL}?subject=${subject}&body=${message}`);
     }
     return (
         <div className='d-flex justify-content-center'>
