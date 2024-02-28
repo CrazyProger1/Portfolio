@@ -1,0 +1,11 @@
+@import 'colors';
+
+
+.skill-badge {
+
+}
+
+.skill-badge:hover {
+  filter: drop-shadow(0 0 3px white);
+  transform: scale(1.05);
+}

@@ -1,0 +1,24 @@
+@import 'colors';
+
+
+.header {
+  min-height: 80px;
+  z-index: auto;
+}
+
+.header-brand {
+  cursor: pointer;
+}
+
+.header-brand:hover {
+  text-shadow: 0 0 5px $fg-color;
+}
+
+.header-text-link {
+
+}
+
+.header-text-link:hover {
+  text-shadow: 0 0 5px $fg-color;
+}
+

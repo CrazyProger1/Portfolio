@@ -1,0 +1,27 @@
+@import 'colors';
+
+$underline-height: 1px;
+
+.form-control {
+  color: $fg-color !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: $underline-height solid gray !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-bottom: $underline-height solid $fg-color !important;
+}
+
+.form-button-send {
+  border: none !important;
+  border-bottom: $underline-height solid gray !important;
+}
+
+.form-button-send:hover {
+  background-color: transparent !important;
+  border-bottom: $underline-height solid $fg-color !important;
+  filter: drop-shadow(0 0 15px $fg-color);
+
+}
