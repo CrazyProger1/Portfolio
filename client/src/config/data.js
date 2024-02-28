@@ -144,6 +144,10 @@ export const SKILLS = {
         name: 'Bootstrap',
         level: 'intermediate'
     },
+    mobx: {
+        name: 'MobX',
+        level: 'intermediate'
+    },
     postgres: {
         name: 'PostgreSQL',
         level: 'advanced'
