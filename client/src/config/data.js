@@ -174,7 +174,7 @@ export const PROJECTS = [
     {
         name: 'Simple-XSS',
         version: '0.0.2',
-        image: 'https://github.com/CrazyProger1/Simple-XSS/blob/master/resources/images/v0.3.png?raw=true',
+        image: process.env.PUBLIC_URL + '/images/project_1.png',
         stars: 45,
         description: 'Simple-XSS is a multi-platform cross-site scripting (XSS) vulnerability exploitation tool for pentesting.',
         type: PROJECT_TYPES.pet,

@@ -5,10 +5,16 @@
   max-width: 82% !important;
 }
 
+.image-project {
+  max-height: 60vh;
+}
 
 @media screen and (max-width: 1536px) {
   .image-me {
     max-width: 60% !important;
+  }
+  .image-project {
+    max-height: 55vh;
   }
 }
 
@@ -18,6 +24,3 @@
   }
 }
 
-.image-project {
-  max-height: 60vh;
-}
