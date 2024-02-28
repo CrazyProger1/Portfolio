@@ -9,6 +9,7 @@ import '../styles/forms.scss';
 import '../styles/navs.scss';
 import '../styles/badges.scss';
 import '../styles/toasts.scss';
+import '../styles/images.scss';
 
 const App = () =>
     <div>

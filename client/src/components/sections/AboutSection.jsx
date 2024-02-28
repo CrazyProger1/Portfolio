@@ -6,7 +6,7 @@ import AboutText from '../texts/AboutText';
 const AboutSection = () =>
     <div className='ms-5 me-5'>
         <AboutText/>
-        <div className='mt-3'/>
+        <div className='mt-5'/>
         <SkillTable skills={Object.values(SKILLS)}/>
     </div>
 

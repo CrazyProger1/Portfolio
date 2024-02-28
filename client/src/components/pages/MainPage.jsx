@@ -13,17 +13,17 @@ const MainPage = () =>
 
         <div className='mt-5' id='about'/>
         <HorizontalDivider section='About'/>
-        <div className='mt-3'/>
+        <div className='mt-5'/>
         <AboutSection/>
 
         <div className='mt-5' id='projects'/>
         <HorizontalDivider section='Projects'/>
-        <div className='mt-3'/>
+        <div className='mt-5'/>
         <ProjectsSection/>
 
         <div className='mt-5' id='contact'/>
         <HorizontalDivider section='Contact Me'/>
-        <div className='mt-3'/>
+        <div className='mt-5'/>
         <ContactMeSection/>
     </PageWrapper>
 

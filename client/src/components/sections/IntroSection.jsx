@@ -2,7 +2,7 @@ import React from 'react';
 import {Col, Image, Row} from 'react-bootstrap';
 import {ME_PHOTO} from '../../config/data';
 import IntroText from '../texts/IntroText';
-import '../../styles/images.scss'
+
 
 const IntroSection = () =>
     <Row className='user-select-none'>

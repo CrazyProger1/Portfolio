@@ -72,6 +72,10 @@ const ContactMeForm = () => {
         if (form.checkValidity() === false)
             return;
 
+        setValidated(false);
+        setMessage('');
+        setEmail('');
+        setSubject('');
         send();
     };
     return (
