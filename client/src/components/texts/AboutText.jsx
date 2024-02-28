@@ -7,8 +7,8 @@ const AboutText = () =>
         always been interested in technology and have spent <span
         className='text-info'>5 years studying programming</span>.
         I have tried many programming languages such as <span className='text-info'>Python, C++, C#, JavaScript, Java, Kotlin and even NASM</span>.
-        But my first and favorite language is Python, so I decided to become a backend <span
-        className='text-info'>Python Developer</span>.
+        But my first and favorite language is Python, so my goal is a <span
+        className='text-info'>Python Developer role</span> on an interesting and challenging project.
     </div>
 
 
