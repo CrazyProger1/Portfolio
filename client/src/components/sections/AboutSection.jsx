@@ -7,7 +7,7 @@ const AboutSection = () =>
     <div className='ms-5 me-5'>
         <AboutText/>
         <div className='mt-3'/>
-        <SkillTable skills={SKILLS}/>
+        <SkillTable skills={Object.values(SKILLS)}/>
     </div>
 
 export default AboutSection;
