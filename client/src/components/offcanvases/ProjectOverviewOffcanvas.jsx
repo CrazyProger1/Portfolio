@@ -23,6 +23,8 @@ const ProjectOverviewOffcanvas = ({show, handleClose, project, ...props}) => {
 
                 <div className='mt-3'/>
                 <SkillTable skills={skills}/>
+
+                <div className='mt-3'/>
                 <ProjectOverviewNav links={links}/>
             </Offcanvas.Body>
         </Offcanvas>

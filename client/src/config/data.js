@@ -64,6 +64,10 @@ export const SKILLS = [
         level: 'advanced'
     },
     {
+        name: 'Django Rest Framework',
+        level: 'advanced'
+    },
+    {
         name: 'FastAPI',
         level: 'advanced'
     },
@@ -100,7 +104,7 @@ export const SKILLS = [
         level: 'advanced'
     },
     {
-        name: 'PyQT5',
+        name: 'PyQT 5',
         level: 'advanced'
     },
     {
@@ -145,7 +149,7 @@ export const SKILLS = [
     },
     {
         name: 'Docker',
-        level: 'advanced'
+        level: 'intermediate'
     },
 ]
 
