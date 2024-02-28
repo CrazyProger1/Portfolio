@@ -6,15 +6,10 @@ export const initEmailService = () => {
     emailjs.init(EMAILJS_PUBLIC_KEY);
 }
 
-export const sendEmail = (message) => {
-    emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_ID, {
-        message: message,
-    }).then(
-        (response) => {
-            console.log('SUCCESS!', response.status, response.text);
-        },
-        (error) => {
-            console.log('FAILED...', error);
-        },
-    );
+export const sendEmail = async (message) => {
+    return emailjs.send(
+        EMAILJS_SERVICE,
+        EMAILJS_TEMPLATE_ID,
+        {message: message,}
+    )
 }
