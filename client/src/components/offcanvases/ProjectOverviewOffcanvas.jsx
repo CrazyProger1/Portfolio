@@ -14,7 +14,7 @@ const ProjectOverviewOffcanvas = ({show, handleClose, project, ...props}) => {
             <Offcanvas.Body className='text-regular text-light'>
                 <div className='d-flex justify-content-center'>
                     <Col xs={12} md={6}>
-                        <Image className='rounded-5 user-select-none' src={image} thumbnail/>
+                        <Image className='rounded-5 user-select-none image-project' src={image} thumbnail/>
                     </Col>
                 </div>
 
