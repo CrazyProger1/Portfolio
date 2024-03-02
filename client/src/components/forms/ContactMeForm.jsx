@@ -1,7 +1,8 @@
 import React, {useReducer, useState} from 'react';
 import {Button, Col, Form} from 'react-bootstrap';
 import StatusNotification from '../toasts/StatusNotification';
-import {sendEmail} from '../../services/email';
+import {sendMessage} from '../../services/telegram';
+import {TELEGRAM_CHATID, TELEGRAM_TOKEN} from '../../config/telegram';
 
 const notificationReducer = (state, action) => {
     switch (action.type) {
@@ -48,16 +49,17 @@ const ContactMeForm = () => {
     )
 
     const send = () => {
-        sendEmail(`Subject: ${subject}\nFrom: ${email}\nMessage: ${message}`).then(response => {
+        const fullMessage = `Subject: ${subject}\nFrom: ${email}\nMessage: ${message}`
+        sendMessage(TELEGRAM_TOKEN, TELEGRAM_CHATID, fullMessage).then(response => {
             dispatchNotification({
                 type: 'success',
-                text: 'Email successfully sent!',
+                text: 'Message successfully sent!',
             });
             setTimeout(() => dispatchNotification({type: 'hide'}), 3000);
         }).catch(error => {
             dispatchNotification({
                 type: 'error',
-                text: `Email was not sent! Reason: ${error.text}`,
+                text: `Message was not sent! Reason: ${error}`,
             });
             setTimeout(() => dispatchNotification({type: 'hide'}), 10000);
         });
