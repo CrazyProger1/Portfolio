@@ -156,6 +156,10 @@ export const SKILLS = {
         name: 'Redis',
         level: 'intermediate'
     },
+    celery: {
+        name: 'Celery',
+        level: 'intermediate'
+    },
     mongo: {
         name: 'Mongo DB',
         level: 'intermediate'
