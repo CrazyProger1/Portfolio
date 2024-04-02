@@ -177,7 +177,7 @@ export const SKILLS = {
 export const PROJECTS = [
     {
         name: 'Simple-XSS',
-        version: '0.0.2',
+        version: '0.0.3',
         image: process.env.PUBLIC_URL + '/images/project_1.png',
         stars: 45,
         description: 'Simple-XSS is a multi-platform cross-site scripting (XSS) vulnerability exploitation tool for pentesting.',
