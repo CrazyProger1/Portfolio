@@ -128,6 +128,10 @@ export const SKILLS = {
         name: 'Pydantic',
         level: 'advanced'
     },
+    selenium: {
+        name: 'Selenium',
+        level: 'intermediate'
+    },
     pytest: {
         name: 'Pytest',
         level: 'intermediate'
@@ -200,7 +204,7 @@ export const PROJECTS = [
     },
     {
         name: 'Translatable-Enums',
-        version: '0.0.3',
+        version: '0.0.6',
         image: process.env.PUBLIC_URL + '/images/project_2.png',
         stars: 2,
         description: 'Translatable-Enums is an i18n tool which uses built-in Enums as a convenient way to store translation keys.',
