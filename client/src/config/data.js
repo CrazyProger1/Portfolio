@@ -12,6 +12,7 @@ export const ME_PHOTO = process.env.PUBLIC_URL + '/images/me.jpg'
 
 export const PROJECT_TYPES = {
     pet: 'Pet',
+    opensource: 'Open-Source',
 }
 
 
@@ -208,7 +209,7 @@ export const PROJECTS = [
         image: process.env.PUBLIC_URL + '/images/project_2.png',
         stars: 2,
         description: 'Translatable-Enums is an i18n tool which uses built-in Enums as a convenient way to store translation keys.',
-        type: PROJECT_TYPES.pet,
+        type: PROJECT_TYPES.opensource,
         skills: [
             SKILLS.python,
             SKILLS.pytest,
@@ -231,7 +232,7 @@ export const PROJECTS = [
         image: process.env.PUBLIC_URL + '/images/project_7.png',
         stars: 2,
         description: 'Resty-Client is a simple, easy-to-use Python library for interacting with REST APIs using Pydantic\'s powerful data validation and deserialization tools. This library provides an intuitive API that makes it easy to make HTTP requests and handle data on the client side.',
-        type: PROJECT_TYPES.pet,
+        type: PROJECT_TYPES.opensource,
         skills: [
             SKILLS.python,
             SKILLS.pytest,
