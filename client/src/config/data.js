@@ -134,7 +134,7 @@ export const SKILLS = {
     },
     pytest: {
         name: 'Pytest',
-        level: 'intermediate'
+        level: 'advanced'
     },
     unittests: {
         name: 'Unittests',
@@ -226,6 +226,30 @@ export const PROJECTS = [
         ]
     },
     {
+        name: 'Resty-Client',
+        version: '0.0.4',
+        image: process.env.PUBLIC_URL + '/images/project_7.png',
+        stars: 2,
+        description: 'Resty-Client is a simple, easy-to-use Python library for interacting with REST APIs using Pydantic\'s powerful data validation and deserialization tools. This library provides an intuitive API that makes it easy to make HTTP requests and handle data on the client side.',
+        type: PROJECT_TYPES.pet,
+        skills: [
+            SKILLS.python,
+            SKILLS.pytest,
+            SKILLS.poetry,
+            SKILLS.pydantic,
+        ],
+        links: [
+            {
+                site: 'github',
+                link: 'https://github.com/CrazyProger1/Resty-Client',
+            },
+            {
+                site: 'pypi',
+                link: 'https://pypi.org/project/resty-client/'
+            }
+        ]
+    },
+    {
         name: 'PC-Alarm',
         version: '0.0.1',
         image: process.env.PUBLIC_URL + '/images/project_3.png',
@@ -291,7 +315,7 @@ export const PROJECTS = [
         name: 'ScreenWriter',
         version: '0.0.2',
         image: process.env.PUBLIC_URL + '/images/project_6.png',
-        stars: 3,
+        stars: 4,
         description: 'ScreenWriter is a simple util that makes your daily life at university easier.',
         type: PROJECT_TYPES.pet,
         skills: [
