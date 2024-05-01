@@ -228,7 +228,7 @@ export const PROJECTS = [
     },
     {
         name: 'Resty-Client',
-        version: '0.0.4',
+        version: '0.0.6',
         image: process.env.PUBLIC_URL + '/images/project_7.png',
         stars: 2,
         description: 'Resty-Client is a simple, easy-to-use Python library for interacting with REST APIs using Pydantic\'s powerful data validation and deserialization tools. This library provides an intuitive API that makes it easy to make HTTP requests and handle data on the client side.',
@@ -273,7 +273,7 @@ export const PROJECTS = [
         name: 'Scary-Stories',
         version: '0.0.1',
         image: process.env.PUBLIC_URL + '/images/project_4.png',
-        stars: 1,
+        stars: 2,
         description: 'Scary Stories is a simple website for exchange scary stories.',
         type: PROJECT_TYPES.pet,
         skills: [
