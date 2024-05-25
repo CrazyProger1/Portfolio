@@ -85,6 +85,10 @@ export const SKILLS = {
         name: 'Websockets',
         level: 'advanced'
     },
+    grpc: {
+        name: 'gRPC',
+        level: 'intermediate'
+    },
     sqlalchemy: {
         name: 'SQLAlchemy',
         level: 'advanced'
