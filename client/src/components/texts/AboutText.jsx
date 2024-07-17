@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutText = () =>
     <div className='text-regular text-light'>
-        I'm third year student of <span className='text-info'>Kharkiv National University of Economics</span>,
+        I'm fourth year student of <span className='text-info'>Kharkiv National University of Economics</span>,
         majoring in <span className='text-info'>Computer Science</span>. I have
         always been interested in technology and have spent <span
         className='text-info'>5 years studying programming</span>.
