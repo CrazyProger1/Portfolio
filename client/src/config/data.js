@@ -29,6 +29,10 @@ export const SKILLS = {
         name: 'JavaScript',
         level: 'intermediate'
     },
+    ts: {
+        name: 'TypeScript',
+        level: 'intermediate'
+    },
     csharp: {
         name: 'С#',
         level: 'intermediate'
@@ -97,6 +101,10 @@ export const SKILLS = {
         name: 'Peewee',
         level: 'advanced'
     },
+    celery: {
+        name: 'Celery',
+        level: 'intermediate'
+    },
     jinja2: {
         name: 'Jinja 2',
         level: 'advanced'
@@ -153,8 +161,16 @@ export const SKILLS = {
         name: 'Bootstrap',
         level: 'intermediate'
     },
+    tailwind: {
+        name: 'Tailwind CSS',
+        level: 'intermediate'
+    },
     mobx: {
         name: 'MobX',
+        level: 'intermediate'
+    },
+    tgminiapps: {
+        name: 'Telegram Mini Apps',
         level: 'intermediate'
     },
     postgres: {
@@ -165,10 +181,7 @@ export const SKILLS = {
         name: 'Redis',
         level: 'intermediate'
     },
-    celery: {
-        name: 'Celery',
-        level: 'intermediate'
-    },
+
     mongo: {
         name: 'Mongo DB',
         level: 'intermediate'
