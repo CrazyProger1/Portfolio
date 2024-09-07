@@ -11,3 +11,4 @@ import './navs.scss';
 import './scroll.css';
 import './sliders.scss';
 import './toasts.scss';
+import './cursor.scss';

@@ -3,6 +3,27 @@ import Slider from 'react-slick';
 import ProjectCard from '../cards/ProjectCard';
 import '../../styles/sliders.scss'
 
+
+const SampleNextArrow =({className, style, onClick}) => {
+    return (
+        <div
+            className={className}
+            style={{...style}}
+            onClick={onClick}
+        />
+    );
+}
+
+const SamplePrevArrow = ({className, style, onClick}) =>  {
+    return (
+        <div
+            className={className}
+            style={{...style}}
+            onClick={onClick}
+        />
+    );
+}
+
 const ProjectSlider = ({projects, onChoose, ...props}) => {
     const settings = {
         infinite: true,
@@ -11,6 +32,8 @@ const ProjectSlider = ({projects, onChoose, ...props}) => {
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 4000,
+        nextArrow: <SampleNextArrow/>,
+        prevArrow: <SamplePrevArrow/>,
         responsive: [
             {
                 breakpoint: 1200,
