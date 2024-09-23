@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-headroom": "^3.2.3",
+    "framer-motion": "^11.5.6",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18",
