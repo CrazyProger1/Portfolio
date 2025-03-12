@@ -1,6 +1,6 @@
 # Portfolio
 
-My Portfolio as a Full-Stack developer.
+My Portfolio as a Full Stack Developer.
 
 I'm fourth year student of **Kharkiv National University of Economics**, majoring in **Computer Science**. I have always been
 interested in technology and have spent **5 years studying programming**. I have tried many programming languages such as
