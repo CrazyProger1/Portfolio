@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
-from src.config.settings.base import INSTALLED_APPS
+from src.config.settings.base import INSTALLED_APPS, APPLICATION
 
 INSTALLED_APPS = [
     "unfold",
@@ -15,8 +15,8 @@ INSTALLED_APPS = [
 ]
 
 UNFOLD = {
-    "SITE_TITLE": "Urbanaut-API",
-    "SITE_HEADER": "Urbanaut-API",
+    "SITE_TITLE": APPLICATION,
+    "SITE_HEADER": APPLICATION,
     "SITE_URL": "/docs",
     "SITE_SYMBOL": "speed",
     "SHOW_HISTORY": True,
