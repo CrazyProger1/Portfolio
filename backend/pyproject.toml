@@ -19,6 +19,7 @@ django-modeltranslation = "^0.19.12"
 drf-spectacular = "^0.28.0"
 django-filter = "^25.1"
 psycopg2 = "^2.9.10"
+django-simple-history = "^3.8.0"
 
 
 [tool.poetry.group.dev.dependencies]

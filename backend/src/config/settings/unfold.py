@@ -57,6 +57,11 @@ UNFOLD = {
                         "icon": "schedule",
                         "link": reverse_lazy("admin:metrics_metricrecord_changelist"),
                     },
+                    {
+                        "title": _("Goals"),
+                        "icon": "target",
+                        "link": reverse_lazy("admin:metrics_metricgoal_changelist"),
+                    }
                 ],
             },
         ]

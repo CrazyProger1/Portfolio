@@ -4,24 +4,20 @@ from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin
 
 from src.apps.accounts.sites import site
-from src.apps.metrics.models import Metric
+from src.apps.metrics.models import MetricGoal
 
 
-@admin.register(Metric, site=site)
-class MetricAdmin(SimpleHistoryAdmin, TabbedTranslationAdmin, ModelAdmin):
+@admin.register(MetricGoal, site=site)
+class MetricGoalAdmin(SimpleHistoryAdmin, ModelAdmin, TabbedTranslationAdmin):
     list_display = (
         "id",
-        "slug",
         "name",
+        "description",
         "value",
     )
     list_display_links = (
-        "slug",
+        "name",
     )
     search_fields = (
-        "slug",
         "name",
-        "value",
-        "id",
-        "records__id"
     )

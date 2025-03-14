@@ -27,19 +27,3 @@ class MetricRetrieveSerializer(serializers.ModelSerializer):
 
 class MetricListSerializer(MetricRetrieveSerializer):
     pass
-
-
-class MetricRecordRetrieveSerializer(serializers.ModelSerializer):
-    value = serializers.IntegerField(
-        source="metric__value",
-        read_only=True,
-    )
-
-    class Meta:
-        model = MetricRecord
-        fields = (
-            "id",
-            "user",
-            "metric",
-            "value",
-        )
