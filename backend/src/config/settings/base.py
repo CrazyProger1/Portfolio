@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "django_filters",
     "src.apps.docs",
     "src.apps.accounts",
+    "src.apps.metrics",
 ]
 
 MIDDLEWARE = [
