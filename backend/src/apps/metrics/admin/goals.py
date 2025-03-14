@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
 from simple_history.admin import SimpleHistoryAdmin
-from unfold.admin import ModelAdmin
+from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.metrics.models import MetricGoal
@@ -21,3 +21,14 @@ class MetricGoalAdmin(SimpleHistoryAdmin, ModelAdmin, TabbedTranslationAdmin):
     search_fields = (
         "name",
     )
+
+
+class MetricGoalInline(TabularInline):
+    model = MetricGoal
+    extra = 0
+    tab = True
+    fields = (
+        "name",
+        "value",
+    )
+    show_change_link = True

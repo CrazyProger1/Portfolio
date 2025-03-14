@@ -4,11 +4,15 @@ from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin
 
 from src.apps.accounts.sites import site
+from src.apps.metrics.admin.goals import MetricGoalInline
 from src.apps.metrics.models import Metric
 
 
 @admin.register(Metric, site=site)
 class MetricAdmin(SimpleHistoryAdmin, TabbedTranslationAdmin, ModelAdmin):
+    inlines = (
+        MetricGoalInline,
+    )
     list_display = (
         "id",
         "slug",
