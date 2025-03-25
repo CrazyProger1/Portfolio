@@ -1,9 +1,10 @@
 import React from 'react';
 import {Nav} from 'react-bootstrap';
-import {GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from '../../config/data';
+import {CV_DOWNLOAD_LINK, GITHUB_LINK, LINKEDIN_LINK, TELEGRAM_LINK} from '../../config/data';
 import GithubLink from '../links/GithubLink';
 import LinkedinLink from '../links/LinkedinLink';
 import TelegramLink from '../links/TelegramLink';
+import CVLink from "../links/CVLink";
 
 
 const SocialNetworksNav = () =>
@@ -13,6 +14,8 @@ const SocialNetworksNav = () =>
         <LinkedinLink link={LINKEDIN_LINK}/>
 
         <GithubLink link={GITHUB_LINK}/>
+
+        <CVLink link={CV_DOWNLOAD_LINK}/>
     </Nav>
 
 

@@ -4,6 +4,7 @@ export const BRAND = process.env.REACT_APP_BRAND;
 export const GITHUB_LINK = process.env.REACT_APP_GITHUB_LINK;
 export const LINKEDIN_LINK = process.env.REACT_APP_LINKEDIN_LINK;
 export const TELEGRAM_LINK = process.env.REACT_APP_TELEGRAM_LINK;
+export const CV_DOWNLOAD_LINK = '/files/CV.pdf'
 
 export const PHONE = process.env.REACT_APP_PHONE;
 export const EMAIL = process.env.REACT_APP_EMAIL;
@@ -65,9 +66,25 @@ export const SKILLS = {
         name: 'REST',
         level: 'advanced'
     },
-    git: {
-        name: 'GIT',
+    gitlab: {
+        name: 'GitLab',
         level: 'advanced'
+    },
+    github: {
+        name: 'GitHub',
+        level: 'advanced'
+    },
+    bitbucket: {
+        name: 'Bitbucket',
+        level: 'advanced',
+    },
+    gitlab_cicd: {
+        name: 'GitLab CI-CD',
+        level: 'intermediate',
+    },
+    github_actions: {
+        name: 'GitHub Actions',
+        level: 'intermediate',
     },
     django: {
         name: 'Django',
@@ -103,7 +120,7 @@ export const SKILLS = {
     },
     celery: {
         name: 'Celery',
-        level: 'intermediate'
+        level: 'advanced'
     },
     jinja2: {
         name: 'Jinja 2',
@@ -153,9 +170,17 @@ export const SKILLS = {
         name: 'Unittests',
         level: 'advanced'
     },
+    poetry: {
+        name: 'Poetry',
+        level: 'advanced'
+    },
     react: {
-        name: 'React JS',
-        level: 'intermediate',
+        name: 'React.js',
+        level: 'advanced',
+    },
+    next: {
+        name: 'Next.js',
+        level: 'intermediate'
     },
     bootstrap: {
         name: 'Bootstrap',
@@ -167,6 +192,10 @@ export const SKILLS = {
     },
     mobx: {
         name: 'MobX',
+        level: 'intermediate'
+    },
+    zustand: {
+        name: 'Zustand',
         level: 'intermediate'
     },
     tgminiapps: {
@@ -190,18 +219,53 @@ export const SKILLS = {
         name: 'Docker',
         level: 'intermediate'
     },
-    poetry: {
-        name: 'Poetry',
-        level: 'advanced'
+    nginx: {
+        name: 'Nginx',
+        level: 'intermediate'
     }
 }
 
 export const PROJECTS = [
     {
+        name: 'Urbanaut',
+        version: '0.0.1',
+        image: process.env.PUBLIC_URL + '/images/project_0.png',
+        stars: 1,
+        description: 'Social network for urban explorers - stalkers, diggers and so on.',
+        type: PROJECT_TYPES.pet,
+        skills: [
+            SKILLS.python,
+            SKILLS.js,
+            SKILLS.ts,
+            SKILLS.html,
+            SKILLS.django,
+            SKILLS.drf,
+            SKILLS.celery,
+            SKILLS.next,
+            SKILLS.react,
+            SKILLS.tailwind,
+            SKILLS.zustand,
+            SKILLS.gitlab_cicd,
+            SKILLS.github_actions,
+            SKILLS.postgres,
+            SKILLS.nginx,
+        ],
+        links: [
+            {
+                site: 'github',
+                link: 'https://github.com/CrazyProger1/Urbanaut-API',
+            },
+            {
+                site: 'gitlab',
+                link: 'https://gitlab.com/urbanaut',
+            }
+        ]
+    },
+    {
         name: 'Simple-XSS',
         version: '0.0.3',
         image: process.env.PUBLIC_URL + '/images/project_1.png',
-        stars: 45,
+        stars: 47,
         description: 'Simple-XSS is a multi-platform cross-site scripting (XSS) vulnerability exploitation tool for pentesting.',
         type: PROJECT_TYPES.pet,
         skills: [
