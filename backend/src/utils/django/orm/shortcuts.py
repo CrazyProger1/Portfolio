@@ -11,8 +11,8 @@ logger = logging.getLogger(__name__)
 
 
 def get_manager(
-        model: type[models.Model],
-        manager: str = "objects",
+    model: type[models.Model],
+    manager: str = "objects",
 ) -> models.Manager:
     manager_instance = getattr(model, manager, None)
 
@@ -28,8 +28,8 @@ def get_manager(
 
 
 def get_queryset(
-        source: Source[Model],
-        manager: str = "objects",
+    source: Source[Model],
+    manager: str = "objects",
 ) -> models.QuerySet[Model]:
     if isinstance(source, models.QuerySet):
         return source
@@ -40,9 +40,9 @@ def get_queryset(
 
 
 def create_object(
-        source: Source[Model],
-        manager: str = "objects",
-        **data,
+    source: Source[Model],
+    manager: str = "objects",
+    **data,
 ) -> Model:
     queryset = get_queryset(source=source, manager=manager)
     obj = queryset.create(**data)
@@ -51,8 +51,8 @@ def create_object(
 
 
 def get_all_objects(
-        source: Source[Model],
-        manager: str = "objects",
+    source: Source[Model],
+    manager: str = "objects",
 ) -> models.QuerySet[Model]:
     queryset = get_queryset(source=source, manager=manager)
     logger.debug(f"Retrieved all objects for {queryset.model.__name__}")
@@ -60,10 +60,10 @@ def get_all_objects(
 
 
 def filter_objects(
-        source: Source[Model],
-        *args,
-        manager: str = "objects",
-        **kwargs,
+    source: Source[Model],
+    *args,
+    manager: str = "objects",
+    **kwargs,
 ) -> models.QuerySet[Model]:
     queryset = get_queryset(source=source, manager=manager)
     resultset = queryset.filter(*args, **kwargs)
@@ -72,10 +72,10 @@ def filter_objects(
 
 
 def exclude_objects(
-        source: Source[Model],
-        *args,
-        manager: str = "objects",
-        **kwargs,
+    source: Source[Model],
+    *args,
+    manager: str = "objects",
+    **kwargs,
 ) -> models.QuerySet[Model]:
     queryset = get_queryset(source=source, manager=manager)
     resultset = queryset.exclude(*args, **kwargs)
@@ -84,10 +84,10 @@ def exclude_objects(
 
 
 def get_object_or_error(
-        source: Source[Model],
-        *args,
-        manager: str = "objects",
-        **kwargs,
+    source: Source[Model],
+    *args,
+    manager: str = "objects",
+    **kwargs,
 ) -> Model:
     queryset = get_queryset(source=source, manager=manager)
 
@@ -105,10 +105,10 @@ def get_object_or_error(
 
 
 def get_object_or_none(
-        source: Source[Model],
-        *args,
-        manager: str = "objects",
-        **kwargs,
+    source: Source[Model],
+    *args,
+    manager: str = "objects",
+    **kwargs,
 ) -> Model | None:
     try:
         return get_object_or_error(source, *args, manager=manager, **kwargs)

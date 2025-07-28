@@ -22,7 +22,6 @@ UNFOLD = {
     "SHOW_HISTORY": True,
     "SHOW_VIEW_ON_SITE": True,
     "THEME": "dark",
-
     "SIDEBAR": {
         "show_search": True,
         "show_all_applications": True,
@@ -61,9 +60,9 @@ UNFOLD = {
                         "title": _("Goals"),
                         "icon": "target",
                         "link": reverse_lazy("admin:metrics_metricgoal_changelist"),
-                    }
+                    },
                 ],
             },
-        ]
-    }
+        ],
+    },
 }

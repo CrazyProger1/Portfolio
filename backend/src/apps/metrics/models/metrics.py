@@ -8,7 +8,7 @@ class Metric(models.Model):
         blank=False,
         unique=True,
         verbose_name=_("slug"),
-        help_text=_("Metric slug key.")
+        help_text=_("Metric slug key."),
     )
     name = models.CharField(
         max_length=150,

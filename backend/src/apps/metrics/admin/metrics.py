@@ -10,22 +10,12 @@ from src.apps.metrics.models import Metric
 
 @admin.register(Metric, site=site)
 class MetricAdmin(SimpleHistoryAdmin, TabbedTranslationAdmin, ModelAdmin):
-    inlines = (
-        MetricGoalInline,
-    )
+    inlines = (MetricGoalInline,)
     list_display = (
         "id",
         "slug",
         "name",
         "value",
     )
-    list_display_links = (
-        "slug",
-    )
-    search_fields = (
-        "slug",
-        "name",
-        "value",
-        "id",
-        "records__id"
-    )
+    list_display_links = ("slug",)
+    search_fields = ("slug", "name", "value", "id", "records__id")

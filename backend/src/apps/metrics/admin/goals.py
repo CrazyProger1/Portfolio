@@ -15,12 +15,8 @@ class MetricGoalAdmin(SimpleHistoryAdmin, ModelAdmin, TabbedTranslationAdmin):
         "description",
         "value",
     )
-    list_display_links = (
-        "name",
-    )
-    search_fields = (
-        "name",
-    )
+    list_display_links = ("name",)
+    search_fields = ("name",)
 
 
 class MetricGoalInline(TabularInline):

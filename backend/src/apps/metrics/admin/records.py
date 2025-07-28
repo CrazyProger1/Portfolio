@@ -17,27 +17,25 @@ class MetricRecordAdmin(ModelAdmin):
         "id",
         "created_at",
     )
-    search_fields = (
-        "id",
-    )
-    list_filter = (
-        "metric",
-    )
-    autocomplete_fields = (
-        "metric",
-    )
+    search_fields = ("id",)
+    list_filter = ("metric",)
+    autocomplete_fields = ("metric",)
     fieldsets = (
-        (None, {
-            "fields": (
-                "id",
-                "metric",
-                "user",
-            ),
-        }),
-        (_("Metadata"), {
-            "fields": (
-                "created_at",
-            ),
-            "classes": ("collapse",),
-        }),
+        (
+            None,
+            {
+                "fields": (
+                    "id",
+                    "metric",
+                    "user",
+                ),
+            },
+        ),
+        (
+            _("Metadata"),
+            {
+                "fields": ("created_at",),
+                "classes": ("collapse",),
+            },
+        ),
     )

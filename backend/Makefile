@@ -1,24 +1,24 @@
-.PHONY: cleancode
-cleancode:
-	poetry run black .
-	poetry run mypy .
+.PHONY: clean
+clean:
+	uvx  black .
+	uvx mypy .
 
 .PHONY: run
 run:
-	poetry run python manage.py runserver
+	uvx python manage.py runserver
 
 
 .PHONY: db.migrations
 db.migrations:
-	poetry run python manage.py makemigrations
+	uvx python manage.py makemigrations
 
 
 .PHONY: db.migrate
 db.migrate:
-	poetry run python manage.py migrate
+	uvx python manage.py migrate
 
 
 .PHONY: db.superuser
 db.superuser:
-	poetry run python manage.py createsuperuser --no-input
+	uvx python manage.py createsuperuser --no-input
 
