@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+@import "flowbite/src/themes/default";
 
 @font-face {
   font-family: 'Poppins';
@@ -21,7 +24,7 @@
   --foreground: rgb(255,255,255);
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
@@ -46,3 +49,36 @@ body {
 .icon-shine:hover {
   filter: drop-shadow(0 0 5px var(--foreground));
 }
+
+.glow-up {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-up::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(
+          to top,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.001) 30%
+  );
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.glow-up:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*!* Increase the height of timeline connectors *!*/
+/*.p-timeline-vertical .p-timeline-event-connector {*/
+/*  height: 300px !important;*/
+/*}*/
+

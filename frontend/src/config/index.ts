@@ -1,1 +1,4 @@
-export { HEADER_NAV_LINKS, HEADER_NAV_ICONS, HEADER_BRAND } from "./header";
+export { HEADER_NAV_LINKS, HEADER_NAV_ICONS, HEADER_BRAND, FOOTER_NAV_ICONS } from "./nav";
+export { SKILLS } from "./skills";
+export { PROJECTS } from "./projects";
+export { JOBS } from "./jobs";

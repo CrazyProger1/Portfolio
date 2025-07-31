@@ -2,8 +2,10 @@ import React from "react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTelegram } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
 
+import { Icon } from "@/types";
+
 interface Props {
-  icon: "github" | "cv" | "gitlab" | "telegram" | "linkedin";
+  icon: Icon;
   className?: string;
   size?: string | number;
   color?: string;

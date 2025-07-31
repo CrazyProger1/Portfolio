@@ -1,24 +1,31 @@
 import Link from "next/link";
 
 import { MultiIcon } from "@/components/common/icons";
+import { Motion } from "@/components/common/utils";
 import { HEADER_BRAND, HEADER_NAV_ICONS, HEADER_NAV_LINKS } from "@/config";
 
 export const Header = () => {
   return (
-    <header className="flex flex-row items-center justify-between">
-      <div className="text-shine cursor-pointer text-xl">{HEADER_BRAND}</div>
+    <header className="flex flex-row items-center justify-between py-6 select-none">
+      <Motion whileHover={{ scale: 1.05 }} className="text-shine cursor-pointer text-xl">
+        {HEADER_BRAND}
+      </Motion>
       <div className="flex flex-row gap-4">
         {HEADER_NAV_LINKS.map(({ href, text }) => (
-          <Link className="text-shine opacity-50 hover:opacity-100" key={href} href={href}>
-            {text}
-          </Link>
+          <Motion key={href} whileHover={{ scale: 1.1 }}>
+            <Link className="text-shine opacity-50 hover:opacity-100" href={href}>
+              {text}
+            </Link>
+          </Motion>
         ))}
       </div>
       <div className="flex flex-row gap-2">
         {HEADER_NAV_ICONS.map(({ href, icon }) => (
-          <Link key={href} href={href}>
-            <MultiIcon icon={icon} size={32} className="icon-shine" />
-          </Link>
+          <Motion key={href} whileHover={{ scale: 1.1 }}>
+            <Link href={href} target="_blank">
+              <MultiIcon icon={icon} size={32} className="icon-shine" />
+            </Link>
+          </Motion>
         ))}
       </div>
     </header>

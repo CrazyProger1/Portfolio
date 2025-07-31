@@ -1,6 +1,6 @@
-import { HeaderNavLink, HeaderNavIcon } from "@/types";
+import { NavLink, NavIcon } from "@/types";
 
-export const HEADER_NAV_LINKS: HeaderNavLink[] = [
+export const HEADER_NAV_LINKS: NavLink[] = [
   {
     text: "About",
     href: "#about",
@@ -15,7 +15,26 @@ export const HEADER_NAV_LINKS: HeaderNavLink[] = [
   },
 ];
 
-export const HEADER_NAV_ICONS: HeaderNavIcon[] = [
+export const HEADER_NAV_ICONS: NavIcon[] = [
+  {
+    icon: "telegram",
+    href: "https://t.me/crazyproger1",
+  },
+  {
+    icon: "linkedin",
+    href: "https://www.linkedin.com/in/crazyproger1/",
+  },
+  {
+    icon: "github",
+    href: "https://github.com/CrazyProger1",
+  },
+  {
+    icon: "cv",
+    href: "https://crazyproger1.com/files/CV.pdf",
+  },
+];
+
+export const FOOTER_NAV_ICONS: NavIcon[] = [
   {
     icon: "telegram",
     href: "https://t.me/crazyproger1",
