@@ -1,7 +1,9 @@
 from django.conf import settings
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 
+from src.apps.portfolio.enums import ProjectState, ProjectType
 from src.utils.django.orm import CreatedAtMixin, UpdatedAtMixin
 
 
@@ -32,6 +34,60 @@ class Project(CreatedAtMixin, UpdatedAtMixin, models.Model):
     name = models.CharField(
         max_length=250,
         verbose_name=_("name"),
+        null=False,
+        blank=False,
+    )
+    description = models.TextField(
+        verbose_name=_("description"),
+        null=True,
+        blank=True,
+    )
+    image = models.ImageField(
+        verbose_name=_("image"),
+        upload_to="projects/",
+        null=True,
+        blank=True,
+    )
+    started_at = models.DateTimeField(
+        verbose_name=_("started at"),
+        default=timezone.now,
+        null=False,
+        blank=False,
+    )
+    ended_at = models.DateTimeField(
+        verbose_name=_("ended at"),
+        null=True,
+        blank=True,
+    )
+    skills = models.ManyToManyField(
+        to="Skill",
+        related_name="projects",
+        verbose_name=_("skills"),
+        help_text=_("Skills used during this project."),
+    )
+    areas = models.ManyToManyField(
+        to="WorkArea",
+        related_name="projects",
+        null=False,
+        blank=False,
+    )
+    state = models.CharField(
+        max_length=20,
+        choices=ProjectState,
+        default=ProjectState.DEVELOPMENT,
+        null=False,
+        blank=False,
+    )
+    type = models.CharField(
+        max_length=20,
+        choices=ProjectType,
+        default=ProjectType.PET,
+        null=False,
+        blank=False,
+    )
+    version = models.CharField(
+        max_length=20,
+        default="0.0.1",
         null=False,
         blank=False,
     )

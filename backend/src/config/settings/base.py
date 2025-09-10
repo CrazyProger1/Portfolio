@@ -57,5 +57,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "src.config.web.wsgi.application"
 ASGI_APPLICATION = "src.config.web.asgi.application"
 STATIC_URL = config("STATIC_URL", default="static/")
-STATIC_ROOT = config("STATIC_ROOT", default="static/")
+STATIC_ROOT = BASE_DIR / config("STATIC_ROOT", default="static/")
+MEDIA_URL = config("MEDIA_URL", default="media/")
+MEDIA_ROOT = BASE_DIR / config("MEDIA_ROOT", default="media/")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

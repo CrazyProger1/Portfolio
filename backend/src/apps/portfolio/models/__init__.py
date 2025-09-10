@@ -6,3 +6,9 @@ from src.apps.portfolio.models.projects import (
     UserProject,
     Project,
 )
+from src.apps.portfolio.models.jobs import (
+    Job,
+)
+from src.apps.portfolio.models.areas import (
+    WorkArea,
+)

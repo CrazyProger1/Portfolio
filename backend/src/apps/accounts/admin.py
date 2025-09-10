@@ -8,7 +8,7 @@ from unfold.admin import ModelAdmin
 
 from src.apps.accounts.models import User
 from src.apps.accounts.sites import site
-from src.apps.portfolio.admin import UserSkillInline, UserProjectInline
+from src.apps.portfolio.admin import UserSkillInline, UserProjectInline, UserJobInline
 
 admin.site.unregister(Group)
 
@@ -18,7 +18,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
-    inlines = (UserSkillInline, UserProjectInline)
+    inlines = (UserSkillInline, UserProjectInline, UserJobInline)
 
 
 @admin.register(Group, site=site)
