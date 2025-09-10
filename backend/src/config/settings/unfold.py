@@ -10,7 +10,6 @@ INSTALLED_APPS = [
     "unfold.contrib.inlines",
     "unfold.contrib.import_export",
     "unfold.contrib.guardian",
-    "unfold.contrib.simple_history",
     *INSTALLED_APPS,
 ]
 
@@ -39,6 +38,17 @@ UNFOLD = {
                         "title": _("Groups"),
                         "icon": "devices",
                         "link": reverse_lazy("admin:auth_group_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Portfolio"),
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("Skill"),
+                        "icon": "person_play",
+                        "link": reverse_lazy("admin:portfolio_skill_changelist"),
                     },
                 ],
             },

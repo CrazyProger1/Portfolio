@@ -20,10 +20,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_filters",
-    "simple_history",
     "src.apps.docs",
     "src.apps.accounts",
     "src.apps.metrics",
+    "src.apps.portfolio",
 ]
 
 MIDDLEWARE = [
@@ -34,7 +34,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 ROOT_URLCONF = "src.config.web.urls"

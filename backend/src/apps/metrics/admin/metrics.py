@@ -1,6 +1,5 @@
 from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
-from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin
 
 from src.apps.accounts.sites import site
@@ -9,7 +8,7 @@ from src.apps.metrics.models import Metric
 
 
 @admin.register(Metric, site=site)
-class MetricAdmin(SimpleHistoryAdmin, TabbedTranslationAdmin, ModelAdmin):
+class MetricAdmin(TabbedTranslationAdmin, ModelAdmin):
     inlines = (MetricGoalInline,)
     list_display = (
         "id",

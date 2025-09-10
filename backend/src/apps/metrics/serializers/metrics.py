@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from src.apps.metrics.models import Metric, MetricRecord
+from src.apps.metrics.models import Metric
 
 
 class MetricCreateSerializer(serializers.ModelSerializer):

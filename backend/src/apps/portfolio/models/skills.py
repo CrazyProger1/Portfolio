@@ -2,6 +2,9 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from src.apps.portfolio.enums import SkillLevel
+from src.utils.django.orm import CreatedAtMixin, UpdatedAtMixin
+
 
 class UserSkill(models.Model):
     user = models.ForeignKey(
@@ -16,9 +19,15 @@ class UserSkill(models.Model):
         null=False,
         blank=False,
     )
+    level = models.CharField(
+        choices=SkillLevel,
+        default=SkillLevel.BEGINNER,
+        null=False,
+        blank=False,
+    )
 
 
-class Skill(models.Model):
+class Skill(CreatedAtMixin, UpdatedAtMixin, models.Model):
     users = models.ManyToManyField(
         to=settings.AUTH_USER_MODEL,
         through=UserSkill,
@@ -26,7 +35,16 @@ class Skill(models.Model):
         verbose_name=_("users"),
         help_text=_("Users with this skill."),
     )
+    name = models.CharField(
+        max_length=250,
+        verbose_name=_("name"),
+        null=False,
+        blank=False,
+    )
 
     class Meta:
         verbose_name = _("Skill")
         verbose_name_plural = _("Skills")
+
+    def __str__(self):
+        return self.name
