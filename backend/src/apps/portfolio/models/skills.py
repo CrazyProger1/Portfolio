@@ -16,15 +16,23 @@ class UserSkill(models.Model):
     skill = models.ForeignKey(
         to="Skill",
         on_delete=models.CASCADE,
+        verbose_name=_("skill"),
         null=False,
         blank=False,
     )
     level = models.CharField(
         choices=SkillLevel,
         default=SkillLevel.BEGINNER,
+        verbose_name=_("level"),
         null=False,
         blank=False,
     )
+
+    class Meta:
+        unique_together = ("user", "skill")
+
+    def __str__(self):
+        return self.skill.name
 
 
 class Skill(CreatedAtMixin, UpdatedAtMixin, models.Model):

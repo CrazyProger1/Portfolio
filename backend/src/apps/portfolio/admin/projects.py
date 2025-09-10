@@ -3,23 +3,22 @@ from django.utils.translation import gettext_lazy as _
 from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
-from src.apps.portfolio.models import Skill, UserSkill
+from src.apps.portfolio.models import Project, UserProject
 
 
-@admin.register(Skill, site=site)
-class SkillAdmin(ModelAdmin):
+@admin.register(Project, site=site)
+class ProjectAdmin(ModelAdmin):
     list_display = ("name",)
     list_display_links = ("name",)
 
 
-class UserSkillInline(TabularInline):
-    model = UserSkill
+class UserProjectInline(TabularInline):
+    model = UserProject
     extra = 1
     tab = True
     fields = (
-        "skill",
-        "level",
+        "project",
     )
     show_change_link = True
-    verbose_name = _("Skill")
-    verbose_name_plural = _("Skills")
+    verbose_name = _("Project")
+    verbose_name_plural = _("Projects")

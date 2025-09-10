@@ -50,6 +50,11 @@ UNFOLD = {
                         "icon": "person_play",
                         "link": reverse_lazy("admin:portfolio_skill_changelist"),
                     },
+                    {
+                        "title": _("Project"),
+                        "icon": "enterprise",
+                        "link": reverse_lazy("admin:portfolio_project_changelist"),
+                    },
                 ],
             },
             {
