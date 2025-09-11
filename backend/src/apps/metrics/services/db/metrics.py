@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 from src.apps.metrics.models import Metric, MetricRecord

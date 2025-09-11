@@ -78,6 +78,11 @@ UNFOLD = {
                 "collapsible": True,
                 "items": [
                     {
+                        "title": _("Statistics"),
+                        "icon": "target",
+                        "link": reverse_lazy("admin:metrics_statistics"),
+                    },
+                    {
                         "title": _("Metrics"),
                         "icon": "bar_chart",
                         "link": reverse_lazy("admin:metrics_metric_changelist"),

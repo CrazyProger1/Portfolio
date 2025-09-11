@@ -3,6 +3,7 @@ from modeltranslation.admin import TabbedTranslationAdmin
 from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
+from src.apps.metrics.forms import MetricGoalForm
 from src.apps.metrics.models import MetricGoal
 
 
@@ -11,11 +12,14 @@ class MetricGoalAdmin(ModelAdmin, TabbedTranslationAdmin):
     list_display = (
         "id",
         "name",
-        "description",
+        "metric",
+        "period",
         "value",
     )
     list_display_links = ("name",)
     search_fields = ("name",)
+    form = MetricGoalForm
+    list_filter = ("metric",)
 
 
 class MetricGoalInline(TabularInline):

@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from src.apps.metrics.enums import GoalPeriod
+from src.utils.colors import random_hex_color
+
 
 class MetricGoal(models.Model):
     name = models.CharField(
@@ -25,12 +28,29 @@ class MetricGoal(models.Model):
         null=False,
         blank=False,
     )
+    period = models.CharField(
+        max_length=10,
+        choices=GoalPeriod,
+        default=GoalPeriod.MONTH,
+        verbose_name=_("period"),
+        help_text=_("Goal period."),
+        null=False,
+        blank=False,
+    )
     value = models.PositiveBigIntegerField(
         null=False,
         blank=False,
         default=0,
         verbose_name=_("goal"),
         help_text=_("Goal value."),
+    )
+    color = models.CharField(
+        max_length=7,
+        default=random_hex_color,
+        verbose_name=_("color"),
+        help_text=_("Goal color on the chart at statistics page."),
+        null=False,
+        blank=False,
     )
 
     class Meta:
