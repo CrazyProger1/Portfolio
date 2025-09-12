@@ -23,16 +23,20 @@
 {% endif %}{% endblock %}
 
 {% block content %}
-    {% component "unfold/components/navigation.html" with items=periods %}{% endcomponent %}
+    <div class="flex flex-col gap-4">
+        {% component "unfold/components/title.html" %}
+            Statistics of {{ user.username }}
+        {% endcomponent %}
 
-    <div class="flex flex-col gap-4 mt-4">
+        {% component "unfold/components/navigation.html" with items=periods %}{% endcomponent %}
+
         {% for chart in statistics %}
             {% component "unfold/components/card.html" %}
                 {% component "unfold/components/text.html" %}
                     Last {{ current_period }} analytics
                 {% endcomponent %}
                 {% component "unfold/components/title.html" with class="mb-8" %}
-                    {{ metric.name }}
+                    {{ chart.name }}
                 {% endcomponent %}
                 {% component "unfold/components/chart/line.html" with data=chart.data options=chart.options %}{% endcomponent %}
             {% endcomponent %}

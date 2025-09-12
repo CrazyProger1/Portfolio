@@ -18,3 +18,7 @@ def increment_metric(metric: Metric, user=None) -> MetricRecord:
 
 def get_all_metrics() -> models.QuerySet[Metric]:
     return get_all_objects(source=Metric)
+
+
+def get_user_metrics(user) -> models.QuerySet[Metric]:
+    return Metric.objects.filter(user=user)

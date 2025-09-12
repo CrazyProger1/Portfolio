@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -51,6 +52,15 @@ class MetricGoal(models.Model):
         help_text=_("Goal color on the chart at statistics page."),
         null=False,
         blank=False,
+    )
+    user = models.ForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        related_name="metric_goals",
+        verbose_name=_("user"),
+        help_text=_("User associated with this goal."),
     )
 
     class Meta:

@@ -1,4 +1,9 @@
+from typing import Any
+
 from django.contrib import admin
+from django.db.models import Model
+from django.forms import Form
+from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from unfold.admin import ModelAdmin
 
@@ -18,7 +23,10 @@ class MetricRecordAdmin(ModelAdmin):
         "created_at",
     )
     search_fields = ("id",)
-    list_filter = ("metric",)
+    list_filter = (
+        "metric",
+        "user",
+    )
     autocomplete_fields = ("metric",)
     fieldsets = (
         (
@@ -39,3 +47,20 @@ class MetricRecordAdmin(ModelAdmin):
             },
         ),
     )
+
+    def save_model(
+        self,
+        request: HttpRequest,
+        obj: Model,
+        form: Form,
+        change: Any,
+    ) -> None:
+        if not obj.user:
+            obj.user = request.user
+
+        super().save_model(
+            request,
+            obj,
+            form,
+            change,
+        )

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -6,7 +7,6 @@ class Metric(models.Model):
     slug = models.SlugField(
         null=False,
         blank=False,
-        unique=True,
         verbose_name=_("slug"),
         help_text=_("Metric slug key."),
     )
@@ -23,12 +23,14 @@ class Metric(models.Model):
         verbose_name=_("description"),
         help_text=_("Metric description."),
     )
-    value = models.PositiveBigIntegerField(
+    user = models.ForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
         null=False,
         blank=False,
-        default=0,
-        verbose_name=_("value"),
-        help_text=_("Metric value."),
+        related_name="metrics",
+        verbose_name=_("user"),
+        help_text=_("User associated with this metric."),
     )
 
     class Meta:

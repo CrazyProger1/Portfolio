@@ -1,4 +1,4 @@
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, permissions
 
 from src.apps.metrics.serializers import (
     MetricRetrieveSerializer,
@@ -18,6 +18,7 @@ class MetricViewSet(
         "list": MetricListSerializer,
     }
     serializer_class = MetricRetrieveSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_serializer_class(self):
         return self.serializer_classes.get(self.action, self.serializer_class)

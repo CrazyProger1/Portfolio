@@ -33,7 +33,10 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin):
         ("Details", {"fields": ("skills", "areas")}),
         ("Timeline", {"fields": ("started_at", "ended_at")}),
         ("Classification", {"fields": ("state", "type", "version")}),
-        ("Metadata", {"fields": ("created_at", "updated_at"), "classes": ("collapse",)}),
+        (
+            "Metadata",
+            {"fields": ("created_at", "updated_at"), "classes": ("collapse",)},
+        ),
     )
     readonly_fields = ("created_at", "updated_at")
 

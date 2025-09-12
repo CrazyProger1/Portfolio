@@ -49,6 +49,12 @@ class Skill(CreatedAtMixin, UpdatedAtMixin, models.Model):
         null=False,
         blank=False,
     )
+    image = models.ImageField(
+        upload_to="skills/",
+        verbose_name=_("image"),
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Skill")

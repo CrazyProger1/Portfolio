@@ -33,7 +33,10 @@ class JobAdmin(ModelAdmin, TabbedTranslationAdmin):
         "started_at",
         "ended_at",
     )
-    list_display_links = ("image_tag", "name",)
+    list_display_links = (
+        "image_tag",
+        "name",
+    )
     search_fields = ("name", "user__username")
     list_filter = ("user",)
     autocomplete_fields = ("skills", "areas")
@@ -41,7 +44,10 @@ class JobAdmin(ModelAdmin, TabbedTranslationAdmin):
         ("General Info", {"fields": ("user", "name", "description", "image")}),
         ("Details", {"fields": ("skills", "areas")}),
         ("Timeline", {"fields": ("started_at", "ended_at")}),
-        ("Metadata", {"fields": ("created_at", "updated_at"), "classes": ("collapse",)}),
+        (
+            "Metadata",
+            {"fields": ("created_at", "updated_at"), "classes": ("collapse",)},
+        ),
     )
     readonly_fields = ("created_at", "updated_at")
 

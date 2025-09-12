@@ -26,9 +26,9 @@ class MetricRecord(CreatedAtMixin, models.Model):
     )
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
         related_name="metric_records",
         verbose_name=_("user"),
         help_text=_("User associated with this record."),
