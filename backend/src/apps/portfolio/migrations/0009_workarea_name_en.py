@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             model_name="workarea",
             name="name_en",
             field=models.CharField(
-                help_text="The name of the job area (eg frontend, backend, etc).",
+                help_text="The name of the job area (eg frontend, backends, etc).",
                 max_length=250,
                 null=True,
                 verbose_name="name",

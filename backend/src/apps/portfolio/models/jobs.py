@@ -18,6 +18,7 @@ class Job(CreatedAtMixin, UpdatedAtMixin, models.Model):
         on_delete=models.CASCADE,
         null=False,
         blank=False,
+        related_name="jobs",
     )
     name = models.CharField(
         max_length=250,
@@ -44,7 +45,6 @@ class Job(CreatedAtMixin, UpdatedAtMixin, models.Model):
     areas = models.ManyToManyField(
         to="WorkArea",
         related_name="jobs",
-        null=False,
         blank=False,
     )
     image = models.ImageField(

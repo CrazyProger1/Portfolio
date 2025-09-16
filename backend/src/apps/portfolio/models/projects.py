@@ -68,7 +68,6 @@ class Project(CreatedAtMixin, UpdatedAtMixin, models.Model):
     areas = models.ManyToManyField(
         to="WorkArea",
         related_name="projects",
-        null=False,
         blank=False,
     )
     state = models.CharField(

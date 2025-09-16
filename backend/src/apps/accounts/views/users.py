@@ -7,6 +7,7 @@ from rest_framework import (
 )
 from rest_framework.decorators import action
 
+from src.apps.accounts.permissions import APIKeyHasPermission
 from src.apps.accounts.serializers import (
     UserListSerializer,
     UserRetrieveSerializer,
@@ -26,7 +27,7 @@ class UsersViewSet(
         "retrieve": UserRetrieveSerializer,
         "me": UserRetrieveSerializer,
     }
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, APIKeyHasPermission)
 
     def get_serializer_class(self):
         return self.serializer_classes.get(self.action, self.serializer_class)

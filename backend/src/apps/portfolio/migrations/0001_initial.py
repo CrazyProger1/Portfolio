@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 (
                     "name",
                     models.CharField(
-                        help_text="The name of the job area (eg frontend, backend, etc).",
+                        help_text="The name of the job area (eg frontend, backends, etc).",
                         max_length=250,
                         verbose_name="name",
                     ),
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 (
                     "name_en",
                     models.CharField(
-                        help_text="The name of the job area (eg frontend, backend, etc).",
+                        help_text="The name of the job area (eg frontend, backends, etc).",
                         max_length=250,
                         null=True,
                         verbose_name="name",

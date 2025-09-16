@@ -39,6 +39,16 @@ UNFOLD = {
                         "icon": "devices",
                         "link": reverse_lazy("admin:auth_group_changelist"),
                     },
+                    {
+                        "title": _("API Keys"),
+                        "icon": "key",
+                        "link": reverse_lazy("admin:accounts_apikey_changelist"),
+                    },
+                    {
+                        "title": _("API Key Permissions"),
+                        "icon": "lock_open",
+                        "link": reverse_lazy("admin:accounts_apikeypermission_changelist"),
+                    },
                 ],
             },
             {
@@ -54,16 +64,16 @@ UNFOLD = {
                         "title": _("Project"),
                         "icon": "enterprise",
                         "link": lambda request: (
-                            reverse_lazy("admin:portfolio_project_changelist")
-                            + f"?users__id__exact={request.user.id}"
+                                reverse_lazy("admin:portfolio_project_changelist")
+                                + f"?users__id__exact={request.user.id}"
                         ),
                     },
                     {
                         "title": _("Job"),
                         "icon": "engineering",
                         "link": lambda request: (
-                            reverse_lazy("admin:portfolio_job_changelist")
-                            + f"?user__id__exact={request.user.id}"
+                                reverse_lazy("admin:portfolio_job_changelist")
+                                + f"?user__id__exact={request.user.id}"
                         ),
                     },
                     {
@@ -86,24 +96,24 @@ UNFOLD = {
                         "title": _("Metrics"),
                         "icon": "bar_chart",
                         "link": lambda request: (
-                            reverse_lazy("admin:metrics_metric_changelist")
-                            + f"?user__id__exact={request.user.id}"
+                                reverse_lazy("admin:metrics_metric_changelist")
+                                + f"?user__id__exact={request.user.id}"
                         ),
                     },
                     {
                         "title": _("Records"),
                         "icon": "schedule",
                         "link": lambda request: (
-                            reverse_lazy("admin:metrics_metricrecord_changelist")
-                            + f"?user__id__exact={request.user.id}"
+                                reverse_lazy("admin:metrics_metricrecord_changelist")
+                                + f"?user__id__exact={request.user.id}"
                         ),
                     },
                     {
                         "title": _("Goals"),
                         "icon": "target",
                         "link": lambda request: (
-                            reverse_lazy("admin:metrics_metricgoal_changelist")
-                            + f"?user__id__exact={request.user.id}"
+                                reverse_lazy("admin:metrics_metricgoal_changelist")
+                                + f"?user__id__exact={request.user.id}"
                         ),
                     },
                 ],

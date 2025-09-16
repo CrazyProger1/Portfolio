@@ -21,6 +21,7 @@ class MetricRecordAdmin(ModelAdmin):
     readonly_fields = (
         "id",
         "created_at",
+        "user",
     )
     search_fields = ("id",)
     list_filter = (
@@ -55,7 +56,7 @@ class MetricRecordAdmin(ModelAdmin):
         form: Form,
         change: Any,
     ) -> None:
-        if not obj.user:
+        if not hasattr(obj, "user"):
             obj.user = request.user
 
         super().save_model(

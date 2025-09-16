@@ -21,7 +21,6 @@ class MetricRetrieveSerializer(serializers.ModelSerializer):
             "slug",
             "name",
             "description",
-            "value",
         )
 
 

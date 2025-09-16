@@ -48,7 +48,7 @@ class MetricGoalAdmin(ModelAdmin, TabbedTranslationAdmin):
         form: Form,
         change: Any,
     ) -> None:
-        if not obj.user:
+        if not hasattr(obj, "user"):
             obj.user = request.user
 
         super().save_model(
