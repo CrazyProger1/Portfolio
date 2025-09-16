@@ -19,7 +19,7 @@ export const JobItem = (item: Job, index: number) => {
             width={200}
             height={200}
           />
-          <div className="absolute bottom-0 left-0 w-full rounded-b-lg bg-blue-950/95 p-2">
+          <div className="bg-background-light/95 absolute bottom-0 left-0 w-full rounded-b-lg p-2">
             {item.name}
           </div>
         </Motion>

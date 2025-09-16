@@ -1,11 +1,19 @@
 import Link from "next/link";
 import React from "react";
 
-import { SKILLS } from "@/config";
+import { SkillBadge } from "@/components/common/badges";
+import { getSkills } from "@/services";
+import { Skill } from "@/types";
 
-import { SkillBadge } from "../../../common/badges";
+export const AboutSection = async () => {
+  const response = await getSkills();
 
-export const AboutSection = () => {
+  let skills: Skill[] = [];
+
+  if (response.success) {
+    skills = response.results;
+  }
+
   return (
     <div className="flex flex-col gap-16 px-8">
       <div>
@@ -24,10 +32,8 @@ export const AboutSection = () => {
         an interesting and challenging project.
       </div>
       <div className="flex flex-wrap gap-1.5 select-none">
-        {Object.keys(SKILLS).map((key) => {
-          const skill = SKILLS[key];
-
-          return <SkillBadge key={key} skill={skill} />;
+        {skills.map((skill) => {
+          return <SkillBadge key={skill.id} skill={skill} />;
         })}
       </div>
     </div>

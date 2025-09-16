@@ -85,7 +85,7 @@ export const ProjectSlider = ({ projects }: Props) => {
               height={200}
               className="max-h-48 rounded-lg object-cover"
             />
-            <div className="absolute bottom-0 left-0 w-full rounded-b-lg bg-blue-950/95 p-2 text-white">
+            <div className="bg-background-light/95 absolute bottom-0 left-0 w-full rounded-b-lg p-2 text-white">
               <div className="flex flex-row justify-between">
                 <div>{project.name}</div>
                 <div className="flex flex-row gap-3">

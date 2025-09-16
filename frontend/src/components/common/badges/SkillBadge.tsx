@@ -7,16 +7,17 @@ import { Skill } from "@/types";
 interface Props {
   skill: Skill;
 }
+
 const skillBadgeVariants = {
-  expert: "bg-[#17AA87]",
-  intermediate: "bg-[#F1C40F]",
-  beginner: "bg-[#FF603E]",
+  EXPERT: "bg-[#17AA87]",
+  INTERMEDIATE: "bg-[#F1C40F]",
+  BEGINNER: "bg-[#FF603E]",
 };
 
 const skillTooltipVariants = {
-  expert: "Expert 😎",
-  intermediate: "Intermediate 🤓",
-  beginner: "Beginner 🙂",
+  EXPERT: "Expert 😎",
+  INTERMEDIATE: "Intermediate 🤓",
+  BEGINNER: "Beginner 🙂",
 };
 
 export const SkillBadge = ({ skill }: Props) => {
@@ -24,14 +25,14 @@ export const SkillBadge = ({ skill }: Props) => {
   const badgeColor = skillBadgeVariants[level];
 
   return (
-    <Tooltip content={skillTooltipVariants[level]} className="bg-blue-950">
+    <Tooltip content={skillTooltipVariants[level]} className="bg-background-light">
       <Motion whileHover={{ scale: 1.05 }}>
         <div className="icon-shine inline-flex text-sm font-medium select-none">
-          <div className="cursor-pointer rounded-l border border-blue-950 bg-blue-950 px-0.5 py-0.5 text-white">
+          <div className="border-background-light bg-background-light cursor-pointer rounded-l border px-0.5 py-0.5 text-white">
             #
           </div>
           <div
-            className={`cursor-pointer rounded-r border border-l-0 border-blue-950 px-2 py-0.5 text-black ${badgeColor}`}
+            className={`border-background-light cursor-pointer rounded-r border border-l-0 px-2 py-0.5 text-black ${badgeColor}`}
           >
             {skill?.name}
           </div>
