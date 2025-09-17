@@ -7,7 +7,7 @@ import { FOOTER_NAV_ICONS } from "@/config";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-row items-center justify-between py-6">
+    <div className="flex flex-col items-center justify-between gap-4 py-6 text-center md:flex-row md:text-left">
       <div className="flex flex-col gap-2">
         <Motion
           whileHover={{ scale: 1.05 }}

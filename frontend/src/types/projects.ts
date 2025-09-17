@@ -1,9 +1,9 @@
 import { NavIcon } from "@/types/nav";
 import { Skill } from "@/types/skills";
 
-export type ProjectType = "pet" | "commercial" | "opensource";
+export type ProjectType = "PET" | "COMMERCIAL" | "OPENSOURCE";
 
-export type ProjectState = "frozen" | "development" | "production";
+export type ProjectState = "FROZEN" | "DEVELOPMENT" | "PRODUCTION";
 
 export type Project = {
   name: string;

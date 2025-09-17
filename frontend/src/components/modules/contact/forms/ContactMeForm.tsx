@@ -4,7 +4,7 @@ import { Motion } from "@/components/common/utils";
 
 export const ContactMeForm = () => {
   return (
-    <form className="flex w-1/2 flex-col gap-8 select-none">
+    <form className="flex w-full flex-col gap-8 select-none md:w-2/3 lg:w-1/2">
       <div>
         <label htmlFor="subject" className="block pb-2 text-white">
           Subject

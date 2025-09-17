@@ -16,7 +16,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <html lang="en">
-      <body className="container mx-auto px-32">
+      <body id="page-wrap" className="container mx-auto px-8 md:px-16 lg:px-32">
         <Header />
         {children}
         <Footer />

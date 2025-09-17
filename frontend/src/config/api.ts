@@ -6,5 +6,7 @@ export const API_ENDPOINTS = {
   skill: "skills/:id/",
   users: "users/",
   jobs: "jobs/",
+  job: "jobs/:id/",
   projects: "projects/",
+  project: "projects/:id/",
 };

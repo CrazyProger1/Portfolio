@@ -5,8 +5,8 @@ export const JOBS: Job[] = [
   {
     name: "Freelance Project",
     description: "Backend python developer role",
-    start_at: new Date(2024, 4, 19),
-    end_at: new Date(Date.now()),
+    started_at: new Date(2024, 4, 19),
+    ended_at: new Date(Date.now()),
     areas: ["backend"],
     skills: [SKILLS.python, SKILLS.drf, SKILLS.nginx],
     image: "/images/freelance.png",
@@ -14,8 +14,8 @@ export const JOBS: Job[] = [
   {
     name: "dZENcode",
     description: "Backend python developer role",
-    start_at: new Date(2024, 4, 19),
-    end_at: new Date(Date.now()),
+    started_at: new Date(2024, 4, 19),
+    ended_at: new Date(Date.now()),
     areas: ["backend"],
     skills: [SKILLS.python, SKILLS.drf, SKILLS.nginx],
     image: "/images/dzencode.png",

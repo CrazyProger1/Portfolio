@@ -8,8 +8,8 @@ export const PROJECTS: Project[] = [
     image: "/images/project_0.png",
     stars: 1,
     description: "Social network for urban explorers - stalkers, diggers and so on.",
-    type: "commercial",
-    state: "development",
+    type: "COMMERCIAL",
+    state: "DEVELOPMENT",
     skills: [
       SKILLS.python,
       SKILLS.js,

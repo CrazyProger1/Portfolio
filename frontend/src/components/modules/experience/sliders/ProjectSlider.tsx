@@ -1,4 +1,11 @@
+"use client";
+
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/saga-blue/theme.css";
+
+import Image from "next/image";
 import React from "react";
+import { FaChevronLeft, FaChevronRight, FaCodeBranch, FaStar } from "react-icons/fa";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -6,9 +13,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { Motion } from "@/components/common/utils";
 import { Project } from "@/types";
-
-import Image from "next/image";
-import { FaChevronLeft, FaChevronRight, FaCodeBranch, FaStar } from "react-icons/fa";
 
 interface Props {
   projects: Project[];
@@ -82,8 +86,8 @@ export const ProjectSlider = ({ projects }: Props) => {
               src={project.image}
               alt="Project Image"
               width={400}
-              height={200}
-              className="max-h-48 rounded-lg object-cover"
+              height={400}
+              className="max-h-60 rounded-lg object-cover"
             />
             <div className="bg-background-light/95 absolute bottom-0 left-0 w-full rounded-b-lg p-2 text-white">
               <div className="flex flex-row justify-between">

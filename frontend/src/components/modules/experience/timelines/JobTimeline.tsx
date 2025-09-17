@@ -1,3 +1,5 @@
+"use client";
+
 import { Timeline } from "primereact/timeline";
 import React from "react";
 
