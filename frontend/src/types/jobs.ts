@@ -6,8 +6,8 @@ export type Job = {
   id: number;
   name: string;
   description: string;
-  started_at: Date;
-  ended_at: Date;
+  started_at: string;
+  ended_at?: string;
   areas: JobArea[];
   skills: Skill[];
   image: string;

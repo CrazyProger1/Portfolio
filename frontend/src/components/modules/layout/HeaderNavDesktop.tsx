@@ -5,7 +5,7 @@ import { MultiIcon } from "@/components/common/icons";
 import { Motion } from "@/components/common/utils";
 import { HEADER_BRAND, HEADER_NAV_ICONS, HEADER_NAV_LINKS } from "@/config";
 
-const DesktopNav = () => {
+const HeaderNavDesktop = () => {
   return (
     <div className="hidden flex-row items-center justify-between md:flex">
       <Motion whileHover={{ scale: 1.05 }} className="text-shine cursor-pointer text-xl">
@@ -34,4 +34,4 @@ const DesktopNav = () => {
   );
 };
 
-export default DesktopNav;
+export default HeaderNavDesktop;

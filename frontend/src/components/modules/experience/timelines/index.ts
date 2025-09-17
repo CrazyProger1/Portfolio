@@ -1,1 +1,2 @@
-export { JobTimeline } from "./JobTimeline";
+export { JobTimelineDesktop } from "./JobTimelineDesktop";
+export { JobTimelineMobile } from "./JobTimelineMobile";

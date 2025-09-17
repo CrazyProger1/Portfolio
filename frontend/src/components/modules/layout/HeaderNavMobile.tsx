@@ -8,7 +8,7 @@ import { MultiIcon } from "@/components/common/icons";
 import { Motion } from "@/components/common/utils";
 import { HEADER_BRAND, HEADER_NAV_ICONS, HEADER_NAV_LINKS } from "@/config";
 
-const MobileNav = () => {
+const HeaderNavMobile = () => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
@@ -66,4 +66,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default HeaderNavMobile;

@@ -1,11 +1,11 @@
-import DesktopNav from "./DesktopNav";
-import MobileNav from "./MobileNav";
+import HeaderNavDesktop from "./HeaderNavDesktop";
+import HeaderNavMobile from "./HeaderNavMobile";
 
 export const Header = () => {
   return (
     <header className="py-6 select-none">
-      <DesktopNav />
-      <MobileNav />
+      <HeaderNavDesktop />
+      <HeaderNavMobile />
     </header>
   );
 };

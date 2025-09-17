@@ -80,7 +80,7 @@ export const ProjectSlider = ({ projects }: Props) => {
         <div className="slider-item p-3" key={project.name}>
           <Motion
             whileHover={{ scale: 1.05 }}
-            className="icon-shine relative flex cursor-pointer flex-col rounded-lg"
+            className="icon-shine flex cursor-pointer flex-col items-center rounded-lg"
           >
             <Image
               src={project.image}
@@ -89,17 +89,17 @@ export const ProjectSlider = ({ projects }: Props) => {
               height={400}
               className="max-h-60 rounded-lg object-cover"
             />
-            <div className="bg-background-light/95 absolute bottom-0 left-0 w-full rounded-b-lg p-2 text-white">
-              <div className="flex flex-row justify-between">
+            <div className="w-full rounded-b-lg p-2">
+              <div className="flex flex-col items-center justify-between justify-items-center">
                 <div>{project.name}</div>
-                <div className="flex flex-row gap-3">
+                <div className="flex flex-row gap-3 text-sm text-gray-300">
                   <div className="flex flex-row items-center gap-1">
                     <FaCodeBranch />
                     <div>{project.version}</div>
                   </div>
                   <div className="flex flex-row items-center gap-1">
                     <FaStar />
-                    <div>{project.stars}</div>
+                    <div>3</div>
                   </div>
                 </div>
               </div>
