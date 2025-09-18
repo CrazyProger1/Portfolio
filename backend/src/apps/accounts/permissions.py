@@ -24,7 +24,8 @@ class APIKeyHasPermission(permissions.BasePermission):
             for permission in api_key.permissions.all():
                 if re.fullmatch(permission.url_regex, path):
                     return not permission.readonly or (
-                            permission.readonly and request.method in permissions.SAFE_METHODS
+                        permission.readonly
+                        and request.method in permissions.SAFE_METHODS
                     )
 
             return False

@@ -9,4 +9,4 @@ def get_all_jobs() -> models.QuerySet[Job]:
 
 
 def get_user_jobs(user) -> models.QuerySet[Job]:
-    return user.jobs.all()
+    return user.jobs.all().order_by("-started_at")

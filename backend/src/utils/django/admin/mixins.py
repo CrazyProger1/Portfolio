@@ -1,0 +1,45 @@
+from typing import Any
+
+from django.conf import settings
+from django.contrib import admin
+from django.db import models
+from django.forms import Form
+from django.http import HttpRequest
+from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
+
+
+class ImageTagMixin(admin.ModelAdmin):
+    image_field = "image"
+    tag_short_description = _("image")
+
+    def image_tag(self, obj: models.Model):
+        image = getattr(obj, self.image_field, None)
+
+        if image:
+            return mark_safe(
+                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
+            )
+
+    image_tag.short_description = tag_short_description
+
+
+class AutosetOwnerMixin(admin.ModelAdmin):
+    owner_field = "user"
+
+    def save_model(
+            self,
+            request: HttpRequest,
+            obj: models.Model,
+            form: Form,
+            change: Any,
+    ) -> None:
+        if not hasattr(obj, self.owner_field):
+            setattr(obj, self.owner_field, request.user)
+
+        super().save_model(
+            request,
+            obj,
+            form,
+            change,
+        )

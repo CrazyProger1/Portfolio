@@ -12,3 +12,9 @@ from src.apps.portfolio.models.jobs import (
 from src.apps.portfolio.models.areas import (
     WorkArea,
 )
+from src.apps.portfolio.models.links import (
+    Link,
+)
+from src.apps.portfolio.models.platforms import (
+    Platform,
+)

@@ -10,3 +10,7 @@ from src.apps.portfolio.serializers.projects import (
     ProjectListSerializer,
     ProjectRetrieveSerializer,
 )
+from src.apps.portfolio.serializers.links import (
+    LinkListSerializer,
+    LinkRetrieveSerializer,
+)

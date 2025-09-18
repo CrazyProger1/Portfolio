@@ -1,4 +1,8 @@
+from typing import Any
+
 from django.contrib import admin
+from django.forms import Form
+from django.http import HttpRequest
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TabbedTranslationAdmin
@@ -46,6 +50,23 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin):
         )
 
     image_tag.short_description = _("image")
+
+    def save_model(
+            self,
+            request: HttpRequest,
+            obj: Project,
+            form: Form,
+            change: Any,
+    ) -> None:
+        super().save_model(
+            request,
+            obj,
+            form,
+            change,
+        )
+
+        if not hasattr(obj, "user"):
+            obj.users.add(request.user)
 
 
 class UserProjectInline(TabularInline):

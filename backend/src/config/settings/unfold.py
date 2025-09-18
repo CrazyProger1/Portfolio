@@ -47,7 +47,9 @@ UNFOLD = {
                     {
                         "title": _("API Key Permissions"),
                         "icon": "lock_open",
-                        "link": reverse_lazy("admin:accounts_apikeypermission_changelist"),
+                        "link": reverse_lazy(
+                            "admin:accounts_apikeypermission_changelist"
+                        ),
                     },
                 ],
             },
@@ -56,12 +58,12 @@ UNFOLD = {
                 "collapsible": True,
                 "items": [
                     {
-                        "title": _("Skill"),
+                        "title": _("Skills"),
                         "icon": "person_play",
                         "link": reverse_lazy("admin:portfolio_skill_changelist"),
                     },
                     {
-                        "title": _("Project"),
+                        "title": _("Projects"),
                         "icon": "enterprise",
                         "link": lambda request: (
                                 reverse_lazy("admin:portfolio_project_changelist")
@@ -69,7 +71,7 @@ UNFOLD = {
                         ),
                     },
                     {
-                        "title": _("Job"),
+                        "title": _("Jobs"),
                         "icon": "engineering",
                         "link": lambda request: (
                                 reverse_lazy("admin:portfolio_job_changelist")
@@ -77,7 +79,20 @@ UNFOLD = {
                         ),
                     },
                     {
-                        "title": _("Job Area"),
+                        "title": _("Platforms"),
+                        "icon": "captive_portal",
+                        "link": reverse_lazy("admin:portfolio_platform_changelist")
+                    },
+                    {
+                        "title": _("Links"),
+                        "icon": "link",
+                        "link": lambda request: (
+                                reverse_lazy("admin:portfolio_link_changelist")
+                                + f"?user__id__exact={request.user.id}"
+                        ),
+                    },
+                    {
+                        "title": _("Job Areas"),
                         "icon": "target",
                         "link": reverse_lazy("admin:portfolio_workarea_changelist"),
                     },

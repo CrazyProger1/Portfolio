@@ -2,7 +2,7 @@ from rest_framework import viewsets, mixins, permissions
 
 from src.apps.accounts.permissions import APIKeyHasPermission
 from src.apps.portfolio.serializers import SkillListSerializer, SkillRetrieveSerializer
-from src.apps.portfolio.services.db import get_all_skills, get_user_skills
+from src.apps.portfolio.services.db import get_all_user_skills, get_user_skills
 
 
 class SkillViewSet(
@@ -10,7 +10,7 @@ class SkillViewSet(
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
 ):
-    queryset = get_all_skills()
+    queryset = get_all_user_skills()
     permission_classes = (permissions.IsAuthenticated, APIKeyHasPermission)
     serializer_class = SkillListSerializer
     serializer_classes = {

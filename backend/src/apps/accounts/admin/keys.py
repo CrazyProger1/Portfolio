@@ -12,9 +12,15 @@ from src.apps.accounts.sites import site
 
 @admin.register(APIKeyPermission, site=site)
 class APIKeyPermissionAdmin(ModelAdmin):
-    list_display = ("name", "url_regex",)
+    list_display = (
+        "name",
+        "url_regex",
+    )
     search_fields = ("name",)
-    list_display_links = ("name", "url_regex",)
+    list_display_links = (
+        "name",
+        "url_regex",
+    )
 
 
 @admin.register(APIKey, site=site)
@@ -35,16 +41,14 @@ class APIKeyAdmin(ModelAdmin):
         "user",
         "hashed_key",
     )
-    autocomplete_fields = (
-        "permissions",
-    )
+    autocomplete_fields = ("permissions",)
 
     def save_model(
-            self,
-            request: HttpRequest,
-            obj: APIKey,
-            form: Form,
-            change: Any,
+        self,
+        request: HttpRequest,
+        obj: APIKey,
+        form: Form,
+        change: Any,
     ) -> None:
         if not hasattr(obj, "user"):
             obj.user = request.user
@@ -53,7 +57,8 @@ class APIKeyAdmin(ModelAdmin):
             raw_key = generate_api_key()
             obj.hashed_key = hash_api_key(raw_key=raw_key)
             messages.warning(
-                request=request, message=f"You will see your API key ONLY ONCE: {raw_key}"
+                request=request,
+                message=f"You will see your API key ONLY ONCE: {raw_key}",
             )
 
         super().save_model(
