@@ -1,6 +1,5 @@
+import { Area } from "@/types/projects";
 import { Skill } from "@/types/skills";
-
-export type JobArea = "frontend" | "backend";
 
 export type Job = {
   id: number;
@@ -8,7 +7,7 @@ export type Job = {
   description: string;
   started_at: string;
   ended_at?: string;
-  areas: JobArea[];
+  areas: Area[];
   skills: Skill[];
   image: string;
 };

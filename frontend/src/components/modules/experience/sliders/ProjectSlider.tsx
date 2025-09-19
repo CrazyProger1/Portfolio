@@ -23,7 +23,7 @@ interface Props {
 export const ProjectSlider = ({ projects }: Props) => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 200,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,

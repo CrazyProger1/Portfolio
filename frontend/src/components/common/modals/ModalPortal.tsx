@@ -20,6 +20,14 @@ export const ModalPortal = ({ visible, children, onClose, query }: Props) => {
   const [actualVisible, setActualVisible] = useState<boolean>(false);
 
   useEffect(() => {
+    document.body.classList.add("overflow-hidden");
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, []);
+
+  useEffect(() => {
     if (visible) {
       setActualVisible(visible);
     } else if (query) {

@@ -8,23 +8,18 @@ interface Props {
   area: Area;
 }
 
-const skillBadgeVariants = {
-  EXPERT: "bg-[#17AA87]",
-  INTERMEDIATE: "bg-[#F1C40F]",
-  BEGINNER: "bg-[#FF603E]",
-};
-
-const skillTooltipVariants = {
-  EXPERT: "Expert 😎",
-  INTERMEDIATE: "Intermediate 🤓",
-  BEGINNER: "Beginner 🙂",
-};
-
 export const AreaBadge = ({ area }: Props) => {
   return (
     <Tooltip content={area.name} className="bg-background-light">
       <Motion whileHover={{ scale: 1.05 }}>
-        <div className="cursor-pointer text-white">{area.name}</div>
+        <div className="icon-shine inline-flex text-sm font-medium select-none">
+          <div className="border-background-light bg-background-light cursor-pointer rounded-l border px-0.5 py-0.5 text-white">
+            #
+          </div>
+          <div className="border-background-light cursor-pointer rounded-r border border-l-0 bg-blue-900 px-2 py-0.5 text-white">
+            {area.name}
+          </div>
+        </div>
       </Motion>
     </Tooltip>
   );

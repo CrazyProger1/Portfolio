@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import { Motion } from "@/components/common/utils";
+import { Motion, SmoothLink } from "@/components/common/utils";
 import { Job } from "@/types";
 
 export const JobItemMobile = (item: Job, index: number) => {
@@ -31,7 +31,7 @@ export const JobItemMobile = (item: Job, index: number) => {
 
   return (
     <div className="pb-8">
-      <div>
+      <SmoothLink href={`?job=${item.id}`}>
         <Motion
           whileHover={{ scale: 1.05 }}
           className="icon-shine relative max-w-fit cursor-pointer rounded-lg text-white"
@@ -50,7 +50,7 @@ export const JobItemMobile = (item: Job, index: number) => {
             </div>
           </div>
         </Motion>
-      </div>
+      </SmoothLink>
     </div>
   );
 };

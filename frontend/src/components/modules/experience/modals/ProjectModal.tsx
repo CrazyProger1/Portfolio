@@ -71,6 +71,12 @@ export const ProjectModal = async ({ project: projectId }: Props) => {
             ))}
           </div>
         </div>
+        <div className="select-none">
+          State: <span className="text-cyan-400">{stateText[state]}</span>
+        </div>
+        <div className="select-none">
+          Type: <span className="text-cyan-400">{typeText[type]}</span>
+        </div>
         <div>{description}</div>
         <div className="flex flex-wrap gap-1.5 select-none">
           {skills.map((skill) => {
@@ -81,12 +87,6 @@ export const ProjectModal = async ({ project: projectId }: Props) => {
           {areas.map((area) => {
             return <AreaBadge key={area.id} area={area} />;
           })}
-        </div>
-        <div>
-          State: <span className="text-cyan-400">{stateText[state]}</span>
-        </div>
-        <div>
-          Type: <span className="text-cyan-400">{typeText[type]}</span>
         </div>
       </StopPropagation>
     </ModalPortal>
