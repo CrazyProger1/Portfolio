@@ -3,9 +3,14 @@ import React from "react";
 
 import { MultiIcon } from "@/components/common/icons";
 import { Motion } from "@/components/common/utils";
-import { HEADER_BRAND, HEADER_NAV_ICONS, HEADER_NAV_LINKS } from "@/config";
+import { HEADER_BRAND, HEADER_NAV_LINKS } from "@/config";
+import { Icon, UserLink } from "@/types";
 
-const HeaderNavDesktop = () => {
+type Props = {
+  links: UserLink[];
+};
+
+const HeaderNavDesktop = ({ links }: Props) => {
   return (
     <div className="hidden flex-row items-center justify-between md:flex">
       <Motion whileHover={{ scale: 1.05 }} className="text-shine cursor-pointer text-xl">
@@ -22,10 +27,14 @@ const HeaderNavDesktop = () => {
         ))}
       </div>
       <div className="flex flex-row gap-2">
-        {HEADER_NAV_ICONS.map(({ href, icon }) => (
-          <Motion key={href} whileHover={{ scale: 1.1 }}>
-            <Link href={href} target="_blank">
-              <MultiIcon icon={icon} size={32} className="icon-shine" />
+        {links.map(({ id, name, platform, link }) => (
+          <Motion key={id} whileHover={{ scale: 1.1 }}>
+            <Link href={link} target="_blank">
+              <MultiIcon
+                icon={(platform || name.toLowerCase()) as Icon}
+                size={32}
+                className="icon-shine"
+              />
             </Link>
           </Motion>
         ))}

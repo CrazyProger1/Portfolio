@@ -14,7 +14,7 @@ type SkillResponse = (Skill & SuccessfulResponse) | ErrorResponse;
 export const getSkills = async (params?: PaginationParams): Promise<SkillsResponse> => {
   try {
     const searchParams = new URLSearchParams(params);
-    const url = `${API_ENDPOINTS.skills}?${searchParams.toString()}`;
+    const url = `${API_ENDPOINTS.getSkills}?${searchParams.toString()}`;
     const response = await fetchExtended(url);
     const data = await response.json();
 
@@ -33,7 +33,7 @@ export const getSkills = async (params?: PaginationParams): Promise<SkillsRespon
 
 export const getSkill = async (id: number | string): Promise<SkillResponse> => {
   try {
-    const url = API_ENDPOINTS.skills.replace(":id", String(id));
+    const url = API_ENDPOINTS.getSkills.replace(":id", String(id));
     const response = await fetchExtended(url);
     const data = await response.json();
 

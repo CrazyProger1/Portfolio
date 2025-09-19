@@ -1,12 +1,16 @@
 import React from "react";
-import { PiArrowFatUpFill } from "react-icons/pi";
 
 import { ProjectSlider } from "@/components/modules/experience/sliders";
 import { JobTimelineDesktop, JobTimelineMobile } from "@/components/modules/experience/timelines";
 import { getJobs, getProjects } from "@/services";
-import { Job, Project } from "@/types";
+import { Job, Project, SearchParams } from "@/types";
 
-export const ExperienceSection = async () => {
+import { JobModal, ProjectModal } from "../modals";
+
+type Props = {
+  params: SearchParams;
+};
+export const ExperienceSection = async ({ params }: Props) => {
   const jobsResponse = await getJobs();
   const projectsResponse = await getProjects();
 
@@ -26,6 +30,8 @@ export const ExperienceSection = async () => {
       <JobTimelineDesktop jobs={jobs} />
       <JobTimelineMobile jobs={jobs} />
       <ProjectSlider projects={projects} />
+      <JobModal job={params.job} />
+      <ProjectModal project={params.project} />
     </div>
   );
 };

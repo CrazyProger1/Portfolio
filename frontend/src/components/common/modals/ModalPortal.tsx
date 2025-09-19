@@ -1,10 +1,9 @@
 "use client";
 
-import { createPortal } from "react-dom";
-import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname, useRouter } from "@/i18n/routing";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface Props {
   visible?: boolean;
@@ -13,7 +12,7 @@ interface Props {
   query?: string;
 }
 
-const ModalPortal = ({ visible, children, onClose, query }: Props) => {
+export const ModalPortal = ({ visible, children, onClose, query }: Props) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -40,7 +39,7 @@ const ModalPortal = ({ visible, children, onClose, query }: Props) => {
     if (query) {
       const params = new URLSearchParams(searchParams.toString());
       params.delete(query);
-      router.push(`${pathname}?${params.toString()}`);
+      router.push(`${pathname}?${params.toString()}`, { scroll: false });
     }
 
     if (onClose) {
@@ -64,5 +63,3 @@ const ModalPortal = ({ visible, children, onClose, query }: Props) => {
     portalElement,
   );
 };
-
-export default ModalPortal;

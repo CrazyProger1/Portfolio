@@ -14,7 +14,7 @@ type JobResponse = (Job & SuccessfulResponse) | ErrorResponse;
 export const getJobs = async (params?: PaginationParams): Promise<JobsResponse> => {
   try {
     const searchParams = new URLSearchParams(params);
-    const url = `${API_ENDPOINTS.jobs}?${searchParams.toString()}`;
+    const url = `${API_ENDPOINTS.getJobs}?${searchParams.toString()}`;
     const response = await fetchExtended(url);
     const data = await response.json();
 
@@ -33,7 +33,7 @@ export const getJobs = async (params?: PaginationParams): Promise<JobsResponse> 
 
 export const getJob = async (id: number | string): Promise<JobResponse> => {
   try {
-    const url = API_ENDPOINTS.job.replace(":id", String(id));
+    const url = API_ENDPOINTS.getJob.replace(":id", String(id));
     const response = await fetchExtended(url);
     const data = await response.json();
 

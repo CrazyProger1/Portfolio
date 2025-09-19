@@ -3,9 +3,13 @@ import React from "react";
 
 import { MultiIcon } from "@/components/common/icons";
 import { Motion } from "@/components/common/utils";
-import { FOOTER_NAV_ICONS } from "@/config";
+import { Icon, UserLink } from "@/types";
 
-export const Footer = () => {
+type Props = {
+  links: UserLink[];
+};
+
+export const Footer = ({ links }: Props) => {
   return (
     <div className="flex flex-col items-center justify-between gap-4 py-6 text-center md:flex-row md:text-left">
       <div className="flex flex-col gap-2">
@@ -23,10 +27,14 @@ export const Footer = () => {
         </Motion>
       </div>
       <div className="flex flex-row gap-2">
-        {FOOTER_NAV_ICONS.map(({ href, icon }) => (
-          <Motion key={href} whileHover={{ scale: 1.1 }}>
-            <Link href={href} target="_blank">
-              <MultiIcon icon={icon} size={32} className="icon-shine" />
+        {links.map(({ id, name, platform, link }) => (
+          <Motion key={id} whileHover={{ scale: 1.1 }}>
+            <Link href={link} target="_blank">
+              <MultiIcon
+                icon={(platform || name.toLowerCase()) as Icon}
+                size={32}
+                className="icon-shine"
+              />
             </Link>
           </Motion>
         ))}

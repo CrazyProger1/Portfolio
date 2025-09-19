@@ -1,38 +1,39 @@
 @import "tailwindcss";
+
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../../.flowbite-react/class-list.json";
 @import "flowbite/src/themes/default";
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 :root {
-  --background: rgb(34,31,31);
-  --background-light: rgb(59,57,57);
-  --foreground: rgb(255,255,255);
-  --scroll: rgba(136, 136, 136, 0.25);
-  --scroll-hover: rgba(85, 85, 85, 0.14);
+    --background: rgb(34, 31, 31);
+    --background-light: rgb(59, 57, 57);
+    --foreground: rgb(255, 255, 255);
+    --scroll: rgba(136, 136, 136, 0.25);
+    --scroll-hover: rgba(85, 85, 85, 0.14);
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-background-light: var(--background-light);
-  --color-foreground: var(--foreground);
-  --color-scroll: var(--scroll);
-  --color-scroll-hover: var(--scroll-hover);
+    --color-background: var(--background);
+    --color-background-light: var(--background-light);
+    --color-foreground: var(--foreground);
+    --color-scroll: var(--scroll);
+    --color-scroll-hover: var(--scroll-hover);
 }
 
 /*@media (prefers-color-scheme: light) {*/
@@ -43,44 +44,48 @@
 /*}*/
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Poppins, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Poppins, sans-serif;
 }
 
 .text-shine:hover {
-  text-shadow: 0 0 5px var(--foreground);
+    text-shadow: 0 0 5px var(--foreground);
 }
 
 .icon-shine:hover {
-  filter: drop-shadow(0 0 5px var(--foreground));
+    filter: drop-shadow(0 0 5px var(--foreground));
+}
+
+.icon-shine-default {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .glow-up {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .glow-up::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(
-          to top,
-          rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0.001) 30%
-  );
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.1s ease, transform 0.1s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.001) 30%
+    );
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.1s ease, transform 0.1s ease;
 }
 
 .glow-up:hover::after {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*!* Increase the height of timeline connectors *!*/
@@ -90,17 +95,17 @@ body {
 
 
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #221F1F;
+    background: #221F1F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-scroll);
+    background: var(--color-scroll);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-scroll-hover);
+    background: var(--color-scroll-hover);
 }

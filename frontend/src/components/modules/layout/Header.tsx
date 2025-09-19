@@ -1,11 +1,17 @@
+import { UserLink } from "@/types";
+
 import HeaderNavDesktop from "./HeaderNavDesktop";
 import HeaderNavMobile from "./HeaderNavMobile";
 
-export const Header = () => {
+type Props = {
+  links: UserLink[];
+};
+
+export const Header = ({ links }: Props) => {
   return (
     <header className="py-6 select-none">
-      <HeaderNavDesktop />
-      <HeaderNavMobile />
+      <HeaderNavDesktop links={links} />
+      <HeaderNavMobile links={links} />
     </header>
   );
 };

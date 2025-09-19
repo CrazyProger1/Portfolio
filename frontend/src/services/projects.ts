@@ -14,7 +14,7 @@ type ProjectResponse = (Project & SuccessfulResponse) | ErrorResponse;
 export const getProjects = async (params?: PaginationParams): Promise<ProjectsResponse> => {
   try {
     const searchParams = new URLSearchParams(params);
-    const url = `${API_ENDPOINTS.projects}?${searchParams.toString()}`;
+    const url = `${API_ENDPOINTS.getProjects}?${searchParams.toString()}`;
     const response = await fetchExtended(url);
     const data = await response.json();
 
@@ -33,7 +33,7 @@ export const getProjects = async (params?: PaginationParams): Promise<ProjectsRe
 
 export const getProject = async (id: number | string): Promise<ProjectResponse> => {
   try {
-    const url = API_ENDPOINTS.project.replace(":id", String(id));
+    const url = API_ENDPOINTS.getProject.replace(":id", String(id));
     const response = await fetchExtended(url);
     const data = await response.json();
 

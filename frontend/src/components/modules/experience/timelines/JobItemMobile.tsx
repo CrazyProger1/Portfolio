@@ -37,7 +37,7 @@ export const JobItemMobile = (item: Job, index: number) => {
           className="icon-shine relative max-w-fit cursor-pointer rounded-lg text-white"
         >
           <Image
-            className="rounded-lg"
+            className="icon-shine-default rounded-lg"
             src={item.image}
             alt={item.description}
             width={200}
