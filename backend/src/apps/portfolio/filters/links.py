@@ -9,6 +9,9 @@ class LinkFilter(filters.FilterSet):
         lookup_expr="in",
     )
 
+    def filter_queryset(self, queryset):
+        return super().filter_queryset(queryset=queryset).distinct()
+
     class Meta:
         model = Link
         fields = ("collections",)
