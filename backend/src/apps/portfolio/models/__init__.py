@@ -14,8 +14,10 @@ from src.apps.portfolio.models.areas import (
 )
 from src.apps.portfolio.models.links import (
     Link,
-    LinkCollection,
 )
 from src.apps.portfolio.models.platforms import (
     Platform,
+)
+from src.apps.portfolio.models.collections import (
+    Collection,
 )

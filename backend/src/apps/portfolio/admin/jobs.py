@@ -7,7 +7,7 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Job
-from src.utils.django.admin import OwnerMixin
+from src.utils.django.admin import OwnerMixin, ImageTagMixin
 
 
 class UserJobInline(TabularInline):
@@ -27,7 +27,7 @@ class UserJobInline(TabularInline):
 
 
 @admin.register(Job, site=site)
-class JobAdmin(ModelAdmin, TabbedTranslationAdmin, OwnerMixin):
+class JobAdmin(ModelAdmin, TabbedTranslationAdmin, OwnerMixin, ImageTagMixin):
     list_display = (
         "image_tag",
         "name",
@@ -51,10 +51,3 @@ class JobAdmin(ModelAdmin, TabbedTranslationAdmin, OwnerMixin):
         ),
     )
     readonly_fields = ("created_at", "updated_at")
-
-    def image_tag(self, obj: Job):
-        return mark_safe(
-            f'<img src="{settings.MEDIA_URL}{obj.image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
-        )
-
-    image_tag.short_description = _("image")

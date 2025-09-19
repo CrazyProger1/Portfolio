@@ -11,7 +11,10 @@ AUTHENTICATION_CLASSES = [
 ]
 
 if DEBUG:
-    AUTHENTICATION_CLASSES += ["rest_framework.authentication.BasicAuthentication"]
+    AUTHENTICATION_CLASSES += [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ]
 
 REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "drf_standardized_errors.handler.exception_handler",
@@ -19,4 +22,5 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 100,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_AUTHENTICATION_CLASSES": AUTHENTICATION_CLASSES,
+    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
 }

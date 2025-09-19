@@ -7,10 +7,11 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Skill, UserSkill
+from src.utils.django.admin import ImageTagMixin
 
 
 @admin.register(Skill, site=site)
-class SkillAdmin(ModelAdmin, TabbedTranslationAdmin):
+class SkillAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
     list_display = (
         "image_tag",
         "name",
@@ -21,13 +22,6 @@ class SkillAdmin(ModelAdmin, TabbedTranslationAdmin):
     )
 
     search_fields = ("name",)
-
-    def image_tag(self, obj: Skill):
-        return mark_safe(
-            f'<img src="{settings.MEDIA_URL}{obj.image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
-        )
-
-    image_tag.short_description = _("image")
 
 
 class UserSkillInline(TabularInline):

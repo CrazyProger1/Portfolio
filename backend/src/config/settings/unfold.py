@@ -83,9 +83,9 @@ UNFOLD = {
                         "link": reverse_lazy("admin:portfolio_link_changelist"),
                     },
                     {
-                        "title": _("Link Collections"),
+                        "title": _("Collections"),
                         "icon": "category",
-                        "link": reverse_lazy("admin:portfolio_linkcollection_changelist"),
+                        "link": reverse_lazy("admin:portfolio_collection_changelist"),
                     },
                     {
                         "title": _("Job Areas"),
@@ -107,24 +107,24 @@ UNFOLD = {
                         "title": _("Metrics"),
                         "icon": "bar_chart",
                         "link": lambda request: (
-                                reverse_lazy("admin:metrics_metric_changelist")
-                                + f"?user__id__exact={request.user.id}"
+                            reverse_lazy("admin:metrics_metric_changelist")
+                            + f"?user__id__exact={request.user.id}"
                         ),
                     },
                     {
                         "title": _("Records"),
                         "icon": "schedule",
                         "link": lambda request: (
-                                reverse_lazy("admin:metrics_metricrecord_changelist")
-                                + f"?user__id__exact={request.user.id}"
+                            reverse_lazy("admin:metrics_metricrecord_changelist")
+                            + f"?user__id__exact={request.user.id}"
                         ),
                     },
                     {
                         "title": _("Goals"),
                         "icon": "target",
                         "link": lambda request: (
-                                reverse_lazy("admin:metrics_metricgoal_changelist")
-                                + f"?user__id__exact={request.user.id}"
+                            reverse_lazy("admin:metrics_metricgoal_changelist")
+                            + f"?user__id__exact={request.user.id}"
                         ),
                     },
                 ],

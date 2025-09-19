@@ -11,4 +11,7 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": DESCRIPTION,
     "VERSION": VERSION,
     "SERVE_INCLUDE_SCHEMA": False,
+    "SWAGGER_UI_SETTINGS": {
+        "deepLinking": True,
+    },
 }

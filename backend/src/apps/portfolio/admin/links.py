@@ -7,7 +7,7 @@ from unfold.admin import TabularInline, ModelAdmin
 from django.utils.translation import gettext_lazy as _
 
 from src.apps.accounts.sites import site
-from src.apps.portfolio.models import Link, LinkCollection
+from src.apps.portfolio.models import Link
 from src.utils.django.admin import ImageTagMixin, OwnerMixin
 
 
@@ -22,16 +22,6 @@ class UserLinkInline(TabularInline):
     show_change_link = True
     verbose_name = _("Link")
     verbose_name_plural = _("Links")
-
-
-@admin.register(LinkCollection, site=site)
-class LinkCollectionAdmin(ModelAdmin, ImageTagMixin, TabbedTranslationAdmin):
-    list_display = (
-        "image_tag",
-        "name",
-        "slug",
-    )
-    search_fields = ("name", "slug",)
 
 
 @admin.register(Link, site=site)
@@ -49,7 +39,10 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
     owner_field = "user"
     readonly_fields = ("user",)
     list_filter = ("user",)
-    autocomplete_fields = ("platform", "collections",)
+    autocomplete_fields = (
+        "platform",
+        "collections",
+    )
     search_fields = ("name",)
 
     def image_tag(self, obj: Link):
@@ -58,7 +51,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
 
         if image:
             return mark_safe(
-                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
+                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));" />'
             )
 
     image_tag.short_description = _("image")

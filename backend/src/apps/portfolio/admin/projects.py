@@ -54,11 +54,11 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
         return queryset.filter(users=request.user)
 
     def save_model(
-            self,
-            request: HttpRequest,
-            obj: Project,
-            form: Form,
-            change: Any,
+        self,
+        request: HttpRequest,
+        obj: Project,
+        form: Form,
+        change: Any,
     ) -> None:
         super().save_model(
             request,

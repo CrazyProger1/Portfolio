@@ -18,7 +18,7 @@ class ImageTagMixin(admin.ModelAdmin):
 
         if image:
             return mark_safe(
-                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
+                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));" />'
             )
 
     image_tag.short_description = tag_short_description
@@ -36,11 +36,11 @@ class OwnerMixin(admin.ModelAdmin):
         return queryset.filter(**filters)
 
     def save_model(
-            self,
-            request: HttpRequest,
-            obj: models.Model,
-            form: Form,
-            change: Any,
+        self,
+        request: HttpRequest,
+        obj: models.Model,
+        form: Form,
+        change: Any,
     ) -> None:
         if not hasattr(obj, self.owner_field):
             setattr(obj, self.owner_field, request.user)
