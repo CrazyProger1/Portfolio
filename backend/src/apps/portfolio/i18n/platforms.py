@@ -4,7 +4,10 @@ from src.apps.portfolio.models import Platform
 
 
 class PlatformTranslationOptions(TranslationOptions):
-    fields = ("name", "description",)
+    fields = (
+        "name",
+        "description",
+    )
 
 
 translator.register(Platform, PlatformTranslationOptions)

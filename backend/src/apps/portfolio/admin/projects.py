@@ -11,10 +11,11 @@ from unfold.admin import ModelAdmin, TabularInline
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Project, UserProject
 from src.config import settings
+from src.utils.django.admin import ImageTagMixin
 
 
 @admin.register(Project, site=site)
-class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin):
+class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
     list_display = (
         "image_tag",
         "name",
@@ -31,10 +32,11 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin):
     autocomplete_fields = (
         "skills",
         "areas",
+        "links",
     )
     fieldsets = (
         ("General Info", {"fields": ("name", "description", "image")}),
-        ("Details", {"fields": ("skills", "areas")}),
+        ("Details", {"fields": ("skills", "areas", "links")}),
         ("Timeline", {"fields": ("started_at", "ended_at")}),
         ("Classification", {"fields": ("state", "type", "version")}),
         (
@@ -44,12 +46,12 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin):
     )
     readonly_fields = ("created_at", "updated_at")
 
-    def image_tag(self, obj: Project):
-        return mark_safe(
-            f'<img src="/{settings.MEDIA_URL}{obj.image}" width="150" height="150" style="border-radius:10%; object-fit:cover;" />'
-        )
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+        if request.user.is_superuser:
+            return queryset
 
-    image_tag.short_description = _("image")
+        return queryset.filter(users=request.user)
 
     def save_model(
             self,

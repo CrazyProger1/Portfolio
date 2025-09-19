@@ -1,6 +1,7 @@
 from src.apps.portfolio.services.db.skills import (
     get_all_user_skills,
     get_user_skills,
+    get_user_skills_from_skills,
 )
 from src.apps.portfolio.services.db.jobs import (
     get_all_jobs,

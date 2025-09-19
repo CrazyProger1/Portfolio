@@ -9,6 +9,13 @@ class Platform(models.Model):
         null=False,
         blank=False,
     )
+    slug = models.SlugField(
+        max_length=100,
+        verbose_name=_("slug"),
+        unique=True,
+        blank=False,
+        null=False,
+    )
     description = models.TextField(
         verbose_name=_("description"),
         null=True,

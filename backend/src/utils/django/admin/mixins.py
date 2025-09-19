@@ -24,8 +24,16 @@ class ImageTagMixin(admin.ModelAdmin):
     image_tag.short_description = tag_short_description
 
 
-class AutosetOwnerMixin(admin.ModelAdmin):
+class OwnerMixin(admin.ModelAdmin):
     owner_field = "user"
+
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+        if request.user.is_superuser:
+            return queryset
+
+        filters = {self.owner_field: request.user}
+        return queryset.filter(**filters)
 
     def save_model(
             self,

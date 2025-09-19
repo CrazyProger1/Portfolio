@@ -10,6 +10,19 @@ class WorkArea(models.Model):
         null=False,
         blank=False,
     )
+    slug = models.SlugField(
+        max_length=250,
+        verbose_name=_("slug"),
+        unique=True,
+        null=False,
+        blank=False,
+    )
+    image = models.ImageField(
+        verbose_name=_("image"),
+        upload_to="work-areas/",
+        null=True,
+        blank=True,
+    )
 
     def __str__(self):
         return self.name

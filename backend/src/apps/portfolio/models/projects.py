@@ -65,6 +65,13 @@ class Project(CreatedAtMixin, UpdatedAtMixin, models.Model):
         verbose_name=_("skills"),
         help_text=_("Skills used during this project."),
     )
+    links = models.ManyToManyField(
+        to="Link",
+        related_name="projects",
+        verbose_name=_("links"),
+        help_text=_("Project links."),
+        blank=True,
+    )
     areas = models.ManyToManyField(
         to="WorkArea",
         related_name="projects",

@@ -11,9 +11,13 @@ class PlatformAdmin(ModelAdmin, ImageTagMixin):
     list_display = (
         "image_tag",
         "name",
+        "slug",
     )
     list_display_links = (
         "image_tag",
         "name",
     )
-    search_fields = ("name",)
+    search_fields = (
+        "name",
+        "slug",
+    )

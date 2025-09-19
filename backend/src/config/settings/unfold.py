@@ -65,31 +65,27 @@ UNFOLD = {
                     {
                         "title": _("Projects"),
                         "icon": "enterprise",
-                        "link": lambda request: (
-                                reverse_lazy("admin:portfolio_project_changelist")
-                                + f"?users__id__exact={request.user.id}"
-                        ),
+                        "link": reverse_lazy("admin:portfolio_project_changelist"),
                     },
                     {
                         "title": _("Jobs"),
                         "icon": "engineering",
-                        "link": lambda request: (
-                                reverse_lazy("admin:portfolio_job_changelist")
-                                + f"?user__id__exact={request.user.id}"
-                        ),
+                        "link": reverse_lazy("admin:portfolio_job_changelist"),
                     },
                     {
                         "title": _("Platforms"),
                         "icon": "captive_portal",
-                        "link": reverse_lazy("admin:portfolio_platform_changelist")
+                        "link": reverse_lazy("admin:portfolio_platform_changelist"),
                     },
                     {
                         "title": _("Links"),
                         "icon": "link",
-                        "link": lambda request: (
-                                reverse_lazy("admin:portfolio_link_changelist")
-                                + f"?user__id__exact={request.user.id}"
-                        ),
+                        "link": reverse_lazy("admin:portfolio_link_changelist"),
+                    },
+                    {
+                        "title": _("Link Collections"),
+                        "icon": "category",
+                        "link": reverse_lazy("admin:portfolio_linkcollection_changelist"),
                     },
                     {
                         "title": _("Job Areas"),

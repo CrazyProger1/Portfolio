@@ -2,6 +2,9 @@ from src.apps.portfolio.serializers.skills import (
     SkillListSerializer,
     SkillRetrieveSerializer,
 )
+from src.apps.portfolio.serializers.areas import (
+    AreaRetrieveSerializer,
+)
 from src.apps.portfolio.serializers.jobs import (
     JobListSerializer,
     JobRetrieveSerializer,

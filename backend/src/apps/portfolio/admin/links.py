@@ -1,27 +1,41 @@
 from django.conf import settings
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+from modeltranslation.admin import TabbedTranslationAdmin
 from unfold.admin import TabularInline, ModelAdmin
 
 from django.utils.translation import gettext_lazy as _
 
 from src.apps.accounts.sites import site
-from src.apps.portfolio.models import Link
-from src.utils.django.admin import ImageTagMixin, AutosetOwnerMixin
+from src.apps.portfolio.models import Link, LinkCollection
+from src.utils.django.admin import ImageTagMixin, OwnerMixin
 
 
 class UserLinkInline(TabularInline):
     model = Link
     tab = True
-    fields = ("name", "link",)
+    fields = (
+        "name",
+        "link",
+    )
     extra = 0
     show_change_link = True
     verbose_name = _("Link")
     verbose_name_plural = _("Links")
 
 
+@admin.register(LinkCollection, site=site)
+class LinkCollectionAdmin(ModelAdmin, ImageTagMixin, TabbedTranslationAdmin):
+    list_display = (
+        "image_tag",
+        "name",
+        "slug",
+    )
+    search_fields = ("name", "slug",)
+
+
 @admin.register(Link, site=site)
-class LinkAdmin(ModelAdmin, ImageTagMixin, AutosetOwnerMixin):
+class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
     list_display = (
         "image_tag",
         "name",
@@ -35,7 +49,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, AutosetOwnerMixin):
     owner_field = "user"
     readonly_fields = ("user",)
     list_filter = ("user",)
-    autocomplete_fields = ("platform",)
+    autocomplete_fields = ("platform", "collections",)
     search_fields = ("name",)
 
     def image_tag(self, obj: Link):

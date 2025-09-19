@@ -14,6 +14,7 @@ include(
     "logging.py",
     "security.py",
     "auth.py",
+    "cache.py",
     optional("rest.py"),
     optional("docs.py"),
     optional("cors.py"),
