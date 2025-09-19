@@ -8,7 +8,7 @@ git checkout -- deploy.sh
 
 git pull
 
-poetry install --no-root
+uv sync
 
 #poetry run python manage.py makemigrations
 poetry run python manage.py migrate
