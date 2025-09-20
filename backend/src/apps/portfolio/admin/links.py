@@ -31,6 +31,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
         "name",
         "link",
         "platform",
+        "priority",
     )
     list_display_links = (
         "image_tag",
@@ -44,6 +45,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
         "collections",
     )
     search_fields = ("name",)
+    ordering = ("priority",)
 
     def image_tag(self, obj: Link):
         platform_image = getattr(getattr(obj, "platform", None), "image", None)
