@@ -2,7 +2,7 @@
 
 set -e
 
-cd /home/admin/urbanaut/frontend/ || exit
+cd /home/admin/portfolio/frontend/ || exit
 
 git checkout -- deploy.sh
 

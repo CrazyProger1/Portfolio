@@ -50,7 +50,7 @@ const HeaderNavMobile = ({ links }: Props) => {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-shine text-lg font-medium"
+              className="text-shine text-md opacity-50 hover:opacity-100"
               onClick={() => setOpen(false)}
             >
               {link.text}

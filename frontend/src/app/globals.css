@@ -58,7 +58,7 @@ body {
 }
 
 .icon-shine-default {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
 .glow-up {
@@ -107,5 +107,28 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scroll-hover);
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none !important;
+}
+
+.scroll-hide {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-track {
+    background: #221f1f;
+    border-radius: 10px;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+    border-radius: 10px;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--color-scroll-hover);
 }

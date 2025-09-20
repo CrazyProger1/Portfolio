@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaGitlab, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { SiPypi } from "react-icons/si";
 import { TbFileCv } from "react-icons/tb";
 
 import { Icon } from "@/types";
@@ -24,5 +25,7 @@ export const MultiIcon = ({ icon, ...props }: Props) => {
       return <FaTelegram {...props} />;
     case "linkedin":
       return <FaLinkedin {...props} />;
+    case "pypi":
+      return <SiPypi {...props} />;
   }
 };

@@ -11,6 +11,10 @@ export type Area = {
   slug: string;
 };
 
+export type ProjectMetrics = {
+  github_stars?: number;
+};
+
 export type Project = {
   id: number;
   name: string;
@@ -22,7 +26,8 @@ export type Project = {
   stars?: number;
   version?: string;
   links?: UserLink[];
-  start_at?: Date;
-  end_at?: Date;
+  started_at: string;
+  ended_at?: string;
   areas: Area[];
+  metrics: ProjectMetrics;
 };
