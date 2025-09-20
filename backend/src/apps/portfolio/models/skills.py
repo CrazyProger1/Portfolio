@@ -27,6 +27,13 @@ class UserSkill(models.Model):
         null=False,
         blank=False,
     )
+    priority = models.PositiveSmallIntegerField(
+        default=0,
+        verbose_name=_("priority"),
+        help_text=_("The priority of the skill shown on the portfolio page."),
+        null=False,
+        blank=False,
+    )
 
     class Meta:
         unique_together = ("user", "skill")

@@ -31,6 +31,7 @@ class UserSkillInline(TabularInline):
     fields = (
         "skill",
         "level",
+        "priority",
     )
     show_change_link = True
     verbose_name = _("Skill")
