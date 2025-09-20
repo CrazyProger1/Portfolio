@@ -36,3 +36,4 @@ class UserSkillInline(TabularInline):
     show_change_link = True
     verbose_name = _("Skill")
     verbose_name_plural = _("Skills")
+    ordering = ("priority",)
