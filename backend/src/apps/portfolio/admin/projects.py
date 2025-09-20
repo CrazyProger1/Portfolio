@@ -54,11 +54,11 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
         return queryset.filter(users=request.user)
 
     def save_model(
-        self,
-        request: HttpRequest,
-        obj: Project,
-        form: Form,
-        change: Any,
+            self,
+            request: HttpRequest,
+            obj: Project,
+            form: Form,
+            change: Any,
     ) -> None:
         super().save_model(
             request,
@@ -75,7 +75,8 @@ class UserProjectInline(TabularInline):
     model = UserProject
     extra = 1
     tab = True
-    fields = ("project",)
+    fields = ("project", "priority",)
     show_change_link = True
     verbose_name = _("Project")
     verbose_name_plural = _("Projects")
+    ordering = ("priority",)
