@@ -15,6 +15,7 @@ class APIKeyPermissionAdmin(ModelAdmin):
     list_display = (
         "name",
         "url_regex",
+        "readonly",
     )
     search_fields = ("name",)
     list_display_links = (
@@ -44,11 +45,11 @@ class APIKeyAdmin(ModelAdmin):
     autocomplete_fields = ("permissions",)
 
     def save_model(
-        self,
-        request: HttpRequest,
-        obj: APIKey,
-        form: Form,
-        change: Any,
+            self,
+            request: HttpRequest,
+            obj: APIKey,
+            form: Form,
+            change: Any,
     ) -> None:
         if not hasattr(obj, "user"):
             obj.user = request.user
