@@ -7,6 +7,28 @@ from src.apps.portfolio.enums import ProjectState, ProjectType
 from src.utils.django.orm import CreatedAtMixin, UpdatedAtMixin
 
 
+class ProjectMetric(models.Model):
+    metric = models.ForeignKey(
+        to="portfolio.Metric",
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+    )
+    project = models.ForeignKey(
+        to="Project",
+        on_delete=models.CASCADE,
+        verbose_name=_("project"),
+        null=False,
+        blank=False,
+    )
+    value = models.PositiveBigIntegerField(
+        verbose_name=_("value"),
+        null=False,
+        blank=False,
+        default=0,
+    )
+
+
 class UserProject(models.Model):
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
@@ -106,6 +128,12 @@ class Project(CreatedAtMixin, UpdatedAtMixin, models.Model):
         default="0.0.1",
         null=False,
         blank=False,
+    )
+    metrics = models.ManyToManyField(
+        to="portfolio.Metric",
+        related_name="projects",
+        through=ProjectMetric,
+        blank=True,
     )
 
     class Meta:

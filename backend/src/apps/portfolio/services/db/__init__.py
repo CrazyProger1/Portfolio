@@ -15,3 +15,6 @@ from src.apps.portfolio.services.db.links import (
     get_user_links,
     get_all_links,
 )
+from src.apps.portfolio.services.db.metrics import (
+    get_project_metrics,
+)

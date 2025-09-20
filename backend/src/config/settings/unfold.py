@@ -92,6 +92,11 @@ UNFOLD = {
                         "icon": "target",
                         "link": reverse_lazy("admin:portfolio_workarea_changelist"),
                     },
+                    {
+                        "title": _("External Metrics"),
+                        "icon": "bar_chart",
+                        "link": reverse_lazy("admin:portfolio_metric_changelist"),
+                    },
                 ],
             },
             {

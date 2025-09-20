@@ -6,3 +6,4 @@ from src.apps.portfolio.admin.areas import WorkAreaAdmin
 from src.apps.portfolio.admin.links import LinkAdmin, UserLinkInline
 from src.apps.portfolio.admin.collections import CollectionAdmin
 from src.apps.portfolio.admin.platforms import PlatformAdmin
+from src.apps.portfolio.admin.metrics import MetricAdmin

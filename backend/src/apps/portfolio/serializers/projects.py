@@ -9,19 +9,25 @@ from src.apps.portfolio.serializers import (
 from src.apps.portfolio.serializers.links import (
     LinkRetrieveSerializer,
 )
-from src.apps.portfolio.services.db import get_user_skills_from_skills
+from src.apps.portfolio.services.db import get_user_skills_from_skills, get_project_metrics
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
+    metrics = serializers.SerializerMethodField()
+
     class Meta:
         model = Project
         fields = "__all__"
+
+    def get_metrics(self, obj: Project):
+        return get_project_metrics(project=obj)
 
 
 class ProjectRetrieveSerializer(serializers.ModelSerializer):
     skills = serializers.SerializerMethodField()
     areas = AreaRetrieveSerializer(many=True)
     links = LinkRetrieveSerializer(many=True)
+    metrics = serializers.SerializerMethodField()
 
     class Meta:
         model = Project
@@ -32,3 +38,6 @@ class ProjectRetrieveSerializer(serializers.ModelSerializer):
         request = self.context.get("request")
         queryset = get_user_skills_from_skills(request.user, obj.skills.all())
         return SkillRetrieveSerializer(queryset, many=True).data
+
+    def get_metrics(self, obj: Project):
+        return get_project_metrics(project=obj)

@@ -3,19 +3,28 @@ from typing import Any
 from django.contrib import admin
 from django.forms import Form
 from django.http import HttpRequest
-from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TabbedTranslationAdmin
 from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
-from src.apps.portfolio.models import Project, UserProject
-from src.config import settings
+from src.apps.portfolio.models import Project, UserProject, ProjectMetric
 from src.utils.django.admin import ImageTagMixin
+
+
+class ProjectMetricInline(TabularInline):
+    model = ProjectMetric
+    extra = 1
+    tab = True
+    fields = ("metric", "value",)
+    show_change_link = True
+    verbose_name = _("Metric")
+    verbose_name_plural = _("Metrics")
 
 
 @admin.register(Project, site=site)
 class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
+    inlines = (ProjectMetricInline,)
     list_display = (
         "image_tag",
         "name",

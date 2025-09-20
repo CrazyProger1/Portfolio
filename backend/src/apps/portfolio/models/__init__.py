@@ -5,6 +5,7 @@ from src.apps.portfolio.models.skills import (
 from src.apps.portfolio.models.projects import (
     UserProject,
     Project,
+    ProjectMetric,
 )
 from src.apps.portfolio.models.jobs import (
     Job,
@@ -20,4 +21,7 @@ from src.apps.portfolio.models.platforms import (
 )
 from src.apps.portfolio.models.collections import (
     Collection,
+)
+from src.apps.portfolio.models.metrics import (
+    Metric,
 )
