@@ -37,3 +37,4 @@ class UserSkillInline(TabularInline):
     verbose_name = _("Skill")
     verbose_name_plural = _("Skills")
     ordering = ("priority",)
+    autocomplete_fields = ("skill",)
