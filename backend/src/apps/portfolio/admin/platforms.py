@@ -1,4 +1,5 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
 from unfold.admin import ModelAdmin
 
 from src.apps.accounts.sites import site
@@ -7,7 +8,7 @@ from src.utils.django.admin import ImageTagMixin
 
 
 @admin.register(Platform, site=site)
-class PlatformAdmin(ModelAdmin, ImageTagMixin):
+class PlatformAdmin(ModelAdmin, ImageTagMixin, TabbedTranslationAdmin):
     list_display = (
         "image_tag",
         "name",
