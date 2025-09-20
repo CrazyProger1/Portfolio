@@ -39,7 +39,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
     )
     owner_field = "user"
     readonly_fields = ("user",)
-    list_filter = ("user",)
+    list_filter = ("user", "collections",)
     autocomplete_fields = (
         "platform",
         "collections",
