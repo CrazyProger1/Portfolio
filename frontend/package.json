@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/typography": "^0.5.18",
     "@types/react-burger-menu": "^2.8.7",
     "@types/react-slick": "^0.23.13",
@@ -24,9 +25,12 @@
     "react": "^19.1.0",
     "react-burger-menu": "^3.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.63.0",
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "react-toastify": "^11.0.5",
+    "slick-carousel": "^1.8.1",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

@@ -13,4 +13,5 @@ export const API_ENDPOINTS = {
   getLink: "links/:id/",
   getTexts: "texts/",
   getText: "texts/:slug/",
+  sendMessage: "messages/",
 };

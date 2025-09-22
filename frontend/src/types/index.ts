@@ -14,3 +14,4 @@ export {
 } from "./api";
 export { type TextBlock } from "./texts";
 export { type CollectionsFilter } from "./filters";
+export { type Message } from "./messages";

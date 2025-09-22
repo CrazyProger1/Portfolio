@@ -37,7 +37,7 @@ const HeaderNavMobile = ({ links }: Props) => {
       />
 
       <nav
-        className={`bg-background fixed top-0 right-0 h-full w-2/3 transform shadow-xl transition-transform duration-300 ${
+        className={`bg-background fixed top-0 right-0 flex h-full w-2/3 transform flex-col gap-8 shadow-xl transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -56,19 +56,19 @@ const HeaderNavMobile = ({ links }: Props) => {
               {link.text}
             </Link>
           ))}
-          <div className="flex flex-row gap-2">
-            {links.map(({ id, name, platform, link }) => (
-              <Motion key={id} whileHover={{ scale: 1.1 }}>
-                <Link href={link} target="_blank">
-                  <MultiIcon
-                    icon={(platform || name.toLowerCase()) as Icon}
-                    size={32}
-                    className="icon-shine"
-                  />
-                </Link>
-              </Motion>
-            ))}
-          </div>
+        </div>
+        <div className="flex flex-row gap-2 pl-4">
+          {links.map(({ id, name, platform, link }) => (
+            <Motion key={id} whileHover={{ scale: 1.1 }}>
+              <Link href={link} target="_blank">
+                <MultiIcon
+                  icon={(platform || name.toLowerCase()) as Icon}
+                  size={32}
+                  className="icon-shine"
+                />
+              </Link>
+            </Motion>
+          ))}
         </div>
       </nav>
     </div>
