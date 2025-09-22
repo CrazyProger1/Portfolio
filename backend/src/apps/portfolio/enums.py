@@ -25,8 +25,3 @@ class ProjectState(models.TextChoices):
 class JobSchedule(models.TextChoices):
     FULLTIME = "FULLTIME", _("Full-time")
     PARTTIME = "PARTTIME", _("Part-time")
-
-
-class Metric(StrEnum):
-    VISIT = "visit"
-    MESSAGE = "message"

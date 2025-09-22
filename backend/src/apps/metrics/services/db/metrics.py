@@ -1,6 +1,8 @@
 import logging
+from datetime import timedelta
 
 from django.db import models
+from django.utils import timezone
 from rest_framework.request import Request
 
 from src.apps.metrics.models import Metric, MetricRecord, Client
@@ -14,7 +16,12 @@ from src.utils.django.orm.shortcuts import (
 logger = logging.getLogger(__name__)
 
 
-def increment_metric(metric: Metric | str, request: Request, user=None) -> MetricRecord:
+def increment_metric(
+    metric: Metric | str,
+    request: Request,
+    user=None,
+    lifespan: timedelta = None,
+) -> MetricRecord | None:
     if isinstance(metric, str):
         metric = get_object_or_none(Metric, slug=metric)
 
@@ -22,11 +29,21 @@ def increment_metric(metric: Metric | str, request: Request, user=None) -> Metri
             logger.error("Metric not found: %s", metric)
             raise ValueError(f"Metric not found: {metric}")
 
+    ip = get_client_ip(request=request)
+    client = Client.objects.get_or_create(ip=ip)[0]
+
+    if lifespan:
+        records = metric.records.filter(
+            user=user,
+            client=client,
+            created_at__gte=timezone.now() - lifespan,
+        )
+        if records.exists():
+            return
+
     if not user:
         user = request.user
 
-    ip = get_client_ip(request=request)
-    client = Client.objects.get_or_create(ip=ip)[0]
     record = create_object(
         source=MetricRecord,
         metric=metric,
@@ -37,12 +54,18 @@ def increment_metric(metric: Metric | str, request: Request, user=None) -> Metri
     return record
 
 
-def increment_metric_safe(metric: Metric | str, request: Request, user=None) -> MetricRecord | None:
+def increment_metric_safe(
+    metric: Metric | str,
+    request: Request,
+    user=None,
+    lifespan: timedelta = None,
+) -> MetricRecord | None:
     try:
         return increment_metric(
             metric=metric,
             request=request,
             user=user,
+            lifespan=lifespan,
         )
     except ValueError:
         pass

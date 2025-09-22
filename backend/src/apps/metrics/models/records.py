@@ -37,7 +37,6 @@ class MetricRecord(CreatedAtMixin, models.Model):
         to="Client",
         on_delete=models.CASCADE,
         verbose_name=_("client"),
-        help_text=_("Client that "),
         null=True,
         blank=True,
     )
