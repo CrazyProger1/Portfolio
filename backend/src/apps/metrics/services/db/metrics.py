@@ -24,7 +24,7 @@ def increment_metric(
         lifespan: timedelta = None,
 ) -> MetricRecord | None:
     if isinstance(metric, str):
-        metric = get_object_or_none(Metric, slug=metric)
+        metric = Metric.objects.select_for_update().filter(slug=metric)
 
         if not metric:
             logger.error("Metric not found: %s", metric)
@@ -34,7 +34,7 @@ def increment_metric(
     client = Client.objects.get_or_create(ip=ip)[0]
 
     if lifespan:
-        records = metric.records.select_for_update().filter(
+        records = metric.records.filter(
             user=user,
             client=client,
             created_at__gte=timezone.now() - lifespan,
