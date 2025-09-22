@@ -1,1 +1,1 @@
-export type Icon = "cv" | "github" | "gitlab" | "telegram" | "linkedin" | "pypi";
+export type Icon = "cv" | "github" | "gitlab" | "telegram" | "linkedin" | "pypi" | "site";

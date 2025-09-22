@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaGitlab, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaGitlab, FaLinkedin, FaTelegram } from "react-icons/fa";
 import { SiPypi } from "react-icons/si";
 import { TbFileCv } from "react-icons/tb";
 
@@ -27,5 +27,7 @@ export const MultiIcon = ({ icon, ...props }: Props) => {
       return <FaLinkedin {...props} />;
     case "pypi":
       return <SiPypi {...props} />;
+    case "site":
+      return <FaExternalLinkAlt {...props} />;
   }
 };
