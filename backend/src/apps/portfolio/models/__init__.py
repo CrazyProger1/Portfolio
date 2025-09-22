@@ -28,3 +28,4 @@ from src.apps.portfolio.models.metrics import (
 from src.apps.portfolio.models.texts import (
     TextBlock,
 )
+from src.apps.portfolio.models.messages import Message

@@ -3,3 +3,4 @@ from src.apps.portfolio.views.jobs import JobViewSet
 from src.apps.portfolio.views.projects import ProjectViewSet
 from src.apps.portfolio.views.links import LinkViewSet
 from src.apps.portfolio.views.texts import TextBlockViewSet
+from src.apps.portfolio.views.messages import MessageViewSet

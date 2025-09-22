@@ -21,3 +21,6 @@ from src.apps.portfolio.serializers.texts import (
     TextBlockListSerializer,
     TextBlockRetrieveSerializer,
 )
+from src.apps.portfolio.serializers.messages import (
+    MessageCreateSerializer,
+)

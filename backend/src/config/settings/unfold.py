@@ -98,6 +98,11 @@ UNFOLD = {
                         "link": reverse_lazy("admin:portfolio_workarea_changelist"),
                     },
                     {
+                        "title": _("Messages"),
+                        "icon": "business_messages",
+                        "link": reverse_lazy("admin:portfolio_message_changelist"),
+                    },
+                    {
                         "title": _("External Metrics"),
                         "icon": "bar_chart",
                         "link": reverse_lazy("admin:portfolio_metric_changelist"),

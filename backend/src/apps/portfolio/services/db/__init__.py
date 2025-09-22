@@ -21,3 +21,4 @@ from src.apps.portfolio.services.db.metrics import (
 from src.apps.portfolio.services.db.texts import (
     get_user_text_blocks,
 )
+from src.apps.portfolio.services.db.messages import get_all_messages
