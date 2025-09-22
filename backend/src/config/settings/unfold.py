@@ -83,6 +83,11 @@ UNFOLD = {
                         "link": reverse_lazy("admin:portfolio_link_changelist"),
                     },
                     {
+                        "title": _("Text Blocks"),
+                        "icon": "text_snippet",
+                        "link": reverse_lazy("admin:portfolio_textblock_changelist"),
+                    },
+                    {
                         "title": _("Collections"),
                         "icon": "category",
                         "link": reverse_lazy("admin:portfolio_collection_changelist"),

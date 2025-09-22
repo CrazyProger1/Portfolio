@@ -9,7 +9,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
 
-class ImageTagMixin(admin.ModelAdmin):
+class ImageTagAdminMixin(admin.ModelAdmin):
     image_field = "image"
     tag_short_description = _("image")
 
@@ -18,13 +18,13 @@ class ImageTagMixin(admin.ModelAdmin):
 
         if image:
             return mark_safe(
-                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));" />'
+                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));" />'
             )
 
     image_tag.short_description = tag_short_description
 
 
-class OwnerMixin(admin.ModelAdmin):
+class OwnerAdminMixin(admin.ModelAdmin):
     owner_field = "user"
 
     def get_queryset(self, request):

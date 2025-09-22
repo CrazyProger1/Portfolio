@@ -7,7 +7,7 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Job
-from src.utils.django.admin import OwnerMixin, ImageTagMixin
+from src.utils.django.admin import OwnerAdminMixin, ImageTagAdminMixin
 
 
 class UserJobInline(TabularInline):
@@ -27,7 +27,7 @@ class UserJobInline(TabularInline):
 
 
 @admin.register(Job, site=site)
-class JobAdmin(ModelAdmin, TabbedTranslationAdmin, OwnerMixin, ImageTagMixin):
+class JobAdmin(ModelAdmin, TabbedTranslationAdmin, OwnerAdminMixin, ImageTagAdminMixin):
     list_display = (
         "image_tag",
         "name",

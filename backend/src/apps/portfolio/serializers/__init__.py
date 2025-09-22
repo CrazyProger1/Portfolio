@@ -17,3 +17,7 @@ from src.apps.portfolio.serializers.links import (
     LinkListSerializer,
     LinkRetrieveSerializer,
 )
+from src.apps.portfolio.serializers.texts import (
+    TextBlockListSerializer,
+    TextBlockRetrieveSerializer,
+)

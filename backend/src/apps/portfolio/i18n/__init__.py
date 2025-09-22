@@ -6,3 +6,4 @@ from src.apps.portfolio.i18n.platforms import PlatformTranslationOptions
 from src.apps.portfolio.i18n.links import LinkTranslationOptions
 from src.apps.portfolio.i18n.collections import CollectionTranslationOptions
 from src.apps.portfolio.i18n.metrics import MetricTranslationOptions
+from src.apps.portfolio.i18n.texts import TextBlockTranslationOptions

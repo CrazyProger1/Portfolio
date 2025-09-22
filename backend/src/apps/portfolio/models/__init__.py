@@ -25,3 +25,6 @@ from src.apps.portfolio.models.collections import (
 from src.apps.portfolio.models.metrics import (
     Metric,
 )
+from src.apps.portfolio.models.texts import (
+    TextBlock,
+)

@@ -7,11 +7,11 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Skill, UserSkill
-from src.utils.django.admin import ImageTagMixin
+from src.utils.django.admin import ImageTagAdminMixin
 
 
 @admin.register(Skill, site=site)
-class SkillAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
+class SkillAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagAdminMixin):
     list_display = (
         "image_tag",
         "name",

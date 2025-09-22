@@ -1,10 +1,10 @@
 import django_filters.rest_framework as filters
 
 from src.apps.portfolio.filters.collections import CollectionFilterMixin
-from src.apps.portfolio.models import Link
+from src.apps.portfolio.models import TextBlock
 
 
-class LinkFilter(CollectionFilterMixin, filters.FilterSet):
+class TextBlockFilter(CollectionFilterMixin, filters.FilterSet):
     class Meta:
-        model = Link
+        model = TextBlock
         fields = ("collections",)

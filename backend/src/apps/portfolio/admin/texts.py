@@ -1,35 +1,43 @@
 from django.conf import settings
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TabbedTranslationAdmin
 from unfold.admin import ModelAdmin
+from django.utils.translation import gettext_lazy as _
 
 from src.apps.accounts.sites import site
-from src.apps.portfolio.models import Metric
+from src.apps.portfolio.models import TextBlock
+from src.utils.django.admin import OwnerAdminMixin
 
 
-@admin.register(Metric, site=site)
-class MetricAdmin(ModelAdmin, TabbedTranslationAdmin):
+@admin.register(TextBlock, site=site)
+class TextBlockAdmin(ModelAdmin, OwnerAdminMixin, TabbedTranslationAdmin):
     list_display = (
         "image_tag",
         "name",
         "slug",
-        "platform",
     )
     list_display_links = (
         "image_tag",
         "name",
     )
-    search_fields = (
-        "name",
-        "slug",
+
+    search_fields = ("name", "slug",)
+    list_filter = ("collections",)
+    readonly_fields = ("user",)
+    autocomplete_fields = (
+        "collections",
     )
     image_field = "image"
 
-    def image_tag(self, obj: Metric):
-        platform_image = getattr(getattr(obj, "platform", None), "image", None)
-        image = getattr(obj, self.image_field, platform_image) or platform_image
+    def image_tag(self, obj: TextBlock):
+        collection = obj.collections.first()
+
+        collection_image = None
+        if collection:
+            collection_image = collection.image
+
+        image = getattr(obj, self.image_field, collection_image) or collection_image
 
         if image:
             return mark_safe(

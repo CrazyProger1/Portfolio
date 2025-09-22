@@ -9,7 +9,7 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Project, UserProject, ProjectMetric
-from src.utils.django.admin import ImageTagMixin
+from src.utils.django.admin import ImageTagAdminMixin
 
 
 class ProjectMetricInline(TabularInline):
@@ -23,7 +23,7 @@ class ProjectMetricInline(TabularInline):
 
 
 @admin.register(Project, site=site)
-class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagMixin):
+class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagAdminMixin):
     inlines = (ProjectMetricInline,)
     list_display = (
         "image_tag",

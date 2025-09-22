@@ -4,11 +4,11 @@ from unfold.admin import ModelAdmin
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Platform
-from src.utils.django.admin import ImageTagMixin
+from src.utils.django.admin import ImageTagAdminMixin
 
 
 @admin.register(Platform, site=site)
-class PlatformAdmin(ModelAdmin, ImageTagMixin, TabbedTranslationAdmin):
+class PlatformAdmin(ModelAdmin, ImageTagAdminMixin, TabbedTranslationAdmin):
     list_display = (
         "image_tag",
         "name",

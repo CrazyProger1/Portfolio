@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 from src.apps.accounts.sites import site
 from src.apps.portfolio.models import Link
-from src.utils.django.admin import ImageTagMixin, OwnerMixin
+from src.utils.django.admin import ImageTagAdminMixin, OwnerAdminMixin
 
 
 class UserLinkInline(TabularInline):
@@ -25,7 +25,7 @@ class UserLinkInline(TabularInline):
 
 
 @admin.register(Link, site=site)
-class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
+class LinkAdmin(ModelAdmin, ImageTagAdminMixin, OwnerAdminMixin, TabbedTranslationAdmin):
     list_display = (
         "image_tag",
         "name",
@@ -53,7 +53,7 @@ class LinkAdmin(ModelAdmin, ImageTagMixin, OwnerMixin, TabbedTranslationAdmin):
 
         if image:
             return mark_safe(
-                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));" />'
+                f'<img src="{settings.MEDIA_URL}{image}" width="150" height="150" style="border-radius:10%; object-fit:cover;filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));" />'
             )
 
     image_tag.short_description = _("image")

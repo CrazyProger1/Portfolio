@@ -18,3 +18,6 @@ from src.apps.portfolio.services.db.links import (
 from src.apps.portfolio.services.db.metrics import (
     get_project_metrics,
 )
+from src.apps.portfolio.services.db.texts import (
+    get_user_text_blocks,
+)
