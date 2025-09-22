@@ -11,3 +11,10 @@ class Client(models.Model):
         blank=False,
         null=False,
     )
+
+    class Meta:
+        verbose_name = _("Client")
+        verbose_name_plural = _("Clients")
+
+    def __str__(self):
+        return self.ip

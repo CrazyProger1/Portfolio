@@ -37,6 +37,7 @@ class MetricRecordAdmin(ModelAdmin):
                     "id",
                     "metric",
                     "user",
+                    "client",
                 ),
             },
         ),
@@ -50,11 +51,11 @@ class MetricRecordAdmin(ModelAdmin):
     )
 
     def save_model(
-        self,
-        request: HttpRequest,
-        obj: Model,
-        form: Form,
-        change: Any,
+            self,
+            request: HttpRequest,
+            obj: Model,
+            form: Form,
+            change: Any,
     ) -> None:
         if not hasattr(obj, "user"):
             obj.user = request.user
