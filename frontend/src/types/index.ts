@@ -13,4 +13,4 @@ export {
   type PaginationParams,
 } from "./api";
 export { type TextBlock } from "./texts";
-export { CollectionsFilter } from "./filters";
+export { type CollectionsFilter } from "./filters";
