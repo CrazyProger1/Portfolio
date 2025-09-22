@@ -19,3 +19,7 @@ class MessageAdmin(ModelAdmin):
         "is_read",
         "created_at",
     )
+    readonly_fields = (
+        "user",
+        "created_at",
+    )
