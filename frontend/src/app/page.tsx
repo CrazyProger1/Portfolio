@@ -15,11 +15,11 @@ const Page = async ({ searchParams }: Props) => {
   return (
     <div className="flex flex-col gap-16 py-2">
       <IntroductionSection />
-      <HorizontalDivider text="About" />
+      <HorizontalDivider id="about" text="About" />
       <AboutSection />
-      <HorizontalDivider text="Expericence" />
+      <HorizontalDivider id="experience" text="Expericence" />
       <ExperienceSection params={params} />
-      <HorizontalDivider text="Contact Me" />
+      <HorizontalDivider id="contactme" text="Contact Me" />
       <ContactMeSection />
     </div>
   );

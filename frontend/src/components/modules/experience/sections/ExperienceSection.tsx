@@ -26,7 +26,7 @@ export const ExperienceSection = async ({ params }: Props) => {
   }
 
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-8">
       <JobTimelineDesktop jobs={jobs} />
       <JobTimelineMobile jobs={jobs} />
       <ProjectSlider projects={projects} />
