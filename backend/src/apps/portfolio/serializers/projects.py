@@ -9,7 +9,10 @@ from src.apps.portfolio.serializers import (
 from src.apps.portfolio.serializers.links import (
     LinkRetrieveSerializer,
 )
-from src.apps.portfolio.services.db import get_user_skills_from_skills, get_project_metrics
+from src.apps.portfolio.services.db import (
+    get_user_skills_from_skills,
+    get_project_metrics,
+)
 
 
 class ProjectListSerializer(serializers.ModelSerializer):

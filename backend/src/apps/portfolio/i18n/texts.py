@@ -4,7 +4,10 @@ from src.apps.portfolio.models import TextBlock
 
 
 class TextBlockTranslationOptions(TranslationOptions):
-    fields = ("name", "content",)
+    fields = (
+        "name",
+        "content",
+    )
 
 
 translator.register(TextBlock, TextBlockTranslationOptions)

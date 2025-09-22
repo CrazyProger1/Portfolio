@@ -11,10 +11,11 @@ def get_all_projects() -> models.QuerySet[Project]:
 
 def get_user_projects(user) -> models.QuerySet[Project]:
     priority_subquery = UserProject.objects.filter(
-        user=user,
-        project=OuterRef("pk")
+        user=user, project=OuterRef("pk")
     ).values("priority")[:1]
 
-    return Project.objects.filter(users=user).annotate(
-        priority=Subquery(priority_subquery)
-    ).order_by("priority")
+    return (
+        Project.objects.filter(users=user)
+        .annotate(priority=Subquery(priority_subquery))
+        .order_by("priority")
+    )

@@ -25,7 +25,9 @@ class UserLinkInline(TabularInline):
 
 
 @admin.register(Link, site=site)
-class LinkAdmin(ModelAdmin, ImageTagAdminMixin, OwnerAdminMixin, TabbedTranslationAdmin):
+class LinkAdmin(
+    ModelAdmin, ImageTagAdminMixin, OwnerAdminMixin, TabbedTranslationAdmin
+):
     list_display = (
         "image_tag",
         "name",
@@ -39,7 +41,10 @@ class LinkAdmin(ModelAdmin, ImageTagAdminMixin, OwnerAdminMixin, TabbedTranslati
     )
     owner_field = "user"
     readonly_fields = ("user",)
-    list_filter = ("user", "collections",)
+    list_filter = (
+        "user",
+        "collections",
+    )
     autocomplete_fields = (
         "platform",
         "collections",

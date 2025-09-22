@@ -1,3 +1,5 @@
+from enum import StrEnum
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -23,3 +25,8 @@ class ProjectState(models.TextChoices):
 class JobSchedule(models.TextChoices):
     FULLTIME = "FULLTIME", _("Full-time")
     PARTTIME = "PARTTIME", _("Part-time")
+
+
+class Metric(StrEnum):
+    VISIT = "visit"
+    MESSAGE = "message"

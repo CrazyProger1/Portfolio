@@ -2,7 +2,10 @@ from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
 from src.apps.portfolio.models import Job
-from src.apps.portfolio.serializers import AreaRetrieveSerializer, SkillRetrieveSerializer
+from src.apps.portfolio.serializers import (
+    AreaRetrieveSerializer,
+    SkillRetrieveSerializer,
+)
 from src.apps.portfolio.services.db import get_user_skills_from_skills
 
 

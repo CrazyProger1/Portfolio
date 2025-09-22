@@ -16,7 +16,10 @@ class ProjectMetricInline(TabularInline):
     model = ProjectMetric
     extra = 1
     tab = True
-    fields = ("metric", "value",)
+    fields = (
+        "metric",
+        "value",
+    )
     show_change_link = True
     verbose_name = _("Metric")
     verbose_name_plural = _("Metrics")
@@ -63,11 +66,11 @@ class ProjectAdmin(ModelAdmin, TabbedTranslationAdmin, ImageTagAdminMixin):
         return queryset.filter(users=request.user)
 
     def save_model(
-            self,
-            request: HttpRequest,
-            obj: Project,
-            form: Form,
-            change: Any,
+        self,
+        request: HttpRequest,
+        obj: Project,
+        form: Form,
+        change: Any,
     ) -> None:
         super().save_model(
             request,
@@ -84,7 +87,10 @@ class UserProjectInline(TabularInline):
     model = UserProject
     extra = 1
     tab = True
-    fields = ("project", "priority",)
+    fields = (
+        "project",
+        "priority",
+    )
     show_change_link = True
     verbose_name = _("Project")
     verbose_name_plural = _("Projects")

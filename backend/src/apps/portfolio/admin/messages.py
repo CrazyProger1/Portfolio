@@ -12,9 +12,7 @@ class MessageAdmin(ModelAdmin):
         "is_read",
         "created_at",
     )
-    list_display_links = (
-        "subject",
-    )
+    list_display_links = ("subject",)
     list_filter = (
         "is_read",
         "created_at",

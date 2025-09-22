@@ -3,7 +3,10 @@ from rest_framework import viewsets, mixins, permissions
 
 from src.apps.accounts.permissions import APIKeyHasPermission
 from src.apps.portfolio.filters import TextBlockFilter
-from src.apps.portfolio.serializers import TextBlockRetrieveSerializer, TextBlockListSerializer
+from src.apps.portfolio.serializers import (
+    TextBlockRetrieveSerializer,
+    TextBlockListSerializer,
+)
 from src.apps.portfolio.services.db import get_user_text_blocks
 
 

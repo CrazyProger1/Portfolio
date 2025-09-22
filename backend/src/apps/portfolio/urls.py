@@ -5,7 +5,8 @@ from src.apps.portfolio.views import (
     ProjectViewSet,
     JobViewSet,
     LinkViewSet,
-    TextBlockViewSet, MessageViewSet,
+    TextBlockViewSet,
+    MessageViewSet,
 )
 
 router = routers.SimpleRouter()

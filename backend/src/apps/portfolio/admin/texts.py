@@ -22,12 +22,13 @@ class TextBlockAdmin(ModelAdmin, OwnerAdminMixin, TabbedTranslationAdmin):
         "name",
     )
 
-    search_fields = ("name", "slug",)
+    search_fields = (
+        "name",
+        "slug",
+    )
     list_filter = ("collections",)
     readonly_fields = ("user",)
-    autocomplete_fields = (
-        "collections",
-    )
+    autocomplete_fields = ("collections",)
     image_field = "image"
 
     def image_tag(self, obj: TextBlock):
