@@ -1,13 +1,13 @@
 export const getLocalizedPeriod = (startedAt: Date, endedAt?: Date) => {
-  if (!endedAt) {
-    endedAt = new Date();
-  }
-
   const formatDate = (date: Date) =>
     date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 
   const startedLabel = formatDate(startedAt);
   const endedLabel = endedAt ? formatDate(endedAt) : "Present";
+
+  if (!endedAt) {
+    endedAt = new Date();
+  }
 
   let years = endedAt.getFullYear() - startedAt.getFullYear();
   let months = endedAt.getMonth() - startedAt.getMonth();
