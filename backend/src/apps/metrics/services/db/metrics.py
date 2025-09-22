@@ -1,7 +1,7 @@
 import logging
 from datetime import timedelta
 
-from django.db import models
+from django.db import models, transaction
 from django.utils import timezone
 from rest_framework.request import Request
 
@@ -16,11 +16,12 @@ from src.utils.django.orm.shortcuts import (
 logger = logging.getLogger(__name__)
 
 
+@transaction.atomic
 def increment_metric(
-    metric: Metric | str,
-    request: Request,
-    user=None,
-    lifespan: timedelta = None,
+        metric: Metric | str,
+        request: Request,
+        user=None,
+        lifespan: timedelta = None,
 ) -> MetricRecord | None:
     if isinstance(metric, str):
         metric = get_object_or_none(Metric, slug=metric)
@@ -33,7 +34,7 @@ def increment_metric(
     client = Client.objects.get_or_create(ip=ip)[0]
 
     if lifespan:
-        records = metric.records.filter(
+        records = metric.records.select_for_update().filter(
             user=user,
             client=client,
             created_at__gte=timezone.now() - lifespan,
@@ -55,10 +56,10 @@ def increment_metric(
 
 
 def increment_metric_safe(
-    metric: Metric | str,
-    request: Request,
-    user=None,
-    lifespan: timedelta = None,
+        metric: Metric | str,
+        request: Request,
+        user=None,
+        lifespan: timedelta = None,
 ) -> MetricRecord | None:
     try:
         return increment_metric(
