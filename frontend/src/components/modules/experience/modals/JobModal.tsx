@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 import { AreaBadge, SkillBadge } from "@/components/common/badges";
+import { MDXRender } from "@/components/common/utils";
 import { getJob } from "@/services";
 import { getLocalizedPeriod } from "@/utils/period";
 
@@ -39,7 +40,7 @@ export const JobModal = async ({ job: jobId }: Props) => {
           {startedLabel} – {endedLabel} · {period}
         </span>
       </div>
-      <div>{description}</div>
+      <MDXRender source={description} />
       <div className="flex flex-wrap gap-1.5 select-none">
         {skills.map((skill) => {
           return <SkillBadge key={skill.id} skill={skill} />;

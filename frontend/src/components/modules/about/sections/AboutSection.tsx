@@ -1,6 +1,7 @@
 import React from "react";
 
 import { SkillBadge } from "@/components/common/badges";
+import { MDXRender } from "@/components/common/utils";
 import { getSkills, getTexts } from "@/services";
 import { Skill, TextBlock } from "@/types";
 
@@ -23,7 +24,7 @@ export const AboutSection = async () => {
     <div className="flex flex-col gap-16 px-8">
       {texts.map(({ content, slug }) => (
         <div key={slug} className="text-white">
-          {content}
+          <MDXRender source={content} />
         </div>
       ))}
       <div className="flex flex-wrap gap-1.5 select-none">

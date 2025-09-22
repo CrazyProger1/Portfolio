@@ -4,7 +4,7 @@ import React from "react";
 
 import { AreaBadge, SkillBadge } from "@/components/common/badges";
 import { MultiIcon } from "@/components/common/icons";
-import { Motion } from "@/components/common/utils";
+import { MDXRender, Motion } from "@/components/common/utils";
 import { getProject } from "@/services";
 import { Icon } from "@/types";
 import { getLocalizedPeriod } from "@/utils/period";
@@ -75,7 +75,7 @@ export const ProjectModal = async ({ project: projectId }: Props) => {
       <div className="select-none">
         Type: <span className="text-cyan-400">{typeText[type]}</span>
       </div>
-      <div>{description}</div>
+      <MDXRender source={description} />
       <div className="flex flex-wrap gap-1.5 select-none">
         {skills.map((skill) => {
           return <SkillBadge key={skill.id} skill={skill} />;

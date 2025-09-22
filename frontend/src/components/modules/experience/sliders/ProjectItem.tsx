@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const ProjectItem = ({ project }: Props) => {
-  const { image, name, metrics, version, started_at, ended_at } = project;
+  const { image, name, metrics, version } = project;
 
   return (
     <Motion

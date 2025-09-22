@@ -21,7 +21,7 @@ export type Project = {
   image: string;
   type: ProjectType;
   state: ProjectState;
-  description?: string;
+  description: string;
   skills: Skill[];
   stars?: number;
   version?: string;
