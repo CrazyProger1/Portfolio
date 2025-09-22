@@ -10,7 +10,6 @@ from src.utils.django.ip import get_client_ip
 from src.utils.django.orm.shortcuts import (
     create_object,
     get_all_objects,
-    get_object_or_none,
 )
 
 logger = logging.getLogger(__name__)
@@ -24,7 +23,7 @@ def increment_metric(
         lifespan: timedelta = None,
 ) -> MetricRecord | None:
     if isinstance(metric, str):
-        metric = Metric.objects.select_for_update().filter(slug=metric)
+        metric = Metric.objects.select_for_update().filter(slug=metric).first()
 
         if not metric:
             logger.error("Metric not found: %s", metric)
