@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 
-import { TargetBlankLink } from "./TargetBlankLink";
+import { MDXLink } from "./MDXLink";
 
 interface Props {
   source: string;
@@ -9,7 +9,7 @@ interface Props {
 
 export const MDXRender = ({ source }: Props) => {
   const components = {
-    a: TargetBlankLink,
+    a: MDXLink,
   };
 
   return (
