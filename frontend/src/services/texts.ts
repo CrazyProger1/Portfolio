@@ -4,20 +4,20 @@ import {
   ErrorResponse,
   PaginatedResponse,
   PaginationParams,
-  UserLink,
+  TextBlock,
   SuccessfulResponse,
   CollectionsFilter,
 } from "@/types";
 
-type LinksResponse = (PaginatedResponse<UserLink> & SuccessfulResponse) | ErrorResponse;
-type LinkResponse = (UserLink & SuccessfulResponse) | ErrorResponse;
+type TextsResponse = (PaginatedResponse<TextBlock> & SuccessfulResponse) | ErrorResponse;
+type TextResponse = (TextBlock & SuccessfulResponse) | ErrorResponse;
 
-export const getLinks = async (
+export const getTexts = async (
   params?: PaginationParams & CollectionsFilter,
-): Promise<LinksResponse> => {
+): Promise<TextsResponse> => {
   try {
     const searchParams = new URLSearchParams(params);
-    const url = `${API_ENDPOINTS.getLinks}?${searchParams.toString()}`;
+    const url = `${API_ENDPOINTS.getTexts}?${searchParams.toString()}`;
     const response = await fetchExtended(url);
     const data = await response.json();
 
@@ -34,9 +34,9 @@ export const getLinks = async (
   }
 };
 
-export const getLink = async (id: number | string): Promise<LinkResponse> => {
+export const getText = async (slug: string): Promise<TextResponse> => {
   try {
-    const url = API_ENDPOINTS.getLink.replace(":id", String(id));
+    const url = API_ENDPOINTS.getTexts.replace(":slug", String(slug));
     const response = await fetchExtended(url);
     const data = await response.json();
 

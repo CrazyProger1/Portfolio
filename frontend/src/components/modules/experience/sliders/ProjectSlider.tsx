@@ -3,7 +3,7 @@
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -77,41 +77,17 @@ export const ProjectSlider = ({ projects }: Props) => {
     ],
   };
 
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div>
-      <div className="mb-4 text-center font-mono">
-        Width: {windowSize.width}px, Height: {windowSize.height}px
-      </div>
-      <Slider {...settings} className="ms-5 me-5">
-        {projects.map((project) => (
-          <SmoothLink
-            href={`?project=${project.id}`}
-            className="slider-item py-10"
-            key={project.name}
-          >
-            <ProjectItem project={project} />
-          </SmoothLink>
-        ))}
-      </Slider>
-    </div>
+    <Slider {...settings} className="ms-5 me-5">
+      {projects.map((project) => (
+        <SmoothLink
+          href={`?project=${project.id}`}
+          className="slider-item py-10"
+          key={project.name}
+        >
+          <ProjectItem project={project} />
+        </SmoothLink>
+      ))}
+    </Slider>
   );
 };

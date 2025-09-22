@@ -23,7 +23,7 @@ export const JobItemDesktop = (item: Job, index: number) => {
             <Image
               className="icon-shine-default rounded-lg"
               src={image}
-              alt={description}
+              alt={name}
               width={200}
               height={200}
             />

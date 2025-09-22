@@ -11,4 +11,6 @@ export const API_ENDPOINTS = {
   getProject: "projects/:id/",
   getLinks: "links/",
   getLink: "links/:id/",
+  getTexts: "texts/",
+  getText: "texts/:slug/",
 };
