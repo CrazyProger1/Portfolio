@@ -17,6 +17,9 @@ export const IntroductionSection = () => {
           src="/images/me.jpg"
           width={400}
           height={800}
+          priority={true}
+          fetchPriority="high"
+          loading="eager"
         />
       </Motion>
     </div>
