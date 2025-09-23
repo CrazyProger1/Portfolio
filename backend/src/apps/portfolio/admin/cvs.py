@@ -2,9 +2,7 @@ from urllib.parse import urljoin
 
 from django.conf import settings
 from django.contrib import admin
-from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext_lazy as _
 
 from unfold.admin import ModelAdmin
 
@@ -30,7 +28,6 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     readonly_fields = (
         "user",
         "link",
-        "frame",  # Move frame to readonly_fields
     )
     list_filter = (
         "created_at",
@@ -41,12 +38,3 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
         return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
 
     link.short_description = "URL"
-
-    def frame(self, obj: CV):
-        url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
-        return format_html(
-            '<iframe src="{}" width="200" height="400" style="border:none;"></iframe>',
-            url
-        )
-
-    frame.short_description = "File Preview"
