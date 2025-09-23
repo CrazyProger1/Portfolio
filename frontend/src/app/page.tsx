@@ -9,6 +9,8 @@ type Props = {
   searchParams: Promise<SearchParams>;
 };
 
+const dynamic = "force-dynamic";
+
 const Page = async ({ searchParams }: Props) => {
   const params = await searchParams;
 
