@@ -20,6 +20,7 @@ export const IntroductionSection = () => {
           height={800}
           sizes="(max-width: 768px) 100vw, 400px"
           priority={true}
+          fetchPriority="high"
         />
       </Motion>
     </div>
