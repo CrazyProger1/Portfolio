@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import * as z from "zod";
 
-import { sendMessage } from "@/actions/messages";
 import { Motion } from "@/components/common/utils";
+import { sendMessage } from "@/services";
 
 const Schema = z.object({
   subject: z.string().min(2, "Subject must be at least 2 characters"),
@@ -41,14 +41,11 @@ export const ContactMeForm = () => {
   } = useForm<ContactFormData>({
     resolver: zodResolver(Schema),
   });
-  const [success, setSuccess] = React.useState(false);
 
   const onSubmit = async (data: ContactFormData) => {
-    setSuccess(false);
     const result = await sendMessage(data);
 
     if (result.success) {
-      setSuccess(true);
       notify("Message sent successfully!");
       reset();
     } else {

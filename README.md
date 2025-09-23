@@ -39,7 +39,7 @@ Fullstack portfolio site built with usage of modern technologies such as Django 
 - React Slick
 - MDX
 
-## Installation
+## Setup
 
 Clone the repo
 
