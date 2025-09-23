@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
   images: {
-    formats: ["image/webp"], // Optimize images for LCP
+    deviceSizes: [360, 640, 750, 828],
+    formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60,
     remotePatterns: [
       {
