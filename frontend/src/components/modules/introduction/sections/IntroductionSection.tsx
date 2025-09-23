@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+import MeImg from "@/assets/me.webp";
 import { Motion } from "@/components/common/utils";
 
 export const IntroductionSection = () => {
@@ -13,10 +14,11 @@ export const IntroductionSection = () => {
       <Motion whileHover={{ scale: 1.05 }} className="cursor-pointer">
         <Image
           alt="Me Photo"
-          className="rounded-4xl"
-          src="/images/me.webp"
+          className="h-auto max-w-full rounded-4xl"
+          src={MeImg}
           width={400}
           height={800}
+          sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw"
           priority={true}
           fetchPriority="high"
           loading="eager"
