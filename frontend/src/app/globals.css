@@ -107,6 +107,12 @@ body {
     overflow: hidden;
 }
 
+.p-timeline-event-connector {
+    background-color: white;
+    width: 2px;
+    opacity: 50%;
+}
+
 .glow-up::after {
     content: '';
     position: absolute;
