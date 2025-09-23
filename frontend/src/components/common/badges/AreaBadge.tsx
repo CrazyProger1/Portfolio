@@ -1,6 +1,6 @@
-import { Tooltip } from "flowbite-react";
 import React from "react";
 
+import { Tooltip } from "@/components/common/hints";
 import { Motion } from "@/components/common/utils";
 import { Area } from "@/types";
 
@@ -10,7 +10,7 @@ interface Props {
 
 export const AreaBadge = ({ area }: Props) => {
   return (
-    <Tooltip content={area.name} className="bg-background-light">
+    <Tooltip tooltipId={area.id} content={area.name} className="bg-background-light">
       <Motion whileHover={{ scale: 1.05 }}>
         <div className="icon-shine inline-flex text-sm font-medium select-none">
           <div className="border-background-light bg-background-light cursor-pointer rounded-l border px-0.5 py-0.5 text-white">
