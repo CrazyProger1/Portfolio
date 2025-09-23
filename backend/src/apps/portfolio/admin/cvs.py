@@ -30,24 +30,10 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     readonly_fields = (
         "user",
         "link",
+        "frame",  # Move frame to readonly_fields
     )
     list_filter = (
         "created_at",
-    )
-    fieldsets = (
-        ("General Information", {
-            "fields": ("version", "user")
-        }),
-        ("File Preview", {
-            "fields": ("link", "frame")
-        }),
-        (
-            _("Metadata"),
-            {
-                "fields": ("created_at",),
-                "classes": ("collapse",),
-            },
-        ),
     )
 
     def link(self, obj: CV):
@@ -62,3 +48,5 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
             '<iframe src="{}" width="400" height="200" style="border:none;"></iframe>',
             url
         )
+
+    frame.short_description = "File Preview"
