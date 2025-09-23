@@ -56,7 +56,7 @@ class APIKeyAuthentication(BaseAuthentication):
 
         logger.debug("User successfully authenticated: %s", user)
 
-        if reverse("admin:index") in request.url:
+        if reverse("admin:index") in request.path:
             logger.warning("User tried to visit admin dashboard using API Key")
             raise AuthenticationFailed(
                 detail="It's forbidden to visit admin dashboard using API Key"
