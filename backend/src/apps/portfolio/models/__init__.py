@@ -29,3 +29,4 @@ from src.apps.portfolio.models.texts import (
     TextBlock,
 )
 from src.apps.portfolio.models.messages import Message
+from src.apps.portfolio.models.cvs import CV
