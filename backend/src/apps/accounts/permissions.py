@@ -19,7 +19,7 @@ class APIKeyHasPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         if getattr(request, "is_api_key_authenticated", None):
             api_key = get_current_api_key(request=request)
-            path = request.url
+            path = request.path
 
             for permission in api_key.permissions.all():
                 if re.fullmatch(permission.url_regex, path):
