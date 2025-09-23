@@ -2,8 +2,10 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from src.utils.django.orm import CreatedAtMixin
 
-class CV(models.Model):
+
+class CV(CreatedAtMixin, models.Model ):
     version = models.CharField(
         max_length=250,
         verbose_name=_("version"),

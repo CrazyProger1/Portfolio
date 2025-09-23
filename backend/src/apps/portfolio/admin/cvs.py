@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 from unfold.admin import ModelAdmin
 
@@ -17,6 +18,7 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     list_display = (
         "version",
         "link",
+        "created_at",
     )
     list_display_links = (
         "version",
@@ -28,6 +30,24 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     readonly_fields = (
         "user",
         "link",
+    )
+    list_filter = (
+        "created_at",
+    )
+    fieldsets = (
+        ("General Information", {
+            "fields": ("version", "user")
+        }),
+        ("File Preview", {
+            "fields": ("link", "frame")
+        }),
+        (
+            _("Metadata"),
+            {
+                "fields": ("created_at",),
+                "classes": ("collapse",),
+            },
+        ),
     )
 
     def link(self, obj: CV):
