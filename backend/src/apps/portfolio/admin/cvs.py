@@ -2,6 +2,7 @@ from urllib.parse import urljoin
 
 from django.conf import settings
 from django.contrib import admin
+from django.utils.html import format_html
 
 from unfold.admin import ModelAdmin
 
@@ -14,7 +15,7 @@ from src.utils.django.admin import OwnerAdminMixin
 class CVAdmin(ModelAdmin, OwnerAdminMixin):
     list_display = (
         "version",
-        "url",
+        "link",
     )
     list_display_links = (
         "version",
@@ -25,8 +26,21 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     owner_field = "user"
     readonly_fields = (
         "user",
-        "url",
+        "link",
+    )
+    fields = (
+        "frame",
     )
 
-    def url(self, obj: CV):
-        return urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
+    def link(self, obj: CV):
+        url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
+        return format_html('<a href="{}" target="_blank">Open</a>', url)
+
+    link.short_description = "URL"
+
+    def frame(self, obj: CV):
+        url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
+        return format_html(
+            '<iframe src="{}" width="400" height="200" style="border:none;"></iframe>',
+            url
+        )
