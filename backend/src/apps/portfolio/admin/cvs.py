@@ -45,7 +45,7 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
     def frame(self, obj: CV):
         url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
         return format_html(
-            '<iframe src="{}" width="400" height="200" style="border:none;"></iframe>',
+            '<iframe src="{}" width="200" height="400" style="border:none;"></iframe>',
             url
         )
 
