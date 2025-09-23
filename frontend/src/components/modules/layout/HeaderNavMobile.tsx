@@ -42,7 +42,7 @@ const HeaderNavMobile = ({ links }: Props) => {
         }`}
       >
         <div className="p-2">
-          <Hamburger toggled={isOpen} toggle={setOpen} />
+          <Hamburger toggled={isOpen} toggle={setOpen} label="Toggle navigation menu" />
         </div>
 
         <div className="flex flex-col gap-4 pl-4">
