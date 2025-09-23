@@ -1,3 +1,5 @@
+"use server";
+
 import { headers } from "next/headers";
 
 import { API_KEY, API_URL } from "@/config";
