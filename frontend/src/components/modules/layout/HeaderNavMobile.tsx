@@ -27,7 +27,7 @@ const HeaderNavMobile = ({ links }: Props) => {
   return (
     <div className="flex flex-row items-center justify-between md:hidden">
       <div className="text-shine text-xl">{HEADER_BRAND}</div>
-      <Hamburger toggled={isOpen} toggle={setOpen} />
+      <Hamburger toggled={isOpen} toggle={setOpen} label="Toggle navigation menu" />
 
       <div
         className={`fixed inset-0 bg-black/40 transition-opacity duration-300 ${
