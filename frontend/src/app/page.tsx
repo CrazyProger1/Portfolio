@@ -15,13 +15,13 @@ const Page = async ({ searchParams }: Props) => {
   return (
     <div className="flex flex-col gap-14 py-2">
       <IntroductionSection />
-      <div id="about" className="pt-2" />
+      <div id="about" className="mb-2" />
       <HorizontalDivider text="About" />
       <AboutSection />
-      <div id="experience" className="pt-2" />
+      <div id="experience" className="mb-2" />
       <HorizontalDivider text="Expericence" />
       <ExperienceSection params={params} />
-      <div id="contactme" className="pt-2" />
+      <div id="contactme" className="mb-2" />
       <HorizontalDivider id="contactme" text="Contact Me" />
       <ContactMeSection />
     </div>
