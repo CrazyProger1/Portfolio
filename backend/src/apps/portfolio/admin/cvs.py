@@ -1,3 +1,5 @@
+from urllib.parse import urljoin
+
 from django.conf import settings
 from django.contrib import admin
 
@@ -21,6 +23,10 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
         "version",
     )
     owner_field = "user"
+    readonly_fields = (
+        "user",
+        "url",
+    )
 
     def url(self, obj: CV):
-        return str(f"{settings.MEDIA_URL}{obj.file}")
+        return urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")

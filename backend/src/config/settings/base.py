@@ -5,6 +5,8 @@ APPLICATION = "Portfolio"
 DESCRIPTION = "Portfolio for Full Stack Developer"
 VERSION = "0.0.2"
 
+SITE_URL = config("SITE_URL", cast=str, default="http/localhost:8000")
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 BASE_URL = config("BASE_URL", cast=str, default="http://localhost:8000")
 SECRET_KEY = config("SECRET_KEY", cast=str)
