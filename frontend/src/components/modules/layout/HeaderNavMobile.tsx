@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 
 import { MultiIcon } from "@/components/common/icons";
 import { Motion } from "@/components/common/utils";
-import { HEADER_BRAND, HEADER_NAV_ICONS, HEADER_NAV_LINKS } from "@/config";
+import { HEADER_BRAND, HEADER_NAV_LINKS } from "@/config";
 import { Icon, UserLink } from "@/types";
 
 type Props = {
@@ -60,7 +60,12 @@ const HeaderNavMobile = ({ links }: Props) => {
         <div className="flex flex-row gap-2 pl-4">
           {links.map(({ id, name, platform, link }) => (
             <Motion key={id} whileHover={{ scale: 1.1 }}>
-              <Link href={link} target="_blank">
+              <Link
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit my ${platform || name}`}
+              >
                 <MultiIcon
                   icon={(platform || name.toLowerCase()) as Icon}
                   size={32}
