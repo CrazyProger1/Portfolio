@@ -4,10 +4,25 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
   images: {
+    formats: ["image/webp"], // Optimize images for LCP
+    minimumCacheTTL: 60,
     remotePatterns: [
-      new URL("http://127.0.0.1:8000/media/**"),
-      new URL("https://api.crazyproger1.com/media/**"),
-      new URL("http://api.crazyproger1.com/media/**"),
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "8000",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.crazyproger1.com",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "http",
+        hostname: "api.crazyproger1.com",
+        pathname: "/media/**",
+      },
     ],
   },
 };
