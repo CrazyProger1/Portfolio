@@ -30,9 +30,10 @@ def increment_metric(
             raise ValueError(f"Metric not found: {metric}")
 
     ip = get_client_ip(request=request)
+    
     logger.info("IP: %s", ip)
+
     client = Client.objects.get_or_create(ip=ip)[0]
-    logger.info("client: %s", client)
     if lifespan:
         records = metric.records.filter(
             user=user,
@@ -40,7 +41,6 @@ def increment_metric(
             created_at__gte=timezone.now() - lifespan,
         )
         if records.exists():
-            logger.info("records: %s", records)
             return
 
     if not user:
