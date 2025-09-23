@@ -1,0 +1,1 @@
+export { ProjectSlider } from "./ProjectSlider";

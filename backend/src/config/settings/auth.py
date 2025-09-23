@@ -1,0 +1,3 @@
+AUTH_USER_MODEL = "accounts.User"
+
+API_KEY_LENGTH = 32

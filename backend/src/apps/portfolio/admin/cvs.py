@@ -1,0 +1,40 @@
+from urllib.parse import urljoin
+
+from django.conf import settings
+from django.contrib import admin
+from django.utils.safestring import mark_safe
+
+from unfold.admin import ModelAdmin
+
+from src.apps.accounts.sites import site
+from src.apps.portfolio.models import CV
+from src.utils.django.admin import OwnerAdminMixin
+
+
+@admin.register(CV, site=site)
+class CVAdmin(ModelAdmin, OwnerAdminMixin):
+    list_display = (
+        "version",
+        "link",
+        "created_at",
+    )
+    list_display_links = (
+        "version",
+    )
+    search_fields = (
+        "version",
+    )
+    owner_field = "user"
+    readonly_fields = (
+        "user",
+        "link",
+    )
+    list_filter = (
+        "created_at",
+    )
+
+    def link(self, obj: CV):
+        url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
+        return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
+
+    link.short_description = "URL"

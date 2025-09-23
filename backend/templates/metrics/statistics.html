@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+
+{% load admin_urls i18n unfold %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+    <div class="px-4">
+        <div class="container mb-6 mx-auto -my-3 lg:mb-12">
+            <ul class="flex flex-wrap">
+                {% url 'admin:index' as link %}
+                {% trans 'Home' as name %}
+                {% include 'unfold/helpers/breadcrumb_item.html' with link=link name=name %}
+
+                {% url 'admin:app_list' app_label='metrics' as link %}
+                {% trans 'Metrics' as name %}
+                {% include 'unfold/helpers/breadcrumb_item.html' with link=link name=name %}
+
+                {% url 'admin:metrics_statistics' as link %}
+                {% trans 'Statistics' as name %}
+                {% include 'unfold/helpers/breadcrumb_item.html' with name=name %}
+            </ul>
+        </div>
+    </div>
+{% endif %}{% endblock %}
+
+{% block content %}
+    <div class="flex flex-col gap-4">
+        {% component "unfold/components/title.html" %}
+            Statistics of {{ user.username }}
+        {% endcomponent %}
+
+        {% component "unfold/components/navigation.html" with items=periods %}{% endcomponent %}
+
+        {% for chart in statistics %}
+            {% component "unfold/components/card.html" %}
+                {% component "unfold/components/text.html" %}
+                    Last {{ current_period }} analytics
+                {% endcomponent %}
+                {% component "unfold/components/title.html" with class="mb-8" %}
+                    {{ chart.name }}
+                {% endcomponent %}
+                {% component "unfold/components/chart/line.html" with data=chart.data options=chart.options %}{% endcomponent %}
+            {% endcomponent %}
+        {% endfor %}
+    </div>
+{% endblock %}

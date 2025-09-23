@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+@import "flowbite/src/themes/default";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --background: rgb(34, 31, 31);
+    --background-light: rgb(59, 57, 57);
+    --foreground: rgb(255, 255, 255);
+    --scroll: rgba(136, 136, 136, 0.25);
+    --scroll-hover: rgba(85, 85, 85, 0.14);
+    --text: rgb(255, 255, 255);
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-background-light: var(--background-light);
+    --color-foreground: var(--foreground);
+    --color-scroll: var(--scroll);
+    --color-scroll-hover: var(--scroll-hover);
+    --color-text: var(--text);
+    --font-primary: var(--font-primary);
+}
+
+@utility prose-dark-modern {
+    --tw-prose-body: var(--color-white);
+    --tw-prose-headings: var(--color-white);
+    --tw-prose-lead: var(--color-gray-300);
+    --tw-prose-links: var(--color-cyan-400);
+    --tw-prose-bold: var(--color-white);
+    --tw-prose-counters: var(--color-gray-400);
+    --tw-prose-bullets: var(--color-gray-400);
+    --tw-prose-hr: var(--color-gray-600);
+    --tw-prose-quotes: var(--color-white);
+    --tw-prose-quote-borders: var(--color-gray-600);
+    --tw-prose-captions: var(--color-gray-400);
+    --tw-prose-code: var(--color-cyan-300);
+    --tw-prose-pre-code: var(--color-white);
+    --tw-prose-pre-bg: var(--color-gray-800);
+    --tw-prose-th-borders: var(--color-gray-600);
+    --tw-prose-td-borders: var(--color-gray-700);
+    --tw-prose-invert-body: var(--color-white);
+    --tw-prose-invert-headings: var(--color-white);
+    --tw-prose-invert-lead: var(--color-gray-300);
+    --tw-prose-invert-links: var(--color-cyan-400);
+    --tw-prose-invert-bold: var(--color-white);
+    --tw-prose-invert-counters: var(--color-gray-400);
+    --tw-prose-invert-bullets: var(--color-gray-400);
+    --tw-prose-invert-hr: var(--color-gray-600);
+    --tw-prose-invert-quotes: var(--color-white);
+    --tw-prose-invert-quote-borders: var(--color-gray-600);
+    --tw-prose-invert-captions: var(--color-gray-400);
+    --tw-prose-invert-code: var(--color-cyan-300);
+    --tw-prose-invert-pre-code: var(--color-white);
+    --tw-prose-invert-pre-bg: var(--color-gray-800);
+    --tw-prose-invert-th-borders: var(--color-gray-600);
+    --tw-prose-invert-td-borders: var(--color-gray-700);
+}
+
+/*@media (prefers-color-scheme: light) {*/
+/*  :root {*/
+/*    --background: 255,255,255;*/
+/*    --foreground: 34,31,31;*/
+/*  }*/
+/*}*/
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Poppins, sans-serif;
+}
+
+.text-shine:hover {
+    text-shadow: 0 0 5px var(--foreground);
+}
+
+.icon-shine:hover {
+    filter: drop-shadow(0 0 5px var(--foreground));
+}
+
+.icon-shine-default {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.glow-up {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-up::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.001) 30%
+    );
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.glow-up:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*!* Increase the height of timeline connectors *!*/
+/*.p-timeline-vertical .p-timeline-event-connector {*/
+/*  height: 300px !important;*/
+/*}*/
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #221F1F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scroll-hover);
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none !important;
+}
+
+.scroll-hide {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-track {
+    background: #221f1f;
+    border-radius: 10px;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+    border-radius: 10px;
+}
+
+.modal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scroll-hover);
+}

@@ -1,0 +1,25 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - 'V0.0.2'
+  pull_request:
+    branches:
+      - 'V0.0.2'
+  workflow_dispatch:
+
+jobs:
+
+  backend:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Update Code
+        run: cp -r ./* /home/portfolio/backend/
+
+      - name: Restart Supervisor
+        run: sudo /usr/bin/supervisorctl restart portfoolio-backend
