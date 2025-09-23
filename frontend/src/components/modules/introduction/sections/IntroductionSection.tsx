@@ -14,7 +14,7 @@ export const IntroductionSection = () => {
         <Image
           alt="Me Photo"
           className="rounded-4xl"
-          src="/images/me.jpg"
+          src="/images/me.webp"
           width={400}
           height={800}
           priority={true}
