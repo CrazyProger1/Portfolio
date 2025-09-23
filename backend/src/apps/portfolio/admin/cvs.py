@@ -3,6 +3,7 @@ from urllib.parse import urljoin
 from django.conf import settings
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 
 from unfold.admin import ModelAdmin
 
@@ -28,13 +29,10 @@ class CVAdmin(ModelAdmin, OwnerAdminMixin):
         "user",
         "link",
     )
-    fields = (
-        "frame",
-    )
 
     def link(self, obj: CV):
         url = urljoin(settings.SITE_URL, f"{settings.MEDIA_URL}{obj.file}")
-        return format_html('<a href="{}" target="_blank">Open</a>', url)
+        return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
 
     link.short_description = "URL"
 
