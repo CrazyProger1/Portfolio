@@ -9,6 +9,7 @@ from src.apps.portfolio.models import Message
 class MessageAdmin(ModelAdmin):
     list_display = (
         "subject",
+        "email",
         "is_read",
         "created_at",
     )
@@ -20,4 +21,8 @@ class MessageAdmin(ModelAdmin):
     readonly_fields = (
         "user",
         "created_at",
+    )
+    search_fields = (
+        "subject",
+        "email",
     )
