@@ -27,6 +27,5 @@ def get_ip_country(ip: str) -> str | None:
     database_path = os.path.join("data", "ipdb.bin")
     database = IP2Location.IP2Location(database_path)
     code = database.get_country_short(ip)
-    if code == "INVALID IP ADDRESS":
-        return None
-    return code.lower()
+    if len(code) == 2:
+        return code.lower()
