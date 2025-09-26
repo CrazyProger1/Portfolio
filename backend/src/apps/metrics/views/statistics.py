@@ -46,7 +46,7 @@ class StatisticsAdminView(UnfoldModelAdminViewMixin, TemplateView):
         context["current_period"] = current_period.lower()
 
         clients_by_country = (
-            Client.objects.values("country")
+            Client.objects.filter(country__isnull=False).values("country")
             .annotate(count=Count("id"))
             .order_by("-count")
         )
