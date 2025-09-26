@@ -28,8 +28,8 @@ class MetricRecordAdmin(ModelAdmin):
     )
     search_fields = (
         "id",
-        "client",
-        "referer",
+        "client__ip",
+        "referer__referer",
     )
     list_filter = (
         "metric",
