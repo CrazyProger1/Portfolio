@@ -18,8 +18,8 @@ export const fetchExtended = async (path: string, options: RequestInit = {}): Pr
     "Accept-Language": "en",
     Authorization: `apikey ${API_KEY}`,
     "X-Forwarded-For": clientIp,
-    ...(referer ? { Referer: referer } : {}),
-    ...(userAgent ? { "User-Agent": userAgent } : {}),
+    "X-Client-Referer": referer ?? "",
+    "X-Client-User-Agent": userAgent ?? "",
     ...(options.headers || {}),
   };
 
