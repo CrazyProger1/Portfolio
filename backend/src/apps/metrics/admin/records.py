@@ -16,8 +16,8 @@ class MetricRecordAdmin(ModelAdmin):
     list_display = (
         "id",
         "metric",
-        "user",
         "client",
+        "referer",
         "created_at",
     )
     readonly_fields = (
