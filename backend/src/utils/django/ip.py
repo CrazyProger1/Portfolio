@@ -10,8 +10,8 @@ def get_client_ip(request: Request) -> str:
 
 
 def get_client_referer(request: Request) -> str:
-    return request.META.get("HTTP_REFERER", "").strip()
+    return request.META.get("HTTP_X_CLIENT_REFERER", "").strip()
 
 
 def get_client_user_agent(request: Request) -> str:
-    return request.META.get("HTTP_USER_AGENT", "").strip()
+    return request.META.get("HTTP_X_CLIENT_USER_AGENT", "").strip()
