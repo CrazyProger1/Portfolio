@@ -47,12 +47,14 @@
             {% endcomponent %}
         {% endfor %}
 
-        <div class="flex flex-col items-center w-full">
-            {% component "unfold/components/title.html" with class="mb-8" %}
-                Clients Location
-            {% endcomponent %}
-            <div id="map"></div>
-        </div>
+        {% component "unfold/components/card.html" %}
+            <div class="flex flex-col items-center w-full">
+                {% component "unfold/components/title.html" with class="mb-8" %}
+                    Client Location
+                {% endcomponent %}
+                <div id="map"></div>
+            </div>
+        {% endcomponent %}
 
 
         <script>
