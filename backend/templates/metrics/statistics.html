@@ -2,6 +2,11 @@
 
 {% load admin_urls i18n unfold %}
 
+{% block extrahead %}
+    {{ block.super }}
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js" charset="utf-8"></script>
+{% endblock %}
+
 {% block breadcrumbs %}{% if not is_popup %}
     <div class="px-4">
         <div class="container mb-6 mx-auto -my-3 lg:mb-12">
@@ -41,34 +46,15 @@
                 {% component "unfold/components/chart/line.html" with data=chart.data options=chart.options %}{% endcomponent %}
             {% endcomponent %}
         {% endfor %}
-        <div id="map" style="height: 600px;"></div>
-
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <div id="tester" style="width:600px;height:250px;"></div>
         <script>
-            const data = {{ clients_map_data|safe }};
-
-            const countries = data.map(d => d.country);
-            const counts = data.map(d => d.count);
-
-            const trace = {
-                type: "choropleth",
-                locations: countries,
-                locationmode: "country names",
-                z: counts,
-                text: countries,
-                colorscale: "Blues",
-                autocolorscale: false,
-                reversescale: true,
-                marker: {line: {color: "rgb(180,180,180)", width: 0.5}},
-                colorbar: {title: "Количество клиентов"}
-            };
-
-            const layout = {
-                title: "Клиенты по странам",
-                geo: {projection: {type: "robinson"}}
-            };
-
-            Plotly.newPlot("map", [trace], layout);
+            TESTER = document.getElementById('tester');
+            Plotly.newPlot(TESTER, [{
+                x: [1, 2, 3, 4, 5],
+                y: [1, 2, 4, 8, 16]
+            }], {
+                margin: {t: 0}
+            });
         </script>
     </div>
 {% endblock %}
