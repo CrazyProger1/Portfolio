@@ -12,7 +12,7 @@ export const fetchExtended = async (path: string, options: RequestInit = {}): Pr
     "unknown";
   const referer = nextHeaders.get("referer");
   const userAgent = nextHeaders.get("user-agent");
-
+  const acceptLanguage = nextHeaders.get("accept-language");
   const requestHeaders: HeadersInit = {
     "Content-Type": "application/json",
     "Accept-Language": "en",
@@ -20,6 +20,7 @@ export const fetchExtended = async (path: string, options: RequestInit = {}): Pr
     "X-Forwarded-For": clientIp,
     "X-Client-Referer": referer ?? "",
     "X-Client-User-Agent": userAgent ?? "",
+    "X-Client-Accept-Language": acceptLanguage ?? "",
     ...(options.headers || {}),
   };
 
