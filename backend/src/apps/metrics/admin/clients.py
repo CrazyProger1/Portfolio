@@ -11,6 +11,8 @@ class ClientAdmin(ModelAdmin):
     list_display = (
         "id",
         "ip",
+        "language",
+        "note",
     )
     list_display_links = ("ip",)
-    search_fields = ("ip",)
+    search_fields = ("ip", "language", "note",)

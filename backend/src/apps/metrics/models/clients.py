@@ -16,8 +16,13 @@ class Client(models.Model):
         blank=True,
         null=True,
     )
-    accept_language = models.CharField(
+    language = models.CharField(
         verbose_name=_("language"),
+        blank=True,
+        null=True,
+    )
+    note = models.TextField(
+        verbose_name=_("note"),
         blank=True,
         null=True,
     )

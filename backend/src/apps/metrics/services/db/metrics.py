@@ -39,7 +39,7 @@ def increment_metric(
         client.user_agent = user_agent
 
     if accept_language:
-        client.accept_language = accept_language
+        client.language = accept_language
 
     if lifespan:
         records = metric.records.filter(
