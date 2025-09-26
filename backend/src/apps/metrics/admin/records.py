@@ -26,7 +26,11 @@ class MetricRecordAdmin(ModelAdmin):
         "user",
         "client",
     )
-    search_fields = ("id",)
+    search_fields = (
+        "id",
+        "client",
+        "referer",
+    )
     list_filter = (
         "metric",
         "user",
