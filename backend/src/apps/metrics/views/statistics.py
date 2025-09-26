@@ -51,9 +51,13 @@ class StatisticsAdminView(UnfoldModelAdminViewMixin, TemplateView):
             .annotate(count=Count("id"))
             .order_by("-count")
         )
-        context["clients_map_data"] = [
-            {"country": pycountry.countries.get(c['country']).alpha_3.lower(), "count": c["count"]} for c in
-            clients_by_country
-        ]
+        map_data = []
 
+        for country in clients_by_country:
+            country_alpha3 = pycountry.countries.get(alpha_2=country["country"])
+            map_data.append({
+                "country": country_alpha3.alpha_3,
+                "count": country["count"]
+            })
+        context["clients_map_data"] = map_data
         return context
