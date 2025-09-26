@@ -15,3 +15,7 @@ def get_client_referer(request: Request) -> str:
 
 def get_client_user_agent(request: Request) -> str:
     return request.META.get("HTTP_X_CLIENT_USER_AGENT", "").strip()
+
+
+def get_client_accept_language(request: Request) -> str:
+    return request.META.get("HTTP_X_CLIENT_ACCEPT_LANGUAGE", "").strip()
