@@ -1,3 +1,4 @@
+import pycountry
 from django.db.models import Count
 from django.views.generic import TemplateView
 from unfold.views import UnfoldModelAdminViewMixin
@@ -51,7 +52,8 @@ class StatisticsAdminView(UnfoldModelAdminViewMixin, TemplateView):
             .order_by("-count")
         )
         context["clients_map_data"] = [
-            {"country": c["country"], "count": c["count"]} for c in clients_by_country
+            {"country": pycountry.countries.get(c['country']).alpha_3.lower(), "count": c["count"]} for c in
+            clients_by_country
         ]
 
         return context
