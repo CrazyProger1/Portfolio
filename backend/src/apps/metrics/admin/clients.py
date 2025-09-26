@@ -13,6 +13,10 @@ class ClientAdmin(ModelAdmin):
         "ip",
         "language",
         "note",
+        "country",
     )
     list_display_links = ("ip",)
     search_fields = ("ip", "language", "note",)
+    list_filter = (
+        "country",
+    )
