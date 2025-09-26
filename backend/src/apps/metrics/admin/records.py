@@ -44,6 +44,7 @@ class MetricRecordAdmin(ModelAdmin):
                     "metric",
                     "user",
                     "client",
+                    "referer",
                 ),
             },
         ),
