@@ -6,7 +6,7 @@ from django.utils import timezone
 from rest_framework.request import Request
 
 from src.apps.metrics.models import Metric, MetricRecord, Client, Referer
-from src.utils.django.ip import get_client_ip, get_client_referer, get_client_user_agent
+from src.utils.django.ip import get_client_ip, get_client_referer, get_client_user_agent, get_client_accept_language
 from src.utils.django.orm.shortcuts import (
     create_object,
     get_all_objects,
@@ -32,11 +32,14 @@ def increment_metric(
     ip = get_client_ip(request=request)
     referer = get_client_referer(request=request)
     user_agent = get_client_user_agent(request=request)
+    accept_language = get_client_accept_language(request=request)
     client = Client.objects.get_or_create(ip=ip)[0]
 
     if user_agent:
         client.user_agent = user_agent
-        client.save(update_fields=("user_agent",))
+
+    if accept_language:
+        client.accept_language = accept_language
 
     if lifespan:
         records = metric.records.filter(
@@ -60,6 +63,8 @@ def increment_metric(
         client=client,
         referer=referer,
     )
+
+    client.save()
 
     return record
 

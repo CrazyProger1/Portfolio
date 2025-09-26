@@ -16,6 +16,11 @@ class Client(models.Model):
         blank=True,
         null=True,
     )
+    accept_language = models.CharField(
+        verbose_name=_("language"),
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = _("Client")
