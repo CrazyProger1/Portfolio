@@ -59,29 +59,24 @@
         <div id="map" style="height: 600px;"></div>
 
         <script>
-            const data = {{ clients_map_data|safe }};
-            const countries = data.map(d => d.country);
-            const counts = data.map(d => d.count);
+            var data = [{
+                type: 'choropleth',
+                locationmode: 'ISO-3',
+                locations: ['USA', 'CHN', 'UKR', 'FRA', 'SGP'],
+                z: [94, 14, 10, 10, 9],
+                colorscale: 'Viridis',
+                colorbar: {title: 'Users'}
+            }];
 
-            const trace = {
-                type: "choropleth",
-                locations: countries,
-                locationmode: "country names",
-                z: counts,
-                text: countries,
-                colorscale: "Blues",
-                autocolorscale: false,
-                reversescale: true,
-                marker: {line: {color: "rgb(180,180,180)", width: 0.5}},
-                colorbar: {title: "Количество клиентов"}
+            var layout = {
+                geo: {
+                    projection: {type: 'natural earth'}
+                },
+                width: 800,
+                height: 600
             };
 
-            const layout = {
-                title: "Клиенты по странам",
-                geo: {projection: {type: "robinson"}}
-            };
-
-            Plotly.newPlot("map", [trace], layout);
+            Plotly.newPlot('myDiv', data, layout);
         </script>
     </div>
 {% endblock %}
