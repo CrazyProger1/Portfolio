@@ -26,6 +26,13 @@ class Client(models.Model):
         blank=True,
         null=True,
     )
+    country = models.CharField(
+        max_length=2,
+        verbose_name=_("country"),
+        help_text=_("Country determined from IP."),
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = _("Client")

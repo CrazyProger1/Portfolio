@@ -6,7 +6,13 @@ from django.utils import timezone
 from rest_framework.request import Request
 
 from src.apps.metrics.models import Metric, MetricRecord, Client, Referer
-from src.utils.django.ip import get_client_ip, get_client_referer, get_client_user_agent, get_client_accept_language
+from src.utils.django.ip import (
+    get_client_ip,
+    get_client_referer,
+    get_client_user_agent,
+    get_client_accept_language,
+    get_ip_country,
+)
 from src.utils.django.orm.shortcuts import (
     create_object,
     get_all_objects,
@@ -33,7 +39,12 @@ def increment_metric(
     referer = get_client_referer(request=request)
     user_agent = get_client_user_agent(request=request)
     accept_language = get_client_accept_language(request=request)
+
     client = Client.objects.get_or_create(ip=ip)[0]
+
+    if ip:
+        country = get_ip_country(ip=ip)
+        client.country = country
 
     if user_agent:
         client.user_agent = user_agent
