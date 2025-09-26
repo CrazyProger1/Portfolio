@@ -1,7 +1,9 @@
+from django.db.models import Count
 from django.views.generic import TemplateView
 from unfold.views import UnfoldModelAdminViewMixin
 
 from src.apps.metrics.enums import GoalPeriod
+from src.apps.metrics.models import Client
 from src.apps.metrics.services.statistics import (
     get_last_month_statistics,
     get_last_year_statistics,
@@ -42,5 +44,14 @@ class StatisticsAdminView(UnfoldModelAdminViewMixin, TemplateView):
 
         context["periods"] = periods
         context["current_period"] = current_period.lower()
+
+        clients_by_country = (
+            Client.objects.values("country")
+            .annotate(count=Count("id"))
+            .order_by("-count")
+        )
+        context["clients_map_data"] = [
+            {"country": c["country"], "count": c["count"]} for c in clients_by_country
+        ]
 
         return context

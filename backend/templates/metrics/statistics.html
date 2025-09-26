@@ -41,5 +41,34 @@
                 {% component "unfold/components/chart/line.html" with data=chart.data options=chart.options %}{% endcomponent %}
             {% endcomponent %}
         {% endfor %}
+        <div id="map" style="height: 600px;"></div>
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script>
+            const data = {{ clients_map_data|safe }};
+
+            const countries = data.map(d => d.country);
+            const counts = data.map(d => d.count);
+
+            const trace = {
+                type: "choropleth",
+                locations: countries,
+                locationmode: "country names",
+                z: counts,
+                text: countries,
+                colorscale: "Blues",
+                autocolorscale: false,
+                reversescale: true,
+                marker: {line: {color: "rgb(180,180,180)", width: 0.5}},
+                colorbar: {title: "Количество клиентов"}
+            };
+
+            const layout = {
+                title: "Клиенты по странам",
+                geo: {projection: {type: "robinson"}}
+            };
+
+            Plotly.newPlot("map", [trace], layout);
+        </script>
     </div>
 {% endblock %}
