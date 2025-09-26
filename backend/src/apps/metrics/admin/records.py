@@ -18,6 +18,7 @@ class MetricRecordAdmin(ModelAdmin):
         "metric",
         "user",
         "client",
+        "created_at",
     )
     readonly_fields = (
         "id",
@@ -30,7 +31,9 @@ class MetricRecordAdmin(ModelAdmin):
         "metric",
         "user",
         "referer",
+        "created_at",
     )
+    ordering = ("-created_at",)
     autocomplete_fields = ("metric",)
     fieldsets = (
         (
