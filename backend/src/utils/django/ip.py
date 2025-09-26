@@ -7,3 +7,11 @@ def get_client_ip(request: Request) -> str:
     if "," in ip:
         return ip.split(",", maxsplit=1)[0]
     return ip
+
+
+def get_client_referer(request: Request) -> str:
+    return request.META.get("HTTP_REFERER", "").strip()
+
+
+def get_client_user_agent(request: Request) -> str:
+    return request.META.get("HTTP_USER_AGENT", "").strip()

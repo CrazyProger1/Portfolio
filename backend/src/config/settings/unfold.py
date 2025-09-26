@@ -152,6 +152,11 @@ UNFOLD = {
                         "icon": "person",
                         "link": reverse_lazy("admin:metrics_client_changelist"),
                     },
+                    {
+                        "title": _("Referers"),
+                        "icon": "co_present",
+                        "link": reverse_lazy("admin:metrics_referer_changelist"),
+                    },
                 ],
             },
         ],

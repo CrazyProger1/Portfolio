@@ -11,6 +11,11 @@ class Client(models.Model):
         blank=False,
         null=False,
     )
+    user_agent = models.TextField(
+        verbose_name=_("user agent"),
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = _("Client")

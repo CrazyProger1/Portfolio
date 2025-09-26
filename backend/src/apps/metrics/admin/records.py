@@ -29,6 +29,7 @@ class MetricRecordAdmin(ModelAdmin):
     list_filter = (
         "metric",
         "user",
+        "referer",
     )
     autocomplete_fields = ("metric",)
     fieldsets = (
