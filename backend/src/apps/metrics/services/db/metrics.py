@@ -5,8 +5,14 @@ from django.db import models, transaction
 from django.utils import timezone
 from rest_framework.request import Request
 
-from src.apps.metrics.models import Metric, MetricRecord, Client
-from src.utils.django.ip import get_client_ip
+from src.apps.metrics.models import Metric, MetricRecord, Client, Referer
+from src.utils.django.ip import (
+    get_client_ip,
+    get_client_referer,
+    get_client_user_agent,
+    get_client_accept_language,
+    get_ip_country,
+)
 from src.utils.django.orm.shortcuts import (
     create_object,
     get_all_objects,
@@ -30,7 +36,22 @@ def increment_metric(
             raise ValueError(f"Metric not found: {metric}")
 
     ip = get_client_ip(request=request)
+    referer = get_client_referer(request=request)
+    user_agent = get_client_user_agent(request=request)
+    accept_language = get_client_accept_language(request=request)
+
     client = Client.objects.get_or_create(ip=ip)[0]
+
+    if ip:
+        country = get_ip_country(ip=ip)
+        client.country = country
+
+    if user_agent:
+        client.user_agent = user_agent
+
+    if accept_language:
+        client.language = accept_language
+
     if lifespan:
         records = metric.records.filter(
             user=user,
@@ -43,12 +64,18 @@ def increment_metric(
     if not user:
         user = request.user
 
+    if referer:
+        referer = Referer.objects.get_or_create(referer=referer)[0]
+
     record = create_object(
         source=MetricRecord,
         metric=metric,
         user=user,
         client=client,
+        referer=referer,
     )
+
+    client.save()
 
     return record
 

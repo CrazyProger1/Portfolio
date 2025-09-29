@@ -6,7 +6,6 @@ import { RiArrowUpDoubleLine } from "react-icons/ri";
 
 import { Job } from "@/types";
 
-import "primereact/resources/themes/md-light-indigo/theme.css";
 import { JobItemDesktop } from "./JobItemDesktop";
 
 interface Props {

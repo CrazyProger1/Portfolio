@@ -1,15 +1,30 @@
-import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
   images: {
+    deviceSizes: [360, 640, 750, 828],
+    formats: ["image/webp", "image/avif"],
+    minimumCacheTTL: 60,
     remotePatterns: [
-      new URL("http://127.0.0.1:8000/media/**"),
-      new URL("https://api.crazyproger1.com/media/**"),
-      new URL("http://api.crazyproger1.com/media/**"),
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "8000",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.crazyproger1.com",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "http",
+        hostname: "api.crazyproger1.com",
+        pathname: "/media/**",
+      },
     ],
   },
 };
 
-export default withFlowbiteReact(nextConfig);
+export default nextConfig;

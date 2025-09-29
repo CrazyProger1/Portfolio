@@ -1,8 +1,5 @@
 "use client";
 
-import "primereact/resources/primereact.min.css";
-import "primereact/resources/themes/saga-blue/theme.css";
-
 import React from "react";
 import Slider from "react-slick";
 

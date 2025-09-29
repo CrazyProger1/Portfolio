@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+import MeImg from "@/assets/me.webp";
 import { Motion } from "@/components/common/utils";
 
 export const IntroductionSection = () => {
@@ -14,9 +15,12 @@ export const IntroductionSection = () => {
         <Image
           alt="Me Photo"
           className="rounded-4xl"
-          src="/images/me.jpg"
+          src={MeImg}
           width={400}
           height={800}
+          sizes="(max-width: 768px) 100vw, 400px"
+          priority={true}
+          fetchPriority="high"
         />
       </Motion>
     </div>

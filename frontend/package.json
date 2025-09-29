@@ -12,23 +12,19 @@
     "-": "^0.0.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/typography": "^0.5.18",
-    "@types/react-burger-menu": "^2.8.7",
     "@types/react-slick": "^0.23.13",
-    "date-fns": "^4.1.0",
-    "flowbite": "^3.1.2",
-    "flowbite-react": "^0.12.5",
     "framer-motion": "^12.23.11",
     "hamburger-react": "^2.5.2",
     "next": "^15.5.3",
     "next-mdx-remote": "^5.0.0",
     "primereact": "^10.9.6",
     "react": "^19.1.0",
-    "react-burger-menu": "^3.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.63.0",
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
+    "react-tooltip": "^5.29.1",
     "slick-carousel": "^1.8.1",
     "zod": "^4.1.11"
   },
@@ -44,8 +40,12 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react": "^7.37.5",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
-  }
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
 }

@@ -11,6 +11,28 @@ class Client(models.Model):
         blank=False,
         null=False,
     )
+    user_agent = models.TextField(
+        verbose_name=_("user agent"),
+        blank=True,
+        null=True,
+    )
+    language = models.CharField(
+        verbose_name=_("language"),
+        blank=True,
+        null=True,
+    )
+    note = models.TextField(
+        verbose_name=_("note"),
+        blank=True,
+        null=True,
+    )
+    country = models.CharField(
+        max_length=2,
+        verbose_name=_("country"),
+        help_text=_("Country determined from IP."),
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = _("Client")

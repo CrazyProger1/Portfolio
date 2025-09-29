@@ -2,6 +2,11 @@
 
 {% load admin_urls i18n unfold %}
 
+{% block extrahead %}
+    {{ block.super }}
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js" charset="utf-8"></script>
+{% endblock %}
+
 {% block breadcrumbs %}{% if not is_popup %}
     <div class="px-4">
         <div class="container mb-6 mx-auto -my-3 lg:mb-12">
@@ -41,5 +46,39 @@
                 {% component "unfold/components/chart/line.html" with data=chart.data options=chart.options %}{% endcomponent %}
             {% endcomponent %}
         {% endfor %}
+
+        {% component "unfold/components/card.html" %}
+            <div class="flex flex-col items-center w-full">
+                {% component "unfold/components/title.html" with class="mb-8" %}
+                    Client Location
+                {% endcomponent %}
+                <div id="map"></div>
+            </div>
+        {% endcomponent %}
+
+
+        <script>
+            const mapCountries = {{ map_countries|safe }};
+            const mapClients = {{ map_clients|safe }};
+
+            let data = [{
+                type: 'choropleth',
+                locationmode: 'ISO-3',
+                locations: mapCountries,
+                z: mapClients,
+                colorscale: 'Viridis',
+                colorbar: {title: 'Users'}
+            }];
+
+            let layout = {
+                geo: {
+                    projection: {type: 'natural earth'}
+                },
+                width: 800, height: 600
+            };
+
+
+            Plotly.newPlot('map', data, layout);
+        </script>
     </div>
 {% endblock %}

@@ -40,6 +40,13 @@ class MetricRecord(CreatedAtMixin, models.Model):
         null=True,
         blank=True,
     )
+    referer = models.ForeignKey(
+        "Referer",
+        on_delete=models.CASCADE,
+        verbose_name=_("referer"),
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Record")

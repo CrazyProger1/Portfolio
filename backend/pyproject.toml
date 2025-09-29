@@ -16,7 +16,9 @@ dependencies = [
     "djangorestframework-simplejwt>=5.5.1",
     "drf-spectacular>=0.28.0",
     "drf-standardized-errors>=0.15.0",
+    "ip2location>=8.11.0",
     "pillow>=11.3.0",
+    "pycountry>=24.6.1",
     "python-decouple>=3.8",
 ]
 

@@ -16,8 +16,9 @@ class MetricRecordAdmin(ModelAdmin):
     list_display = (
         "id",
         "metric",
-        "user",
         "client",
+        "referer",
+        "created_at",
     )
     readonly_fields = (
         "id",
@@ -25,11 +26,18 @@ class MetricRecordAdmin(ModelAdmin):
         "user",
         "client",
     )
-    search_fields = ("id",)
+    search_fields = (
+        "id",
+        "client__ip",
+        "referer__referer",
+    )
     list_filter = (
         "metric",
         "user",
+        "referer",
+        "created_at",
     )
+    ordering = ("-created_at",)
     autocomplete_fields = ("metric",)
     fieldsets = (
         (
@@ -40,6 +48,7 @@ class MetricRecordAdmin(ModelAdmin):
                     "metric",
                     "user",
                     "client",
+                    "referer",
                 ),
             },
         ),

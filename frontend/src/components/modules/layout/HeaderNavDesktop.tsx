@@ -29,7 +29,12 @@ const HeaderNavDesktop = ({ links }: Props) => {
       <div className="flex flex-row gap-2">
         {links.map(({ id, name, platform, link }) => (
           <Motion key={id} whileHover={{ scale: 1.1 }}>
-            <Link href={link} target="_blank">
+            <Link
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit my ${platform || name}`}
+            >
               <MultiIcon
                 icon={(platform || name.toLowerCase()) as Icon}
                 size={32}

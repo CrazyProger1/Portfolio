@@ -1,25 +1,23 @@
 @import "tailwindcss";
+@import "react-tooltip/dist/react-tooltip.css";
 
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../../.flowbite-react/class-list.json";
-@import "flowbite/src/themes/default";
 @plugin "@tailwindcss/typography";
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: 'Poppins';*/
+/*    src: url("/fonts/Poppins/Poppins-Regular.woff2") format('woff2');*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: 'Poppins';*/
+/*    src: url("/fonts/Poppins/Poppins-Bold.woff2") format('woff2');*/
+/*    font-weight: 700;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 
 :root {
@@ -29,6 +27,7 @@
     --scroll: rgba(136, 136, 136, 0.25);
     --scroll-hover: rgba(85, 85, 85, 0.14);
     --text: rgb(255, 255, 255);
+    --tooltip: rgb(59, 57, 57)
 }
 
 @theme {
@@ -39,6 +38,8 @@
     --color-scroll-hover: var(--scroll-hover);
     --color-text: var(--text);
     --font-primary: var(--font-primary);
+    --color-tooltip: var(--tooltip);
+    --font-main: var(--font-poppins);
 }
 
 @utility prose-dark-modern {
@@ -86,8 +87,8 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Poppins, sans-serif;
 }
+
 
 .text-shine:hover {
     text-shadow: 0 0 5px var(--foreground);
@@ -104,6 +105,12 @@ body {
 .glow-up {
     position: relative;
     overflow: hidden;
+}
+
+.p-timeline-event-connector {
+    background-color: white;
+    width: 2px;
+    opacity: 50%;
 }
 
 .glow-up::after {

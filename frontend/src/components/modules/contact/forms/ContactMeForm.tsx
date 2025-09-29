@@ -64,7 +64,6 @@ export const ContactMeForm = () => {
         </label>
         <input
           {...register("subject")}
-          tabIndex={1}
           type="text"
           id="subject"
           className={`w-full border-b p-2 outline-none focus:border-white ${
@@ -86,7 +85,6 @@ export const ContactMeForm = () => {
         </label>
         <input
           {...register("email")}
-          tabIndex={2}
           type="email"
           id="email"
           className={`w-full border-b p-2 outline-none focus:border-white ${
@@ -108,7 +106,6 @@ export const ContactMeForm = () => {
         </label>
         <textarea
           {...register("message")}
-          tabIndex={3}
           rows={3}
           id="message"
           className={`w-full border-b p-2 outline-none focus:border-white ${
@@ -126,7 +123,6 @@ export const ContactMeForm = () => {
 
       <Motion whileHover={{ scale: 1.05 }} className="flex flex-col items-center">
         <button
-          tabIndex={4}
           type="submit"
           disabled={isSubmitting}
           className="text-shine glow-up cursor-pointer border-b border-gray-500 p-2 text-center outline-none select-none hover:border-white disabled:cursor-not-allowed disabled:opacity-50"
