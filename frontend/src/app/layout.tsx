@@ -1,12 +1,18 @@
+// eslint-disable-next-line import/order
 import type { Metadata } from "next";
 import "./globals.css";
+
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
 import { ModalProvider } from "@/components/common/modals";
 import { Header, Footer } from "@/components/modules/layout";
+import { GOOGLE_ANALYTICS_ID } from "@/config";
 import { getLinks } from "@/services";
 import { UserLink } from "@/types";
+
+// eslint-disable-next-line import/order
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -39,6 +45,7 @@ export default async function Layout({ children }: Props) {
           {children}
           <Footer links={links} />
         </ModalProvider>
+        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
       </body>
     </html>
   );
