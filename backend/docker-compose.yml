@@ -1,9 +1,9 @@
 services:
   postgres:
     container_name: portfolio-postgres
-    image: postgres:latest
+    image: postgres:17
     volumes:
-      - postgres_data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data
     restart: always
     env_file:
       - .env
