@@ -6,11 +6,6 @@ WORKDIR /portfolio
 
 RUN apt-get update -y
 
-RUN apt-get install -y gdal-bin libgdal-dev
-RUN apt-get install -y python3-gdal
-RUN apt-get install -y binutils libproj-dev
-RUN apt-get install -y make
-
   # set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
 PYTHONUNBUFFERED=1 \
