@@ -3,7 +3,7 @@ services:
     container_name: portfolio-postgres
     image: postgres:latest
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
     restart: always
     env_file:
       - .env
