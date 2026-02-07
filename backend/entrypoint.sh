@@ -2,7 +2,7 @@
 set -e
 
 echo "Running migrations..."
-uv run python manage.py migrate
+uv run python manage.py migrate || true
 
 echo "Creating superuser..."
 uv run python manage.py createsuperuser --no-input || true
