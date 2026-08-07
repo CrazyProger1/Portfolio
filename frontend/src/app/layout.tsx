@@ -5,9 +5,10 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
+import { UmamiProvider } from "@/components/common/analytics";
 import { ModalProvider } from "@/components/common/modals";
 import { Header, Footer } from "@/components/modules/layout";
-import { GOOGLE_ANALYTICS_ID } from "@/config";
+import { GOOGLE_ANALYTICS_ID, UMAMI_URL, UMAMI_WEBSITE_ID } from "@/config";
 import { getLinks } from "@/services";
 import { UserLink } from "@/types";
 
@@ -46,6 +47,7 @@ export default async function Layout({ children }: Props) {
           <Footer links={links} />
         </ModalProvider>
         <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
+        <UmamiProvider url={UMAMI_URL} websiteId={UMAMI_WEBSITE_ID} />
       </body>
     </html>
   );

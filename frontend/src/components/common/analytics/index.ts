@@ -1,0 +1,1 @@
+export { UmamiProvider } from "./UmamiProvider";
