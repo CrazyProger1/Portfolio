@@ -1,6 +1,5 @@
 import logging
 
-from django.conf import settings
 from django.urls import reverse
 from drf_spectacular.extensions import OpenApiAuthenticationExtension
 from rest_framework.authentication import BaseAuthentication
@@ -8,8 +7,6 @@ from rest_framework.exceptions import AuthenticationFailed
 
 from src.apps.accounts.services.crypto import hash_api_key
 from src.apps.accounts.services.db import get_key_or_none
-from src.apps.metrics.enums import DefaultMetric
-from src.apps.metrics.services.db import increment_metric_safe
 
 logger = logging.getLogger(__name__)
 
@@ -63,12 +60,6 @@ class APIKeyAuthentication(BaseAuthentication):
             )
 
         request.is_api_key_authenticated = True
-        increment_metric_safe(
-            metric=DefaultMetric.VISIT,
-            request=request,
-            user=user,
-            lifespan=settings.METRIC_RECORD_VISIT_LIFETIME,
-        )
         return user, key
 
 

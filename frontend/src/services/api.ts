@@ -10,17 +10,11 @@ export const fetchExtended = async (path: string, options: RequestInit = {}): Pr
     nextHeaders.get("x-forwarded-for")?.split(",").shift()?.trim() ||
     nextHeaders.get("x-real-ip") ||
     "unknown";
-  const referer = nextHeaders.get("referer");
-  const userAgent = nextHeaders.get("user-agent");
-  const acceptLanguage = nextHeaders.get("accept-language");
   const requestHeaders: HeadersInit = {
     "Content-Type": "application/json",
     "Accept-Language": "en",
     Authorization: `apikey ${API_KEY}`,
     "X-Forwarded-For": clientIp,
-    "X-Client-Referer": referer ?? "",
-    "X-Client-User-Agent": userAgent ?? "",
-    "X-Client-Accept-Language": acceptLanguage ?? "",
     ...(options.headers || {}),
   };
 
