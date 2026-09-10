@@ -15,8 +15,8 @@
     "@types/react-slick": "^0.23.13",
     "framer-motion": "^12.23.11",
     "hamburger-react": "^2.5.2",
-    "next": "15.5.9",
-    "next-mdx-remote": "^5.0.0",
+    "next": "^15.5.23",
+    "next-mdx-remote": "^6.0.0",
     "primereact": "^10.9.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -27,6 +27,10 @@
     "react-tooltip": "^5.29.1",
     "slick-carousel": "^1.8.1",
     "zod": "^4.1.11"
+  },
+  "overrides": {
+    "postcss": "^8.5.26",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
