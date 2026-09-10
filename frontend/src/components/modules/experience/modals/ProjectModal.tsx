@@ -4,7 +4,8 @@ import React from "react";
 
 import { AreaBadge, SkillBadge } from "@/components/common/badges";
 import { MultiIcon } from "@/components/common/icons";
-import { MDXRender, Motion } from "@/components/common/utils";
+import { Motion } from "@/components/common/utils";
+import { MDXRender } from "@/components/common/utils/MDXRender";
 import { getProject } from "@/services";
 import { Icon } from "@/types";
 import { getLocalizedPeriod } from "@/utils/period";

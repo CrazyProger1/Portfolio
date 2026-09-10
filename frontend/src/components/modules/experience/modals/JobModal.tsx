@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 import { AreaBadge, SkillBadge } from "@/components/common/badges";
-import { MDXRender } from "@/components/common/utils";
+import { MDXRender } from "@/components/common/utils/MDXRender";
 import { getJob } from "@/services";
 import { getLocalizedPeriod } from "@/utils/period";
 

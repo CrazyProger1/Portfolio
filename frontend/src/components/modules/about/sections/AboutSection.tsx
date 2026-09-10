@@ -1,7 +1,7 @@
 import React from "react";
 
 import { SkillBadge } from "@/components/common/badges";
-import { MDXRender } from "@/components/common/utils";
+import { MDXRender } from "@/components/common/utils/MDXRender";
 import { getSkills, getTexts } from "@/services";
 import { Skill, TextBlock } from "@/types";
 
