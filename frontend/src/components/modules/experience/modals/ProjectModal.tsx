@@ -4,13 +4,12 @@ import React from "react";
 
 import { AreaBadge, SkillBadge } from "@/components/common/badges";
 import { MultiIcon } from "@/components/common/icons";
+import { Modal } from "@/components/common/modals";
 import { Motion } from "@/components/common/utils";
 import { MDXRender } from "@/components/common/utils/MDXRender";
 import { getProject } from "@/services";
 import { Icon } from "@/types";
 import { getLocalizedPeriod } from "@/utils/period";
-
-import { Modal } from "./Modal";
 
 type Props = {
   project?: string;
@@ -44,7 +43,7 @@ export const ProjectModal = async ({ project: projectId }: Props) => {
   );
 
   return (
-    <Modal>
+    <Modal query="project">
       <div className="flex flex-col items-center gap-4 select-none">
         <div className="flex flex-row items-center justify-between">
           <div className="text-4xl font-extrabold">{name}</div>

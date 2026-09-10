@@ -73,6 +73,11 @@ UNFOLD = {
                         "link": reverse_lazy("admin:portfolio_job_changelist"),
                     },
                     {
+                        "title": _("Hobbies"),
+                        "icon": "hiking",
+                        "link": reverse_lazy("admin:portfolio_hobby_changelist"),
+                    },
+                    {
                         "title": _("Platforms"),
                         "icon": "captive_portal",
                         "link": reverse_lazy("admin:portfolio_platform_changelist"),
@@ -96,6 +101,11 @@ UNFOLD = {
                         "title": _("Work Areas"),
                         "icon": "target",
                         "link": reverse_lazy("admin:portfolio_workarea_changelist"),
+                    },
+                    {
+                        "title": _("Hobby Tags"),
+                        "icon": "sell",
+                        "link": reverse_lazy("admin:portfolio_hobbytag_changelist"),
                     },
                     {
                         "title": _("Messages"),

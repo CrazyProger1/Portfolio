@@ -2,6 +2,7 @@ import { HorizontalDivider } from "@/components/common/dividers";
 import { AboutSection } from "@/components/modules/about";
 import { ContactMeSection } from "@/components/modules/contact";
 import { ExperienceSection } from "@/components/modules/experience";
+import { HobbiesSection } from "@/components/modules/hobbies";
 import { IntroductionSection } from "@/components/modules/introduction";
 import { SearchParams } from "@/types";
 
@@ -23,6 +24,9 @@ const Page = async ({ searchParams }: Props) => {
       <div id="experience" className="mb-2" />
       <HorizontalDivider text="Expericence" />
       <ExperienceSection params={params} />
+      <div id="hobbies" className="mb-2" />
+      <HorizontalDivider text="Hobbies" />
+      <HobbiesSection params={params} />
       <div id="contactme" className="mb-2" />
       <HorizontalDivider id="contactme" text="Contact Me" />
       <ContactMeSection />

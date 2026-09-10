@@ -6,11 +6,12 @@ import { Motion, SmoothLink } from "@/components/common/utils";
 
 type Props = {
   children: React.ReactNode;
+  query: string;
 };
 
-export const Modal = ({ children }: Props) => {
+export const Modal = ({ children, query }: Props) => {
   return (
-    <ModalPortal visible={true} query="project">
+    <ModalPortal visible={true} query={query}>
       <div className="modal-scroll-wrapper lg:1/2 max-h-[98%] w-[98%] overflow-y-auto pr-1 md:w-2/3">
         <StopPropagation className="bg-background relative flex flex-col gap-4 rounded-2xl p-4">
           <div className="absolute top-4 right-4">

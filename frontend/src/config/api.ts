@@ -7,6 +7,8 @@ export const API_ENDPOINTS = {
   getUsers: "users/",
   getJobs: "jobs/",
   getJob: "jobs/:id/",
+  getHobbies: "hobbies/",
+  getHobby: "hobbies/:id/",
   getProjects: "projects/",
   getProject: "projects/:id/",
   getLinks: "links/",

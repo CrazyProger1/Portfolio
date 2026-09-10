@@ -1,24 +1,24 @@
 import Image from "next/image";
 import React from "react";
 
-import { AreaBadge, SkillBadge } from "@/components/common/badges";
+import { TagBadge } from "@/components/common/badges";
 import { Modal } from "@/components/common/modals";
 import { MDXRender } from "@/components/common/utils/MDXRender";
-import { getJob } from "@/services";
+import { getHobby } from "@/services";
 import { getLocalizedPeriod } from "@/utils/period";
 
 type Props = {
-  job?: string;
+  hobby?: string;
 };
 
-export const JobModal = async ({ job: jobId }: Props) => {
-  if (!jobId) return null;
+export const HobbyModal = async ({ hobby: hobbyId }: Props) => {
+  if (!hobbyId) return null;
 
-  const job = await getJob(jobId);
+  const hobby = await getHobby(hobbyId);
 
-  if (!job.success) return null;
+  if (!hobby.success) return null;
 
-  const { image, name, description, skills, areas, started_at, ended_at } = job;
+  const { image, name, description, tags, started_at, ended_at } = hobby;
 
   const { startedLabel, endedLabel, period } = getLocalizedPeriod(
     new Date(started_at),
@@ -26,12 +26,12 @@ export const JobModal = async ({ job: jobId }: Props) => {
   );
 
   return (
-    <Modal query="job">
+    <Modal query="hobby">
       <div className="flex flex-col items-center gap-4 select-none">
         <div className="flex flex-row items-center justify-between">
           <div className="text-4xl font-extrabold">{name}</div>
         </div>
-        <Image className="icon-shine-default" src={image} alt="Project" width={300} height={300} />
+        <Image className="icon-shine-default" src={image} alt="Hobby" width={600} height={410} />
       </div>
       <div className="select-none">
         Period:{" "}
@@ -41,13 +41,8 @@ export const JobModal = async ({ job: jobId }: Props) => {
       </div>
       <MDXRender source={description} />
       <div className="flex flex-wrap gap-1.5 select-none">
-        {skills.map((skill) => {
-          return <SkillBadge key={skill.id} skill={skill} />;
-        })}
-      </div>
-      <div className="flex flex-wrap gap-1.5 select-none">
-        {areas.map((area) => {
-          return <AreaBadge key={area.id} area={area} />;
+        {tags.map((tag) => {
+          return <TagBadge key={tag.id} tag={tag} />;
         })}
       </div>
     </Modal>

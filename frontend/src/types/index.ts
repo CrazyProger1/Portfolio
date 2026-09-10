@@ -3,6 +3,7 @@ export { type Icon } from "./icons";
 export { type Skill, type SkillLevel } from "./skills";
 export { type Project, type ProjectType, type Area } from "./projects";
 export { type Job } from "./jobs";
+export { type Hobby, type HobbyTag } from "./hobbies";
 export { type UserLink } from "./links";
 export { type SearchParams } from "./search";
 export {

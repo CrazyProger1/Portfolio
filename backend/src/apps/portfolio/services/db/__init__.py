@@ -7,6 +7,10 @@ from src.apps.portfolio.services.db.jobs import (
     get_all_jobs,
     get_user_jobs,
 )
+from src.apps.portfolio.services.db.hobbies import (
+    get_all_hobbies,
+    get_user_hobbies,
+)
 from src.apps.portfolio.services.db.projects import (
     get_all_projects,
     get_user_projects,

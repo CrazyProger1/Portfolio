@@ -1,0 +1,1 @@
+export { HobbiesSection } from "./HobbiesSection";

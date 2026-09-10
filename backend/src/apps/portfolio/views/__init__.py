@@ -1,5 +1,6 @@
 from src.apps.portfolio.views.skills import SkillViewSet
 from src.apps.portfolio.views.jobs import JobViewSet
+from src.apps.portfolio.views.hobbies import HobbyViewSet
 from src.apps.portfolio.views.projects import ProjectViewSet
 from src.apps.portfolio.views.links import LinkViewSet
 from src.apps.portfolio.views.texts import TextBlockViewSet

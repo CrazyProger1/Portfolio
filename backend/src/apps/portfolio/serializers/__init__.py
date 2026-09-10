@@ -9,6 +9,11 @@ from src.apps.portfolio.serializers.jobs import (
     JobListSerializer,
     JobRetrieveSerializer,
 )
+from src.apps.portfolio.serializers.hobbies import (
+    HobbyListSerializer,
+    HobbyRetrieveSerializer,
+    HobbyTagSerializer,
+)
 from src.apps.portfolio.serializers.projects import (
     ProjectListSerializer,
     ProjectRetrieveSerializer,

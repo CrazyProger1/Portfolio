@@ -10,6 +10,10 @@ from src.apps.portfolio.models.projects import (
 from src.apps.portfolio.models.jobs import (
     Job,
 )
+from src.apps.portfolio.models.hobbies import (
+    Hobby,
+    HobbyTag,
+)
 from src.apps.portfolio.models.areas import (
     WorkArea,
 )
