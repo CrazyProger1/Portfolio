@@ -6,19 +6,24 @@ import { Motion } from "@/components/common/utils";
 
 export const IntroductionSection = () => {
   return (
-    <div className="flex flex-col items-center justify-evenly gap-8 text-center select-none lg:flex-row lg:text-left">
-      <Motion whileHover={{ scale: 1.05 }} className="text-shine flex cursor-pointer flex-col">
-        <div className="text-xl">Hi, I&#39;m Nikolay,</div>
-        <div className="text-4xl font-extrabold lg:text-6xl">Fullstack Developer</div>
+    <div className="intro-section flex flex-col items-center justify-evenly gap-8 text-center select-none lg:flex-row lg:gap-12 lg:text-left">
+      <Motion
+        whileHover={{ scale: 1.05 }}
+        className="text-shine flex min-w-0 cursor-pointer flex-col lg:flex-1"
+      >
+        <div className="text-xl lg:text-2xl">Hi, I&#39;m Nikolay,</div>
+        <div className="text-4xl font-extrabold lg:text-5xl xl:text-6xl 2xl:text-7xl">
+          Fullstack Developer
+        </div>
       </Motion>
-      <Motion whileHover={{ scale: 1.05 }} className="cursor-pointer">
+      <Motion whileHover={{ scale: 1.05 }} className="intro-photo shrink-0 cursor-pointer">
         <Image
           alt="Me Photo"
-          className="rounded-4xl"
+          className="h-auto w-full rounded-4xl"
           src={MeImg}
-          width={400}
-          height={800}
-          sizes="(max-width: 768px) 100vw, 400px"
+          width={1000}
+          height={1498}
+          sizes="(max-width: 1024px) 100vw, 50vw"
           priority={true}
           fetchPriority="high"
         />

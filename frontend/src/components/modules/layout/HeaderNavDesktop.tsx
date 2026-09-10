@@ -12,7 +12,7 @@ type Props = {
 
 const HeaderNavDesktop = ({ links }: Props) => {
   return (
-    <div className="hidden flex-row items-center justify-between md:flex">
+    <div className="hidden w-full flex-row items-center justify-between md:flex">
       <Motion whileHover={{ scale: 1.05 }} className="text-shine cursor-pointer text-xl">
         {HEADER_BRAND}
       </Motion>

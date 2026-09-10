@@ -9,7 +9,7 @@ type Props = {
 
 export const Header = ({ links }: Props) => {
   return (
-    <header className="py-6 select-none">
+    <header className="flex h-[var(--header-height)] items-center select-none">
       <HeaderNavDesktop links={links} />
       <HeaderNavMobile links={links} />
     </header>

@@ -27,7 +27,14 @@
     --scroll: rgba(136, 136, 136, 0.25);
     --scroll-hover: rgba(85, 85, 85, 0.14);
     --text: rgb(255, 255, 255);
-    --tooltip: rgb(59, 57, 57)
+    --tooltip: rgb(59, 57, 57);
+    --header-height: 6rem;
+}
+
+@media (min-width: 48rem) {
+    :root {
+        --header-height: 5rem;
+    }
 }
 
 @theme {
@@ -87,6 +94,23 @@
 body {
     background: var(--background);
     color: var(--foreground);
+}
+
+/* The introduction fills the first screen, so nothing below it peeks in. */
+.intro-section {
+    height: calc(100svh - var(--header-height) - 3rem);
+}
+
+/* Photo width follows the height it is allowed to take, so it keeps its own ratio.
+   Stacked, it also has to leave room for the heading above it. */
+.intro-photo {
+    width: min(100%, max(0px, calc((100svh - var(--header-height) - 12rem) * 0.667)));
+}
+
+@media (min-width: 64rem) {
+    .intro-photo {
+        width: min(100%, calc(min(70svh, 100svh - var(--header-height) - 3rem) * 0.667));
+    }
 }
 
 
