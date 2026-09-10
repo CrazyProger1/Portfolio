@@ -22,6 +22,16 @@ const eslintConfig = [
       import: pluginImport,
       prettier,
     },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
+      },
+    },
     rules: {
       "prettier/prettier": "error",
 
