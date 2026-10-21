@@ -1,0 +1,30 @@
+name: portfolio-analytics
+
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    container_name: portfolio-umami
+    restart: unless-stopped
+    env_file: [.env]
+    # nginx proxies analytics.crazyproger1.com here, so it stays off the public interface
+    ports:
+      - "${UMAMI_PORT:-127.0.0.1:3061}:3000"
+    init: true
+    depends_on:
+      umami-db: {condition: service_healthy}
+
+  umami-db:
+    image: postgres:17
+    container_name: portfolio-umami-db
+    restart: unless-stopped
+    env_file: [.env]
+    volumes:
+      - umamidata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  umamidata:
