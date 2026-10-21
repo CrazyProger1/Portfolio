@@ -2,6 +2,9 @@
 
 set -e
 
+# Docker is rootless on the server: talk to the admin user's daemon
+export DOCKER_HOST=unix:///run/user/1001/docker.sock
+
 cd /home/admin/portfolio/analytics/ || exit
 
 git checkout -- deploy.sh
